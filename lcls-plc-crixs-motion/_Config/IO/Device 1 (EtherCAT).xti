@@ -50,6 +50,7 @@
 			<SyncUnit Name="VLS" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="Catcher" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="CRIX_VAC_PLC" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="Cryostat" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>
