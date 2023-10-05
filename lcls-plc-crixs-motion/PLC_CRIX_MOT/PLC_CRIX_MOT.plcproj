@@ -2,7 +2,7 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{320423e4-504c-4304-8ded-7e40e0a2a352}</ProjectGuid>
+    <ProjectGuid>{e42975c7-61de-4327-9a0b-7bb4242b63e1}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
@@ -17,7 +17,7 @@
     <LibraryReferences>{84e56759-6288-4e80-a121-5405505f1f9a}</LibraryReferences>
     <CombineIds>false</CombineIds>
     <Company>SLAC</Company>
-    <Released>true</Released>
+    <Released>false</Released>
     <Title>lcls-plc-crix-motion</Title>
     <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
@@ -41,6 +41,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\EPS\ST_BFSAssemblyState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\EPS\ST_EPSLimits.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\EPS\ST_Queue.TcDUT">
@@ -157,6 +160,9 @@
     <Compile Include="POUs\EPS\PRG_QueueTest.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\EPS\PRG_SDS_Y_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\EPS\PRG_Test_AdjacentStates.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -179,6 +185,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\temp\FB_SLITS_SCATTER.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\temp\F_InRange.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -234,10 +243,10 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
-      <Resolution>LCLS General, 2.6.0 (SLAC)</Resolution>
+      <Resolution>LCLS General, 2.9.1 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, 2.0.1 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 2.2.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, 3.0.14 (SLAC - LCLS)</Resolution>
