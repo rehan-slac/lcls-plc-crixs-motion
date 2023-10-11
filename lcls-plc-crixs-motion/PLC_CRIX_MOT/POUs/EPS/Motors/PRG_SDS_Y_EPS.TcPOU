@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PRG_SDS_Y_EPS" Id="{1d694921-86bf-430a-8dcf-197fd1ce1485}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_SDS_Y_EPS
+VAR
+	bInit 		: BOOL := TRUE;
+	aSDS_Y_EPS 	: ARRAY [1 ... 4] OF ST_EPSLimits;
+	
+	nIndex 		: uint;
+	nEPSIndex 	: uint;
+	
+	fSDS_Z_ENC 	: REAL;
+	fSDS_RY 	: REAL;
+	fSDS_Y 		: REAL;
+	fRCC_Y 		: REAL;
+	
+	pMotorDUT	: POINTER TO DUT_MotionStage;
+	fbBwdEPS 	: FB_EPS;
+	fbFwdEPS 	: FB_EPS;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// SDS Y EPS
+IF bInit THEN
+	// Set Inital Values
+	aSDS_Y_EPS[1].fBwd_Limits := 37.5;
+	aSDS_Y_EPS[1].fFwd_Limits := 38.5;
+	
+	aSDS_Y_EPS[2].fBwd_Limits := 30;
+	aSDS_Y_EPS[2].fFwd_Limits := 38.5;
+	
+	aSDS_Y_EPS[3].fBwd_Limits := 30;
+	aSDS_Y_EPS[3].fFwd_Limits := 35;
+	
+    aSDS_Y_EPS[4].fBwd_Limits := 30;
+	aSDS_Y_EPS[4].fFwd_Limits := 45;
+
+	
+	bInit := FALSE;
+END_IF
+
+// Encoder / position values
+fSDS_Z_ENC :=  M36.fPosition;
+fSDS_RY := M19.fPosition;
+fSDS_Y  := M17.fPosition;
+fRCC_Y  := M38.fPosition;
+
+// Information about current motor
+pMotorDUT := ADR (M17);
+fbBwdEPS(eps := pMotorDut^.stEPSBackwardEnable);
+fbFwdEPS(eps := pMotorDut^.stEPSForwardEnable);
+
+// Set EPS conditions
+aSDS_Y_EPS[1].fbEPS.setBit(0, TRUE); // FULL RANGE
+
+aSDS_Y_EPS[2].fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 0, 400));
+
+aSDS_Y_EPS[3].fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 420));
+aSDS_Y_EPS[3].fbEPS.setBit(1, F_InRange(fSDS_RY, -5, 5));
+
+aSDS_Y_EPS[4].fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 495));
+aSDS_Y_EPS[4].fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -5));
+
+aSDS_Y_EPS[5].fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 495, 510));
+aSDS_Y_EPS[5].fbEPS.setBit(1, (fSDS_Y - fRCC_Y) >= 36);
+
+// Find which conition we are in
+FOR nIndex := 1 TO 4 DO
+	IF aSDS_Y_EPS[nIndex].fbEPS.eps.bEPS_OK THEN
+		nEPSIndex := nIndex;
+	END_IF
+END_FOR
+
+
+// STOP the motor depeding on which condition we are in
+IF fSDS_Y < aSDS_Y_EPS[nIndex].fBwd_Limits THEN
+	fbBwdEPS.setBit(0, FALSE);
+ELSE
+	fbBwdEPS.setBit(0, TRUE);
+END_IF
+
+IF fSDS_Y > aSDS_Y_EPS[nIndex].fFwd_Limits THEN
+	fbFwdEPS.setBit(0, FALSE);
+ELSE
+	fbFwdEPS.setBit(0, TRUE);
+END_IF
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

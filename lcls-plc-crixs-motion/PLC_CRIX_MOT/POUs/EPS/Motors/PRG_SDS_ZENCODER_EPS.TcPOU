@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PRG_SDS_ZENCODER_EPS" Id="{590b5600-f8af-4ace-bb67-7ba2f1f32fc7}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_SDS_ZENCODER_EPS
+VAR
+    bInit       : BOOL := TRUE;
+    aEPS        : ARRAY [1 ... 5] OF ST_EPSLimits;
+    
+    nIndex      : UINT;
+    nEPSIndex   : UINT;
+    
+    fSDS_RY     : REAL;
+    fSDS_Y      : REAL;
+    fSDS_Z_ENC  : REAL;
+    fRCC_Y      : REAL;
+    fDPL_X      : REAL;
+
+    pMotorDUT   : POINTER TO DUT_MotionStage;
+    fbBwdEPS    : FB_EPS;
+    fbFwdEPS    : FB_EPS;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bInit THEN
+    aEPS[1].fBwd_Limits := 0;
+    aEPS[1].fFwd_Limits := 420;
+
+    aEPS[1].fBwd_Limits := 400;
+    aEPS[2].fFwd_Limits := 420;
+
+    aEPS[1].fBwd_Limits := 400;
+    aEPS[3].fFwd_Limits := 420;
+
+    aEPS[1].fBwd_Limits := 400;
+    aEPS[4].fFwd_Limits := 510;
+
+    aEPS[1].fBwd_Limits := 495;
+    aEPS[5].fFwd_Limits := 510;
+
+    bInit := FALSE;
+END_IF
+
+fSDS_RY     := M19.fPosition;
+fSDS_Y      := M17.fPosition;
+fSDS_Z_ENC  := M36.fPosition;
+fRCC_Y      := M38.fPosition;
+fDPL_X      := M1.fPosition;
+
+pMotorDUT := ADR (M18);
+fbBwdEPS(eps := pMotorDUT^.stEPSBackwardEnable);
+fbFwdEPS(eps := pMotorDUT^.stEPSForwardEnable);
+
+aEPS[1].fbEPS.setBit(0, F_InRange(fSDS_RY, -5, 5));
+aEPS[1].fbEPS.setBit(1, F_InRange(fSDS_Y, 37.5, 38.5));
+
+aEPS[2].fbEPS.setBit(0, F_InRange(fSDS_RY, -80, 5));
+aEPS[2].fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 37.5));
+
+aEPS[3].fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
+aEPS[3].fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 400, 420));
+aEPS[3].fbEPS.setBit(2, FALSE); // NOT INJECTOR Vertical Tansport Condition
+
+aEPS[4].fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
+aEPS[4].fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 35));
+aEPS[4].fbEPS.setBit(2, F_InRange(fRCC_Y, -38, -34));
+aEPS[4].fbEPS.setBit(3, F_InRange(fDPL_X, 10, 30));
+
+aEPS[5].fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
+aEPS[5].fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 495, 510));
+aEPS[5].fbEPS.setBit(2, FALSE); // NOT INJECTOR Vertical Transport Condition
+
+FOR nIndex := 1 TO 5 DO
+    IF aEPS[nIndex].fbEPS.eps.bEPS_OK THEN
+        nEPSIndex := nIndex;
+    END_IF
+END_FOR
+
+IF fSDS_Z_ENC < aEPS[nIndex].fBwd_Limits THEN
+	fbBwdEPS.setBit(0, FALSE);
+ELSE
+	fbBwdEPS.setBit(0, TRUE);
+END_IF
+
+IF fSDS_Z_ENC > aEPS[nIndex].fFwd_Limits THEN
+	fbFwdEPS.setBit(0, FALSE);
+ELSE
+	fbFwdEPS.setBit(0, TRUE);
+END_IF
+
+
+
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
