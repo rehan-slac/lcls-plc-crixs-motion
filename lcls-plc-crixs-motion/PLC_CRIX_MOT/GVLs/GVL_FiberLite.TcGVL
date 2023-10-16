@@ -12,7 +12,7 @@ VAR_GLOBAL
 
     bLedOutput1 : FB_LED;
 
-    {attribute 'TcLinkTo' := '.iIlluminatorINT := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^FiberLight LED (EL2502)^PWM Outputs Channel 1^PWM output'}
+    {attribute 'TcLinkTo' := '.iIlluminatorINT := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^FiberLite (EL4004)^AO Outputs Channel 2^Analog output'}
     {attribute 'pytmc' := '
         pv: RIX:CRIX:LED:02
         io: io
