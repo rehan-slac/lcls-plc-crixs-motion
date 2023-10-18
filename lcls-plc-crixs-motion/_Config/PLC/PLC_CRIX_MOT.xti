@@ -2,24 +2,6 @@
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CNestedPlcProjDef">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
-			<BitSize>48</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
-			<ArrayInfo>
-				<LBound>0</LBound>
-				<Elements>6</Elements>
-			</ArrayInfo>
-			<Format>
-				<Printf>%d.%d.%d.%d.%d.%d</Printf>
-				<Parameter>[0]</Parameter>
-				<Parameter>[1]</Parameter>
-				<Parameter>[2]</Parameter>
-				<Parameter>[3]</Parameter>
-				<Parameter>[4]</Parameter>
-				<Parameter>[5]</Parameter>
-			</Format>
-		</DataType>
-		<DataType>
 			<Name GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
@@ -1205,11 +1187,8 @@ External Setpoint Generation:
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
-					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
-					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
-					</Comment>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+					<Name>PRG_RCI.iMagnetInINT</Name>
+					<Type>INT</Type>
 				</Var>
 				<Var>
 					<Name>PRG_DiagnosticPaddleMotors.fbDPX_Motor.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -1947,21 +1926,6 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_RCI.iMagnetInINT</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_InjectorMotors.bLimitBackwardEnable_SDSZ_18</Name>
-					<Comment>
-						<![CDATA[Limit Switch]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PRG_InjectorMotors.bSDS_VGC_01_CLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>PRG_RCI.fbGetMagnetVoltage.iRaw</Name>
 					<Comment>
 						<![CDATA[ Connect this input to the terminal]]>
@@ -2555,6 +2519,21 @@ External Setpoint Generation:
 ]]>
 						</Comment>
 					</SubVar>
+				</Var>
+				<Var>
+					<Name>PRG_InjectorMotors.bLimitBackwardEnable_SDSZ_18</Name>
+					<Comment>
+						<![CDATA[Limit Switch]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_InjectorMotors.bSDS_VGC_01_CLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_InjectorMotors.bSDS_VGC_01_OPN</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_VLS.fbVLS_SLITS_TOP.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -3243,10 +3222,6 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_InjectorMotors.bSDS_VGC_01_OPN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>PRG_InjectorMotors.bHall_Forward</Name>
 					<Comment>
 						<![CDATA[ Hall Effect Limits for SDS X Stage]]>
@@ -3255,6 +3230,17 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>PRG_InjectorMotors.bHall_Backward</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_CryoPump.bLimitBackwardEnable_Y_10</Name>
+					<Comment>
+						<![CDATA[Limit switches]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_CryoPump.bLimitBackwardEnable_Y_11</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -3354,17 +3340,6 @@ External Setpoint Generation:
 ]]>
 						</Comment>
 					</SubVar>
-				</Var>
-				<Var>
-					<Name>PRG_CryoPump.bLimitBackwardEnable_Y_10</Name>
-					<Comment>
-						<![CDATA[Limit switches]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PRG_CryoPump.bLimitBackwardEnable_Y_11</Name>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_CryoPump.xEcatBridge_TxPDO_state</Name>
@@ -8911,6 +8886,10 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
+					<Name>PRG_InjectorMotors.bMOTSDSZ18_IN</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PRG_VLS.fbVLS_SLITS_TOP.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
@@ -8965,10 +8944,6 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_InjectorMotors.fbSDSZEncoder.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>PRG_InjectorMotors.bMOTSDSZ18_IN</Name>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PRG_InjectorMotors.bMOTSDSZ18_OUT</Name>
@@ -9141,6 +9116,21 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_FiberLite.bLedOutput1.fbSetIllPercent.iRaw</Name>
+					<Comment>
+						<![CDATA[ Connect this output to the terminal]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FiberLite.bLedOutput2.bLedPower</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FiberLite.bLedOutput2.iIlluminatorINT</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FiberLite.bLedOutput2.fbSetIllPercent.iRaw</Name>
 					<Comment>
 						<![CDATA[ Connect this output to the terminal]]>
 					</Comment>
@@ -10266,8 +10256,8 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M24.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M24.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^Term 158 (EL4004)">
-				<Link VarA="PlcTask Outputs^GVL_FiberLite.bLedOutput1.iIlluminatorINT" VarB="AO Outputs Channel 1^Analog output" AutoLink="true"/>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^FiberLite (EL4004)">
+				<Link VarA="PlcTask Outputs^GVL_FiberLite.bLedOutput2.iIlluminatorINT" VarB="AO Outputs Channel 2^Analog output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^VLS_EP10_EP7041-3102">
 				<Link VarA="PlcTask Inputs^Main.M44.bHome" VarB="ENC Status compact^Status^Status of input C" AutoLink="true"/>
