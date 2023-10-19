@@ -17,7 +17,7 @@
     <LibraryReferences>{84e56759-6288-4e80-a121-5405505f1f9a}</LibraryReferences>
     <CombineIds>false</CombineIds>
     <Company>SLAC</Company>
-    <Released>false</Released>
+    <Released>true</Released>
     <Title>lcls-plc-crix-motion</Title>
     <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
@@ -41,9 +41,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\EPS\ST_BFSAssemblyState.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\EPS\ST_EPSLimits.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\EPS\ST_Queue.TcDUT">
@@ -154,33 +151,6 @@
     <Compile Include="POUs\EPS\FB_Queue.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\EPS\InjectorMotorLimits\F_InRange.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_DPL_X_EPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_DPL_Y_EPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_DPL_Z_EPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_RCC_Y_EPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_RCC_Z_EPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_SDS_RY_EPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_SDS_Y_EPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_SDS_ZENCODER_EPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\EPS\PRG_BFS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -211,9 +181,6 @@
     <Compile Include="POUs\temp\FB_SLITS_SCATTER.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\temp\F_InRange.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
@@ -222,7 +189,6 @@
     <Folder Include="GVLs" />
     <Folder Include="POUs\EPS" />
     <Folder Include="POUs\Assemblies" />
-    <Folder Include="POUs\EPS\InjectorMotorLimits" />
     <Folder Include="POUs\temp" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
@@ -271,7 +237,7 @@
       <Resolution>LCLS General, 2.9.1 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, 2.2.0 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 4.0.4 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, 3.0.14 (SLAC - LCLS)</Resolution>
