@@ -4,14 +4,14 @@
     <Declaration><![CDATA[TYPE ST_EPSLimits :
 STRUCT
     {attribute 'pytmc' := '
-		pv: FwdLimit
-		io: i
-	'}
+        pv: FwdLimit
+        io: i
+    '}
     fFwd_Limits : REAL;
     {attribute 'pytmc' := '
-		pv: BwdLimit
-		io: i
-	'}
+        pv: BwdLimit
+        io: i
+    '}
     fBwd_Limits	: REAL;
     {attribute 'pytmc' := 'pv: ST'}
     stEPS 		: DUT_EPS;
