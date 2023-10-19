@@ -2,7 +2,7 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{e42975c7-61de-4327-9a0b-7bb4242b63e1}</ProjectGuid>
+    <ProjectGuid>{320423e4-504c-4304-8ded-7e40e0a2a352}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
@@ -154,13 +154,37 @@
     <Compile Include="POUs\EPS\FB_Queue.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorLimits\F_InRange.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_DPL_X_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_DPL_Y_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_DPL_Z_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_RCC_Y_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_RCC_Z_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_SDS_RY_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_SDS_Y_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorLimits\PRG_SDS_ZENCODER_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\EPS\PRG_BFS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\EPS\PRG_QueueTest.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\EPS\PRG_SDS_Y_EPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\EPS\PRG_Test_AdjacentStates.TcPOU">
@@ -198,6 +222,7 @@
     <Folder Include="GVLs" />
     <Folder Include="POUs\EPS" />
     <Folder Include="POUs\Assemblies" />
+    <Folder Include="POUs\EPS\InjectorMotorLimits" />
     <Folder Include="POUs\temp" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />

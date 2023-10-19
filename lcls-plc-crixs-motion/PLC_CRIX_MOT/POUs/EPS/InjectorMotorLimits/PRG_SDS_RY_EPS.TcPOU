@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="PRG_SDS_RY_EPS" Id="{18466759-88d2-4c0f-bc51-f9ca798237c4}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_SDS_RY_EPS
 VAR
@@ -14,6 +14,8 @@ VAR
     fSDS_Y      : REAL;
     fRCC_Y 		: REAL;
     fDPL_X 		: REAL;
+
+    bSDS_RY_FullRange : BOOL;
 
     pMotorDUT	: POINTER TO DUT_MotionStage;
     fbBwdEPS 	: FB_EPS;
@@ -58,17 +60,19 @@ aEPS[1].fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 35));
 aEPS[1].fbEPS.setBit(2, F_InRange(fRCC_Y, -38, -34));
 aEPS[1].fbEPS.setBit(3, F_InRange(fDPL_X, 10, 30));
 
+bSDS_RY_FullRange := aEPS[1].fbEPS.eps.bEPS_OK; // FULL RANGE CONDITION
+
 aEPS[2].fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 0, 400));
 
 aEPS[3].fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 420));
 aEPS[3].fbEPS.setBit(1, F_InRange(fSDS_RY, -5, 5));
-aEPS[3].fbEPS.setBit(2, TRUE); // NOT FULL RANGE COND.
+aEPS[3].fbEPS.setBit(2, NOT bSDS_RY_FullRange); // NOT FULL RANGE COND.
 
 aEPS[4].fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 420, 510));
 
 aEPS[5].fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 420));
 aEPS[5].fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -80));
-aEPS[5].fbEPS.setBit(2, TRUE); // NOT FULL RANGE COND.
+aEPS[5].fbEPS.setBit(2, NOT bSDS_RY_FullRange); // NOT FULL RANGE COND.
 
 
 // Find which conition we are in
