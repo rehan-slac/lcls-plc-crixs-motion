@@ -3,9 +3,12 @@
   <DUT Name="ST_EPSLimits" Id="{4ee57205-73a9-412c-b8d8-c1dfce7e0790}">
     <Declaration><![CDATA[TYPE ST_EPSLimits :
 STRUCT
+    {attribute 'pytmc' := 'pv: FwdLimit'}
     fFwd_Limits : REAL;
+    {attribute 'pytmc' := 'pv: BwdLimit'}
     fBwd_Limits	: REAL;
-    fbEPS 		: FB_EPS;
+    {attribute 'pytmc' := 'pv: ST'}
+    stEPS 		: DUT_EPS;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

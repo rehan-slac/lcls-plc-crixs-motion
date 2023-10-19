@@ -4,29 +4,28 @@
     <Declaration><![CDATA[PROGRAM PRG_DPL_Y_EPS
 VAR
     bInit 		: BOOL := TRUE;
-    aEPS 	    : ARRAY [1 ... 2] OF ST_EPSLimits;
-
     nIndex 		: UINT;
     nEPSIndex 	: UINT;
 
     pMotorDUT	: POINTER TO DUT_MotionStage;
     fbBwdEPS 	: FB_EPS;
     fbFwdEPS 	: FB_EPS;
+    fbEPS		: FB_EPS;
 
-    fDPL_Y      : REAL;
-    fDPL_Z      : REAL;
-    fRCC_Z      : REAL;
+    fDPL_Y      : LREAL;
+    fDPL_Z      : LREAL;
+    fRCC_Z      : LREAL;
 
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF bInit THEN
     // Set Inital Values
-    aEPS[1].fBwd_Limits := -1;
-    aEPS[1].fFwd_Limits := 80;
+    aDPL_Y_EPS[1].fBwd_Limits := -1;
+    aDPL_Y_EPS[1].fFwd_Limits := 80;
 
-    aEPS[2].fBwd_Limits := 40;
-    aEPS[2].fFwd_Limits := 80;
+    aDPL_Y_EPS[2].fBwd_Limits := 40;
+    aDPL_Y_EPS[2].fFwd_Limits := 80;
 
     bInit := FALSE;
 END_IF
@@ -39,24 +38,26 @@ pMotorDUT := ADR (M2);
 fbBwdEPS(eps := pMotorDut^.stEPSBackwardEnable);
 fbFwdEPS(eps := pMotorDut^.stEPSForwardEnable);
 
-aEPS[1].fbEPS.setBit(0, F_InRange(fDPL_Y, 10, 80));
+fbEPS(eps:=aDPL_Y_EPS[1].stEPS);
+fbEPS.setBit(0, F_InRange(fDPL_Y, 10, 80));
 
-aEPS[2].fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
-aEPS[2].fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
+fbEPS(eps:=aDPL_Y_EPS[2].stEPS);
+fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
+fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
 
 FOR nIndex := 1 TO 3 DO
-    IF aEPS[nIndex].fbEPS.eps.bEPS_OK THEN
+    IF aDPL_Y_EPS[nIndex].stEPS.bEPS_OK THEN
         nEPSIndex := nIndex;
     END_IF
 END_FOR
 
-IF fDPL_Y < aEPS[nIndex].fBwd_Limits THEN
+IF fDPL_Y < aDPL_Y_EPS[nEPSIndex].fBwd_Limits THEN
     fbBwdEPS.setBit(0, FALSE);
 ELSE
     fbBwdEPS.setBit(0, TRUE);
 END_IF
 
-IF fDPL_Y > aEPS[nIndex].fFwd_Limits THEN
+IF fDPL_Y > aDPL_Y_EPS[nEPSIndex].fFwd_Limits THEN
     fbFwdEPS.setBit(0, FALSE);
 ELSE
     fbFwdEPS.setBit(0, TRUE);
