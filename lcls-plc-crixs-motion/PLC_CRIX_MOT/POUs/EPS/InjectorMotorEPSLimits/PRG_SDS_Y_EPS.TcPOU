@@ -40,10 +40,10 @@ IF bInit THEN
 END_IF
 
 // Encoder / position values
-fSDS_Z_ENC :=  M36.fPosition;
-fSDS_RY := M19.fPosition;
-fSDS_Y  := M17.fPosition;
-fRCC_Y  := M38.fPosition;
+fSDS_Z_ENC :=  M36.stAxisStatus.fActPosition;
+fSDS_RY := M19.stAxisStatus.fActPosition;
+fSDS_Y  := M17.stAxisStatus.fActPosition;
+fRCC_Y  := M38.stAxisStatus.fActPosition;
 
 // Information about current motor
 pMotorDUT := ADR (M17);
@@ -71,23 +71,23 @@ fbEPS.setBit(1, (fSDS_Y - fRCC_Y) >= 36);
 
 // Find which conition we are in
 FOR nIndex := 1 TO 4 DO
-    IF aSDS_Y_EPS[nIndex].stEPS.bEPS_OK THEN
+    IF aSDS_Y_EPS[PMPS.CheckBounds(nIndex, 1, 4)].stEPS.bEPS_OK THEN
         nEPSIndex := nIndex;
     END_IF
 END_FOR
 
 
 // STOP the motor depeding on which condition we are in
-IF fSDS_Y < aSDS_Y_EPS[nEPSIndex].fBwd_Limits THEN
-    fbBwdEPS.setBit(0, FALSE);
+IF fSDS_Y > aSDS_Y_EPS[nEPSIndex].fBwd_Limits THEN
+    fbBwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), TRUE);
 ELSE
-    fbBwdEPS.setBit(0, TRUE);
+    fbBwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), FALSE);
 END_IF
 
-IF fSDS_Y > aSDS_Y_EPS[nEPSIndex].fFwd_Limits THEN
-    fbFwdEPS.setBit(0, FALSE);
+IF fSDS_Y < aSDS_Y_EPS[nEPSIndex].fFwd_Limits THEN
+    fbFwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), TRUE);
 ELSE
-    fbFwdEPS.setBit(0, TRUE);
+    fbFwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), FALSE);
 END_IF
 
 ]]></ST>

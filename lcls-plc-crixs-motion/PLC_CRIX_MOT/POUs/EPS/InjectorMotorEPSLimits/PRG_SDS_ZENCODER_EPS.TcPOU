@@ -34,7 +34,7 @@ END_VAR
     aSDS_Z_ENC_EPS[3].fBwd_Limits := 400;
     aSDS_Z_ENC_EPS[3].fFwd_Limits := 420;
 
-    aSDS_Z_ENC_EPS[4].fBwd_Limits := 400;
+     aSDS_Z_ENC_EPS[4].fBwd_Limits := 400;
     aSDS_Z_ENC_EPS[4].fFwd_Limits := 510;
 
     aSDS_Z_ENC_EPS[5].fBwd_Limits := 495;
@@ -43,11 +43,11 @@ END_VAR
     bInit := FALSE;
 END_IF
 
-fSDS_RY     := M19.fPosition;
-fSDS_Y      := M17.fPosition;
-fSDS_Z_ENC  := M36.fPosition;
-fRCC_Y      := M38.fPosition;
-fDPL_X      := M1.fPosition;
+fSDS_RY     := M19.stAxisStatus.fActPosition;
+fSDS_Y      := M17.stAxisStatus.fActPosition;
+fSDS_Z_ENC  := M36.stAxisStatus.fActPosition;
+fRCC_Y      := M38.stAxisStatus.fActPosition;
+fDPL_X      := M1.stAxisStatus.fActPosition;
 
 bSDS_vert_transport_state := F_InRange(fSDS_Y, 30, 35) AND F_InRange(fSDS_Z_ENC, 420, 495) AND F_InRange(fSDS_RY, -100, -80);
 
@@ -80,21 +80,21 @@ fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 495, 510));
 fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Transport Condition
 
 FOR nIndex := 1 TO 5 DO
-    IF aSDS_Z_ENC_EPS[nIndex].stEPS.bEPS_OK THEN
+    IF aSDS_Z_ENC_EPS[PMPS.CheckBounds(nIndex, 1, 5)].stEPS.bEPS_OK THEN
         nEPSIndex := nIndex;
     END_IF
 END_FOR
 
-IF fSDS_Z_ENC < aSDS_Z_ENC_EPS[nEPSIndex].fBwd_Limits THEN
-    fbBwdEPS.setBit(0, FALSE);
+IF fSDS_Z_ENC > aSDS_Z_ENC_EPS[nEPSIndex].fBwd_Limits THEN
+    fbBwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), TRUE);
 ELSE
-    fbBwdEPS.setBit(0, TRUE);
+    fbBwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), FALSE);
 END_IF
 
-IF fSDS_Z_ENC > aSDS_Z_ENC_EPS[nEPSIndex].fFwd_Limits THEN
-    fbFwdEPS.setBit(0, FALSE);
+IF fSDS_Z_ENC < aSDS_Z_ENC_EPS[nEPSIndex].fFwd_Limits THEN
+    fbFwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), TRUE);
 ELSE
-    fbFwdEPS.setBit(0, TRUE);
+    fbFwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), FALSE);
 END_IF
 
 
