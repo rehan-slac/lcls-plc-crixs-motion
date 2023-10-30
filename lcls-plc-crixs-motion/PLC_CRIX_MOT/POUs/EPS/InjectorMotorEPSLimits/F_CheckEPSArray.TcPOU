@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="F_CheckEPSArray" Id="{f3d4ff3a-d34c-48ee-a2cc-6fde4bafd853}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_CheckEPSArray : BOOL
+// Determins which 'plc limits' to use and stops motor from moving if motor is out of bounds.
+VAR_IN_OUT
+    stMotor	: ST_MotionStage;
+    aEPSLimits : ARRAY [*] OF ST_EPSLimits;
+END_VAR
+VAR_INPUT
+END_VAR
+VAR
+    nIndex: DINT;
+    nEPSIndex: DINT;
+    fbBwdEPS: FB_EPS;
+    fbFwdEPS: FB_EPS;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[FOR nIndex := LOWER_BOUND(aEPSLimits, 1) TO UPPER_BOUND(aEPSLimits, 1) BY 1 DO
+    IF aEPSLimits[nIndex].stEPS.bEPS_OK THEN
+        nEPSIndex := nIndex;
+    END_IF
+END_FOR
+
+IF stMotor.stAxisStatus.fActPosition > aEPSLimits[nEPSIndex].fBwd_Limits THEN
+    fbBwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), TRUE);
+ELSE
+    fbBwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), FALSE);
+END_IF
+
+IF stMotor.stAxisStatus.fActPosition < aEPSLimits[nEPSIndex].fFwd_Limits THEN
+    fbFwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), TRUE);
+ELSE
+    fbFwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), FALSE);
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

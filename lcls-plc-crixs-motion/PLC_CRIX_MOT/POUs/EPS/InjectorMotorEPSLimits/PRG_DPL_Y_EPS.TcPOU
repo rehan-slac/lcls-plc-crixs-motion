@@ -4,17 +4,14 @@
     <Declaration><![CDATA[PROGRAM PRG_DPL_Y_EPS
 VAR
     bInit 		: BOOL := TRUE;
-    nIndex 		: UINT;
-    nEPSIndex 	: UINT;
 
-    pMotorDUT	: POINTER TO DUT_MotionStage;
-    fbBwdEPS 	: FB_EPS;
-    fbFwdEPS 	: FB_EPS;
     fbEPS		: FB_EPS;
-
     fDPL_Y      : LREAL;
     fDPL_Z      : LREAL;
     fRCC_Z      : LREAL;
+
+    {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Y:EPS'}
+    aDPL_Y_EPS		: ARRAY [1 .. 2] OF ST_EPSLimits;
 
 END_VAR
 ]]></Declaration>
@@ -34,10 +31,6 @@ fDPL_Y := M2.stAxisStatus.fActPosition;
 fDPL_Z := M3.stAxisStatus.fActPosition;
 fRCC_Z := M39.stAxisStatus.fActPosition;
 
-pMotorDUT := ADR (M2);
-fbBwdEPS(eps := pMotorDut^.stEPSBackwardEnable);
-fbFwdEPS(eps := pMotorDut^.stEPSForwardEnable);
-
 fbEPS(eps:=aDPL_Y_EPS[1].stEPS);
 fbEPS.setBit(0, F_InRange(fDPL_Y, 10, 80));
 
@@ -45,23 +38,7 @@ fbEPS(eps:=aDPL_Y_EPS[2].stEPS);
 fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
 fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
 
-FOR nIndex := 1 TO 3 DO
-    IF aDPL_Y_EPS[PMPS.CheckBounds(nIndex, 1,3)].stEPS.bEPS_OK THEN
-        nEPSIndex := nIndex;
-    END_IF
-END_FOR
-
-IF fDPL_Y > aDPL_Y_EPS[nEPSIndex].fBwd_Limits THEN
-    fbBwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), TRUE);
-ELSE
-    fbBwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), FALSE);
-END_IF
-
-IF fDPL_Y < aDPL_Y_EPS[nEPSIndex].fFwd_Limits THEN
-    fbFwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), TRUE);
-ELSE
-    fbFwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), FALSE);
-END_IF
+F_CheckEPSArray(stMotor:= M2, aDPL_Y_EPS);
 ]]></ST>
     </Implementation>
   </POU>

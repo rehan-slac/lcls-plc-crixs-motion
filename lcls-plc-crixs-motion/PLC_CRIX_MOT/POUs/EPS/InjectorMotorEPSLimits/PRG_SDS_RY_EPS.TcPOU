@@ -4,8 +4,6 @@
     <Declaration><![CDATA[PROGRAM PRG_SDS_RY_EPS
 VAR
     bInit 		: BOOL := TRUE;
-    nIndex 		: UINT;
-    nEPSIndex 	: UINT;
 
     fSDS_Z_ENC 	: LREAL;
     fSDS_RY 	: LREAL;
@@ -15,10 +13,10 @@ VAR
 
     bSDS_RY_FullRange : BOOL;
 
-    pMotorDUT	: POINTER TO DUT_MotionStage;
-    fbBwdEPS 	: FB_EPS;
-    fbFwdEPS 	: FB_EPS;
     fbEPS		: FB_EPS;
+
+    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:RY:EPS'}
+    aSDS_RY_EPS 	: ARRAY [1 .. 5] OF ST_EPSLimits;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -48,10 +46,6 @@ fSDS_Y  := M17.stAxisStatus.fActPosition;
 fRCC_Y  := M38.stAxisStatus.fActPosition;
 fDPL_X  := M1.stAxisStatus.fActPosition;
 
-// Information about current motor
-pMotorDUT := ADR (M39);
-fbBwdEPS(eps := pMotorDut^.stEPSBackwardEnable);
-fbFwdEPS(eps := pMotorDut^.stEPSForwardEnable);
 
 // Set EPS conditions
 fbEPS(eps:=aSDS_RY_EPS[1].stEPS);
@@ -79,26 +73,7 @@ fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(2, NOT bSDS_RY_FullRange); // NOT FULL RANGE COND.
 
 
-// Find which conition we are in
-FOR nIndex := 1 TO 5 DO
-    IF aSDS_RY_EPS[PMPS.CheckBounds(nIndex, 1, 5)].stEPS.bEPS_OK THEN
-        nEPSIndex := nIndex;
-    END_IF
-END_FOR
-
-
-// STOP the motor depeding on which condition we are in
-IF fSDS_RY > aSDS_RY_EPS[nEPSIndex].fBwd_Limits THEN
-    fbBwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), TRUE);
-ELSE
-    fbBwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), FALSE);
-END_IF
-
-IF fSDS_RY < aSDS_RY_EPS[nEPSIndex].fFwd_Limits THEN
-    fbFwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), TRUE);
-ELSE
-    fbFwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), FALSE);
-END_IF]]></ST>
+F_CheckEPSArray(stMotor:=M39, aEPSLimits:= aSDS_RY_EPS);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

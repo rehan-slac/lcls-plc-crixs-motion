@@ -2,18 +2,23 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <DUT Name="ST_EPSLimits" Id="{4ee57205-73a9-412c-b8d8-c1dfce7e0790}">
     <Declaration><![CDATA[TYPE ST_EPSLimits :
+    // Defines the PLC limits and EPS structure of these limits to be valid
 STRUCT
     {attribute 'pytmc' := '
         pv: FwdLimit
         io: i
     '}
+    // Limit there MotionStage cannot move anymore forward
+
     fFwd_Limits : REAL;
     {attribute 'pytmc' := '
         pv: BwdLimit
         io: i
     '}
+    // Limit there MotionStage cannot move anymore backward
     fBwd_Limits	: REAL;
     {attribute 'pytmc' := 'pv: ST'}
+    // EPS_OK - TRUE, Use limits as 'plc limits'; EPS_OK - FALSE, DO not use limits
     stEPS 		: DUT_EPS;
 END_STRUCT
 END_TYPE

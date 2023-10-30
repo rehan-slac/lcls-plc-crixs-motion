@@ -4,8 +4,6 @@
     <Declaration><![CDATA[PROGRAM PRG_SDS_ZENCODER_EPS
 VAR
     bInit       : BOOL := TRUE;
-    nIndex      : UINT;
-    nEPSIndex   : UINT;
 
     fSDS_RY     : LREAL;
     fSDS_Y      : LREAL;
@@ -15,11 +13,11 @@ VAR
 
     bSDS_vert_transport_state : BOOL;
 
-    pMotorDUT   : POINTER TO DUT_MotionStage;
-    fbBwdEPS    : FB_EPS;
-    fbFwdEPS    : FB_EPS;
-
     fbEPS 		: FB_EPS;
+
+     {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:ZENC:EPS'}
+    aSDS_Z_ENC_EPS	: ARRAY [1 .. 5] OF ST_EPSLimits;
+
 
 END_VAR
 ]]></Declaration>
@@ -51,10 +49,6 @@ fDPL_X      := M1.stAxisStatus.fActPosition;
 
 bSDS_vert_transport_state := F_InRange(fSDS_Y, 30, 35) AND F_InRange(fSDS_Z_ENC, 420, 495) AND F_InRange(fSDS_RY, -100, -80);
 
-pMotorDUT := ADR (M18);
-fbBwdEPS(eps := pMotorDUT^.stEPSBackwardEnable);
-fbFwdEPS(eps := pMotorDUT^.stEPSForwardEnable);
-
 fbEPS(eps:=aSDS_Z_ENC_EPS[1].stEPS);
 fbEPS.setBit(0, F_InRange(fSDS_RY, -5, 5));
 fbEPS.setBit(1, F_InRange(fSDS_Y, 37.5, 38.5));
@@ -79,24 +73,7 @@ fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 495, 510));
 fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Transport Condition
 
-FOR nIndex := 1 TO 5 DO
-    IF aSDS_Z_ENC_EPS[PMPS.CheckBounds(nIndex, 1, 5)].stEPS.bEPS_OK THEN
-        nEPSIndex := nIndex;
-    END_IF
-END_FOR
-
-IF fSDS_Z_ENC > aSDS_Z_ENC_EPS[nEPSIndex].fBwd_Limits THEN
-    fbBwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), TRUE);
-ELSE
-    fbBwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), FALSE);
-END_IF
-
-IF fSDS_Z_ENC < aSDS_Z_ENC_EPS[nEPSIndex].fFwd_Limits THEN
-    fbFwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), TRUE);
-ELSE
-    fbFwdEPS.setBit(UINT_TO_BYTE(nEPSIndex), FALSE);
-END_IF
-
+F_CheckEPSArray(stMotor:=M18, aEPSLimits:=aSDS_Z_ENC_EPS);
 
 
 
