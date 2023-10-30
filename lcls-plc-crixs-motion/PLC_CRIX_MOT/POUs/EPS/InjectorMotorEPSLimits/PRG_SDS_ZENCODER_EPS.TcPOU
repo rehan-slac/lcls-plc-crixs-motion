@@ -12,17 +12,21 @@ VAR
     fDPL_X      : LREAL;
 
     bSDS_vert_transport_state : BOOL;
+    bFullRange	: BOOL;
 
     fbEPS 		: FB_EPS;
 
      {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:ZENC:EPS'}
-    aSDS_Z_ENC_EPS	: ARRAY [1 .. 5] OF ST_EPSLimits;
+    aSDS_Z_ENC_EPS	: ARRAY [1 .. 6] OF ST_EPSLimits;
 
 
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF bInit THEN
+    aSDS_Z_ENC_EPS[1].fBwd_Limits := 0;
+    aSDS_Z_ENC_EPS[1].fFwd_Limits := 510;
+
     aSDS_Z_ENC_EPS[1].fBwd_Limits := 0;
     aSDS_Z_ENC_EPS[1].fFwd_Limits := 420;
 
@@ -49,29 +53,33 @@ fDPL_X      := M1.stAxisStatus.fActPosition;
 
 bSDS_vert_transport_state := F_InRange(fSDS_Y, 30, 35) AND F_InRange(fSDS_Z_ENC, 420, 495) AND F_InRange(fSDS_RY, -100, -80);
 
-fbEPS(eps:=aSDS_Z_ENC_EPS[1].stEPS);
+fbEPS(eps:=aSDS_Z_ENC_EPS[2].stEPS);
 fbEPS.setBit(0, F_InRange(fSDS_RY, -5, 5));
 fbEPS.setBit(1, F_InRange(fSDS_Y, 37.5, 38.5));
 
-fbEPS(eps:=aSDS_Z_ENC_EPS[2].stEPS);
+fbEPS(eps:=aSDS_Z_ENC_EPS[3].stEPS);
 fbEPS.setBit(0, F_InRange(fSDS_RY, -80, 5));
 fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 37.5));
 
-fbEPS(eps:=aSDS_Z_ENC_EPS[3].stEPS);
+fbEPS(eps:=aSDS_Z_ENC_EPS[4].stEPS);
 fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 400, 420));
 fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Tansport Condition
 
-fbEPS(eps:=aSDS_Z_ENC_EPS[4].stEPS);
+fbEPS(eps:=aSDS_Z_ENC_EPS[5].stEPS);
 fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 35));
 fbEPS.setBit(2, F_InRange(fRCC_Y, -38, -34));
 fbEPS.setBit(3, F_InRange(fDPL_X, 10, 30));
 
-fbEPS(eps:=aSDS_Z_ENC_EPS[5].stEPS);
+fbEPS(eps:=aSDS_Z_ENC_EPS[6].stEPS);
 fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 495, 510));
 fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Transport Condition
+
+bFullRange := (NOT aSDS_Z_ENC_EPS[2].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[3].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[4].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[5].stEPS.bEPS_OK);
+fbEPS(eps:=aSDS_Z_ENC_EPS[1].stEPS);
+fbEPS.setBit(0, bFullRange);
 
 F_CheckEPSArray(stMotor:=M18, aEPSLimits:=aSDS_Z_ENC_EPS);
 

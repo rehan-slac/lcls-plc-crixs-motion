@@ -8,6 +8,7 @@ VAR
     fDPL_X 		: LREAL;
     fSDS_RY 	: LREAL;
     fDPL_Z 		: LREAL;
+    bFullRange 	: BOOL;
 
     fbBwdEPS 	: FB_EPS;
     fbFwdEPS 	: FB_EPS;
@@ -21,14 +22,14 @@ END_VAR
     <Implementation>
       <ST><![CDATA[IF bInit THEN
     // Set Inital Values
-    aDPL_X_EPS[1].fBwd_Limits := -100;
-    aDPL_X_EPS[1].fFwd_Limits := -5;
+    aDPL_X_EPS[1].fBwd_Limits := 10;
+    aDPL_X_EPS[1].fFwd_Limits := 80;
 
-    aDPL_X_EPS[2].fBwd_Limits := -5;
-    aDPL_X_EPS[2].fFwd_Limits := 5;
+    aDPL_X_EPS[2].fBwd_Limits := 10;
+    aDPL_X_EPS[2].fFwd_Limits := 30;
 
-    aDPL_X_EPS[3].fBwd_Limits := 5;
-    aDPL_X_EPS[3].fFwd_Limits := -5;
+    aDPL_X_EPS[3].fBwd_Limits := 30;
+    aDPL_X_EPS[3].fFwd_Limits := 80;
 
 
     bInit := FALSE;
@@ -38,14 +39,16 @@ fDPL_X  := M1.stAxisStatus.fActPosition;
 fSDS_RY := M19.stAxisStatus.fActPosition;
 fDPL_Z 	:= M3.stAxisStatus.fActPosition;
 
-fbEPS(eps:=aDPL_X_EPS[1].stEPS);
-fbEPS.setBit(0, F_InRange(fDPL_X, 10, 80));
 
 fbEPS(eps:=aDPL_X_EPS[2].stEPS);
 fbEPS.setBit(0, F_InRange(fSDS_RY, 10, 30));
 
 fbEPS(eps:=aDPL_X_EPS[3].stEPS);
 fbEPS.setBit(0, F_InRange(fDPL_Z, 30, 80));
+
+bFullRange := (NOT aDPL_X_EPS[2].stEPS.bEPS_OK) AND (NOT aDPL_X_EPS[3].stEPS.bEPS_OK);
+fbEPS(eps:=aDPL_X_EPS[1].stEPS);
+fbEPS.setBit(0, bFullRange);
 
 F_CheckEPSArray(stMotor:= M3, aEPSLimits:= aDPL_X_EPS);]]></ST>
     </Implementation>

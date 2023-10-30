@@ -4,6 +4,7 @@
     <Declaration><![CDATA[PROGRAM PRG_SDS_Y_EPS
 VAR
     bInit 		: BOOL := TRUE;
+    bFullRange	: BOOL;
     nIndex 		: uint;
     nEPSIndex 	: uint;
 
@@ -22,17 +23,20 @@ END_VAR
       <ST><![CDATA[// SDS Y EPS
 IF bInit THEN
     // Set Inital Values
-    aSDS_Y_EPS[1].fBwd_Limits := 37.5;
-    aSDS_Y_EPS[1].fFwd_Limits := 38.5;
+    aSDS_Y_EPS[1].fBwd_Limits := 20;
+    aSDS_Y_EPS[1].fFwd_Limits := 45;
 
-    aSDS_Y_EPS[2].fBwd_Limits := 30;
+    aSDS_Y_EPS[2].fBwd_Limits := 37.5;
     aSDS_Y_EPS[2].fFwd_Limits := 38.5;
 
     aSDS_Y_EPS[3].fBwd_Limits := 30;
-    aSDS_Y_EPS[3].fFwd_Limits := 35;
+    aSDS_Y_EPS[3].fFwd_Limits := 38.5;
 
     aSDS_Y_EPS[4].fBwd_Limits := 30;
-    aSDS_Y_EPS[4].fFwd_Limits := 45;
+    aSDS_Y_EPS[4].fFwd_Limits := 35;
+
+    aSDS_Y_EPS[5].fBwd_Limits := 30;
+    aSDS_Y_EPS[5].fFwd_Limits := 45;
 
 
     bInit := FALSE;
@@ -45,9 +49,6 @@ fSDS_Y  := M17.stAxisStatus.fActPosition;
 fRCC_Y  := M38.stAxisStatus.fActPosition;
 
 // Set EPS conditions
-fbEPS(eps:= aSDS_Y_EPS[1].stEPS);
-fbEPS.setBit(0, TRUE); // FULL RANGE
-
 fbEPS(eps:= aSDS_Y_EPS[2].stEPS);
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 0, 400));
 
@@ -62,6 +63,11 @@ fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -5));
 fbEPS(eps:= aSDS_Y_EPS[5].stEPS);
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 495, 510));
 fbEPS.setBit(1, (fSDS_Y - fRCC_Y) >= 36);
+
+
+bFullRange := (NOT aSDS_Y_EPS[2].stEPS.bEPS_OK) AND (NOT aSDS_Y_EPS[3].stEPS.bEPS_OK) AND(NOT aSDS_Y_EPS[4].stEPS.bEPS_OK) AND (NOT aSDS_Y_EPS[5].stEPS.bEPS_OK);
+fbEPS(eps:= aSDS_Y_EPS[1].stEPS);
+fbEPS.setBit(0, bFullRange); // FULL RANGE
 
 F_CheckEPSArray(stMotor:=M17, aEPSLimits:=aSDS_Y_EPS);]]></ST>
     </Implementation>

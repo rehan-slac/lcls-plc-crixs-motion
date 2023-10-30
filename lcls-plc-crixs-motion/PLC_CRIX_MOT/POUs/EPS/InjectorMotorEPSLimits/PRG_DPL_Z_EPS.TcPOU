@@ -8,8 +8,10 @@ VAR
     fbEPS		: FB_EPS;
     fDPL_Z      : LREAL;
     fDPL_X      : LREAL;
+    fDPL_Y		: LREAL;
     fRCC_Y      : LREAL;
     fRCC_Z      : LREAL;
+    bFullRange 	: BOOL;
 
     {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Z:EPS'}
     aDPL_Z_EPS 	    : ARRAY [1 .. 4] OF ST_EPSLimits;
@@ -36,11 +38,10 @@ END_IF
 
 fDPL_Z := M3.stAxisStatus.fActPosition;
 fDPL_X := M1.stAxisStatus.fActPosition;
+fDPL_Y := M2.stAxisStatus.fActPosition;
 fRCC_Y := M38.stAxisStatus.fActPosition;
 fRCC_Z := M39.stAxisStatus.fActPosition;
 
-fbEPS(eps:=aDPL_Z_EPS[1].stEPS);
-fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 100));
 
 fbEPS(eps:=aDPL_Z_EPS[2].stEPS);
 fbEPS.setBit(0, F_InRange(fDPL_X, 10, 30));
@@ -52,6 +53,11 @@ fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
 fbEPS(eps:=aDPL_Z_EPS[4].stEPS);
 fbEPS.setBit(0, F_InRange(fRCC_Y, -38, -34));
 fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
+fbEPS.setBit(2, F_InRange(fDPL_Y, -1, 40));
+
+bFullRange := (NOT aDPL_Z_EPS[2].stEPS.bEPS_OK) AND (NOT aDPL_Z_EPS[3].stEPS.bEPS_OK) AND (NOT aDPL_Z_EPS[4].stEPS.bEPS_OK);
+fbEPS(eps:=aDPL_Z_EPS[1].stEPS);
+fbEPS.setBit(0, bFullRange);
 
 F_CheckEPSArray(stMotor:=M3, aEPSLimits:= aDPL_Z_EPS);]]></ST>
     </Implementation>
