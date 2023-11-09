@@ -5,8 +5,6 @@
 VAR
     bInit 		: BOOL := TRUE;
     bFullRange	: BOOL;
-    {attribute 'pytmc' := 'pv: CRIX:RCC:MMS:Z:EPS'}
-    aRCC_Z_EPS	    : ARRAY [1 .. 3] OF ST_EPSLimits;
 
     fbEPS		: FB_EPS;
 
@@ -39,15 +37,18 @@ fDPL_Z := M3.fPosition;
 fDPL_Y := M2.fPosition;
 
 fbEPS(eps:=aRCC_Z_EPS[2].stEPS);
+fbEPS.setDescription('DPL_Z in [-10,30];DPL_Y in [-1,40]');
 fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
 fbEPS.setBit(1, F_InRange(fDPL_Y, -1, 40));
 
 fbEPS(eps:=aRCC_Z_EPS[3].stEPS);
+fbEPS.setDescription('DPL_Z in [-10, 30];RCC_Y in [-34,10]');
 fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
 fbEPS.setBit(1, F_InRange(fRCC_Y, -34, 10));
 
 bFullRange := (NOT aRCC_Z_EPS[2].stEPS.bEPS_OK) AND (NOT aRCC_Z_EPS[3].stEPS.bEPS_OK);
 fbEPS(eps:=aRCC_Z_EPS[1].stEPS);
+fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
 F_CheckEPSArray(stMotor:= M39, aRCC_Z_EPS);]]></ST>

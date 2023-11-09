@@ -16,8 +16,7 @@ VAR
 
     fbEPS 		: FB_EPS;
 
-     {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:ZENC:EPS'}
-    aSDS_Z_ENC_EPS	: ARRAY [1 .. 6] OF ST_EPSLimits;
+
 
 
 END_VAR
@@ -54,31 +53,37 @@ fDPL_X      := M1.stAxisStatus.fActPosition;
 bSDS_vert_transport_state := F_InRange(fSDS_Y, 30, 35) AND F_InRange(fSDS_Z_ENC, 420, 495) AND F_InRange(fSDS_RY, -100, -80);
 
 fbEPS(eps:=aSDS_Z_ENC_EPS[2].stEPS);
+fbEPS.setDescription('SDS_RY in [-5,5];SDS_Y in [37.5,58.5]');
 fbEPS.setBit(0, F_InRange(fSDS_RY, -5, 5));
 fbEPS.setBit(1, F_InRange(fSDS_Y, 37.5, 38.5));
 
 fbEPS(eps:=aSDS_Z_ENC_EPS[3].stEPS);
+fbEPS.setDescription('SDS_RY in [-80,5];SDS_Y in [30,37.5]');
 fbEPS.setBit(0, F_InRange(fSDS_RY, -80, 5));
 fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 37.5));
 
 fbEPS(eps:=aSDS_Z_ENC_EPS[4].stEPS);
+fbEPS.setDescription('SDS_RY in [-100,-80];SDS_Z_ENC in [400,420];Not SDS VERT. TRANS. State');
 fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 400, 420));
 fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Tansport Condition
 
 fbEPS(eps:=aSDS_Z_ENC_EPS[5].stEPS);
+fbEPS.setDescription('SDS_RY in [-100,-80];SDS_Y in [30,35];RCC_Y in [-38,-34];DPL_X in [10,30]');
 fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 35));
 fbEPS.setBit(2, F_InRange(fRCC_Y, -38, -34));
 fbEPS.setBit(3, F_InRange(fDPL_X, 10, 30));
 
 fbEPS(eps:=aSDS_Z_ENC_EPS[6].stEPS);
+fbEPS.setDescription('SDS_RY in [-100,-80];SDS_Z_ENC in [495,510]; NOT SDS VERT. TRANS. State');
 fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 495, 510));
 fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Transport Condition
 
 bFullRange := (NOT aSDS_Z_ENC_EPS[2].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[3].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[4].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[5].stEPS.bEPS_OK);
 fbEPS(eps:=aSDS_Z_ENC_EPS[1].stEPS);
+fbEPS.setDescription('FULL RANGE');
 fbEPS.setBit(0, bFullRange);
 
 F_CheckEPSArray(stMotor:=M18, aEPSLimits:=aSDS_Z_ENC_EPS);

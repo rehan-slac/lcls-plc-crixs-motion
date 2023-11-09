@@ -15,8 +15,6 @@ VAR
 
     fbEPS		: FB_EPS;
 
-    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:Y:EPS'}
-    aSDS_Y_EPS 		: ARRAY [1 .. 5] OF ST_EPSLimits;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -50,17 +48,21 @@ fRCC_Y  := M38.stAxisStatus.fActPosition;
 
 // Set EPS conditions
 fbEPS(eps:= aSDS_Y_EPS[2].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [0,400]');
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 0, 400));
 
 fbEPS(eps:= aSDS_Y_EPS[3].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [400,420];SDS_RY in [-5,5]');
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 420));
 fbEPS.setBit(1, F_InRange(fSDS_RY, -5, 5));
 
 fbEPS(eps:= aSDS_Y_EPS[4].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [400,495];SDS_RY in [-100,-5]');
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 495));
 fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -5));
 
 fbEPS(eps:= aSDS_Y_EPS[5].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [495,510];(SDS_Y - RCC >= 36');
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 495, 510));
 fbEPS.setBit(1, (fSDS_Y - fRCC_Y) >= 36);
 

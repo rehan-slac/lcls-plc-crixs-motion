@@ -15,8 +15,6 @@ VAR
 
     fbEPS		: FB_EPS;
 
-    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:RY:EPS'}
-    aSDS_RY_EPS 	: ARRAY [1 .. 5] OF ST_EPSLimits;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -49,6 +47,7 @@ fDPL_X  := M1.stAxisStatus.fActPosition;
 
 // Set EPS conditions
 fbEPS(eps:=aSDS_RY_EPS[1].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [400,420];SDS_Y in [30,35];RCC_Y in [-38,-34];DPL_X in [10,30]');
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 420));
 fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 35));
 fbEPS.setBit(2, F_InRange(fRCC_Y, -38, -34));
@@ -57,17 +56,21 @@ fbEPS.setBit(3, F_InRange(fDPL_X, 10, 30));
 bSDS_RY_FullRange := aSDS_RY_EPS[1].stEPS.bEPS_OK; // FULL RANGE CONDITION
 
 fbEPS(eps:=aSDS_RY_EPS[2].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [0,400]');
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 0, 400));
 
 fbEPS(eps:=aSDS_RY_EPS[3].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [400,420];SDS_RY in [-5,5];Not Full Range');
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 420));
 fbEPS.setBit(1, F_InRange(fSDS_RY, -5, 5));
 fbEPS.setBit(2, NOT bSDS_RY_FullRange); // NOT FULL RANGE COND.
 
 fbEPS(eps:=aSDS_RY_EPS[4].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [420,510]');
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 420, 510));
 
 fbEPS(eps:=aSDS_RY_EPS[5].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [400,420];SDS_RY in [-100,-80];Not Full Range');
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 420));
 fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(2, NOT bSDS_RY_FullRange); // NOT FULL RANGE COND.
