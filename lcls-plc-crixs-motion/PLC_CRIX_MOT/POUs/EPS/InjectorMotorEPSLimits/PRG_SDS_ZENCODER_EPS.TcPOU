@@ -87,7 +87,7 @@ fbEPS(eps:=aSDS_Z_ENC_EPS[1].stEPS);
 fbEPS.setDescription('FULL RANGE');
 fbEPS.setBit(0, bFullRange);
 
-F_CheckEPSArray(stMotor:=M18, aEPSLimits:=aSDS_Z_ENC_EPS);
+F_CheckEPSArray(stMotor:=M18, aEPSLimits:=aSDS_Z_ENC_EPS, 1,6);
 
 
 
