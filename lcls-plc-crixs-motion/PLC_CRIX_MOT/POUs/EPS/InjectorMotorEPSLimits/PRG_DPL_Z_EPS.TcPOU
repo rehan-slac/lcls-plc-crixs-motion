@@ -57,6 +57,7 @@ fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
 fbEPS.setBit(2, F_InRange(fDPL_Y, -1, 40));
 
 bFullRange := (NOT aDPL_Z_EPS[2].stEPS.bEPS_OK) AND (NOT aDPL_Z_EPS[3].stEPS.bEPS_OK) AND (NOT aDPL_Z_EPS[4].stEPS.bEPS_OK);
+
 fbEPS(eps:=aDPL_Z_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);

@@ -26,20 +26,20 @@ END_VAR
     aSDS_Z_ENC_EPS[1].fBwd_Limits := 0;
     aSDS_Z_ENC_EPS[1].fFwd_Limits := 510;
 
-    aSDS_Z_ENC_EPS[1].fBwd_Limits := 0;
-    aSDS_Z_ENC_EPS[1].fFwd_Limits := 420;
-
-    aSDS_Z_ENC_EPS[2].fBwd_Limits := 400;
+    aSDS_Z_ENC_EPS[2].fBwd_Limits := 0;
     aSDS_Z_ENC_EPS[2].fFwd_Limits := 420;
 
     aSDS_Z_ENC_EPS[3].fBwd_Limits := 400;
     aSDS_Z_ENC_EPS[3].fFwd_Limits := 420;
 
-     aSDS_Z_ENC_EPS[4].fBwd_Limits := 400;
-    aSDS_Z_ENC_EPS[4].fFwd_Limits := 510;
+    aSDS_Z_ENC_EPS[4].fBwd_Limits := 400;
+    aSDS_Z_ENC_EPS[4].fFwd_Limits := 420;
 
-    aSDS_Z_ENC_EPS[5].fBwd_Limits := 495;
+    aSDS_Z_ENC_EPS[5].fBwd_Limits := 400;
     aSDS_Z_ENC_EPS[5].fFwd_Limits := 510;
+
+    aSDS_Z_ENC_EPS[6].fBwd_Limits := 495;
+    aSDS_Z_ENC_EPS[6].fFwd_Limits := 510;
 
     bInit := FALSE;
 END_IF
@@ -82,6 +82,7 @@ fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 495, 510));
 fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Transport Condition
 
 bFullRange := (NOT aSDS_Z_ENC_EPS[2].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[3].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[4].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[5].stEPS.bEPS_OK);
+
 fbEPS(eps:=aSDS_Z_ENC_EPS[1].stEPS);
 fbEPS.setDescription('FULL RANGE');
 fbEPS.setBit(0, bFullRange);

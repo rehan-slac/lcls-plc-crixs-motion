@@ -62,6 +62,7 @@ fbEPS.setBit(1, (fSDS_Y - fRCC_Y) >= 36);
 
 
 bFullRange := (NOT aRCC_Y_EPS[2].stEPS.bEPS_OK) AND (NOT aRCC_Y_EPS[3].stEPS.bEPS_OK) AND (NOT aRCC_Y_EPS[4].stEPS.bEPS_OK);
+
 fbEPS(eps:=aRCC_Y_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, F_InRange(fRCC_Y, -38, 10));
