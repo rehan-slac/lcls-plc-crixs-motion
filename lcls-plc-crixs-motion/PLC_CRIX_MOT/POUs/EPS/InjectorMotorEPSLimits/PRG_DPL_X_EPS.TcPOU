@@ -36,12 +36,12 @@ fDPL_Z 	:= M3.stAxisStatus.fActPosition;
 
 
 fbEPS(eps:=aDPL_X_EPS[2].stEPS);
-fbEPS.setDescription('DPL_RY in [10,30]');
-fbEPS.setBit(0, F_InRange(fSDS_RY, 10, 30));
+fbEPS.setDescription('SDS_RY in [-100,-5]');
+fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -5));
 
 fbEPS(eps:=aDPL_X_EPS[3].stEPS);
-fbEPS.setDescription('DPL_Z in [10,30]');
-fbEPS.setBit(0, F_InRange(fDPL_Z, 30, 80));
+fbEPS.setDescription('DPL_Z in [-10,30]');
+fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
 
 bFullRange := (NOT aDPL_X_EPS[2].stEPS.bEPS_OK) AND (NOT aDPL_X_EPS[3].stEPS.bEPS_OK);
 

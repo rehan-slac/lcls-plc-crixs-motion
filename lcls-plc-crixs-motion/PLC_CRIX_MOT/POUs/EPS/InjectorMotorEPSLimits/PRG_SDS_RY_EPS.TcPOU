@@ -26,8 +26,8 @@ END_VAR
     aSDS_RY_EPS[2].fBwd_Limits := -5;
     aSDS_RY_EPS[2].fFwd_Limits := 5;
 
-    aSDS_RY_EPS[3].fBwd_Limits := 5;
-    aSDS_RY_EPS[3].fFwd_Limits := -5;
+    aSDS_RY_EPS[3].fBwd_Limits := -5;
+    aSDS_RY_EPS[3].fFwd_Limits := 5;
 
     aSDS_RY_EPS[4].fBwd_Limits := -100;
     aSDS_RY_EPS[4].fFwd_Limits := -80;

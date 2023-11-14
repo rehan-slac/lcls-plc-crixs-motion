@@ -50,7 +50,7 @@ fSDS_Z_ENC  := M36.stAxisStatus.fActPosition;
 fRCC_Y      := M38.stAxisStatus.fActPosition;
 fDPL_X      := M1.stAxisStatus.fActPosition;
 
-bSDS_vert_transport_state := F_InRange(fSDS_Y, 30, 35) AND F_InRange(fSDS_Z_ENC, 420, 495) AND F_InRange(fSDS_RY, -100, -80);
+bSDS_vert_transport_state := F_InRange(fSDS_Y, 30, 35) AND F_InRange(fSDS_Z_ENC, 420, 495) AND F_InRange(fSDS_RY, -100, -80) AND (fDPL_X < 30) AND (fRCC_Y < -34);
 
 fbEPS(eps:=aSDS_Z_ENC_EPS[2].stEPS);
 fbEPS.setDescription('SDS_RY in [-5,5];SDS_Y in [37.5,58.5]');
