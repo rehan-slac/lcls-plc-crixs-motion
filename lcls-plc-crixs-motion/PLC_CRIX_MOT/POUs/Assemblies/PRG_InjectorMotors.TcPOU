@@ -94,8 +94,11 @@ Main.M16.bLimitBackwardEnable := nHall_Backward_Cycles < nNumCyclesNeeded;
 PRG_SDS_Y_EPS();
 PRG_SDS_ZENCODER_EPS();
 PRG_SDS_RY_EPS();
+
 PRG_DPL_X_EPS();
 PRG_DPL_Y_EPS();
+PRG_DPL_Z_EPS();
+
 PRG_RCC_Y_EPS();
 PRG_RCC_Z_EPS();]]></ST>
     </Implementation>
