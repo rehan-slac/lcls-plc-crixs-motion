@@ -8,8 +8,6 @@ VAR_IN_OUT
     aEPSLimits : ARRAY [*] OF ST_EPSLimits;
 END_VAR
 VAR_INPUT
-    nStart : DINT;
-    nEnd   : DINT;
 END_VAR
 VAR
     nIndex: DINT;
@@ -19,7 +17,10 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[FOR nIndex := nStart TO nEnd BY 1 DO
+      <ST><![CDATA[fbBwdEps(eps:=stMotor.stEPSBackwardEnable);
+fbFwdEPS(eps:=stMotor.stEPSForwardEnable);
+
+FOR nIndex := LOWER_BOUND(aEPSLimits, 1) TO UPPER_BOUND(aEPSLimits, 1) BY 1 DO
     IF aEPSLimits[nIndex].stEPS.bEPS_OK THEN
         nEPSIndex := nIndex;
     END_IF

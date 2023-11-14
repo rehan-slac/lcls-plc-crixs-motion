@@ -52,7 +52,7 @@ fbEPS(eps:=aRCC_Z_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-F_CheckEPSArray(stMotor:= M39, aRCC_Z_EPS,nStart:=1, nEnd:=3);]]></ST>
+F_CheckEPSArray(stMotor:= M39, aRCC_Z_EPS);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

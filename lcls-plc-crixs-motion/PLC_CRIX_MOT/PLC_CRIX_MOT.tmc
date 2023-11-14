@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{B35BCC16-C273-A79B-4F61-C03D24D619EE}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{06F37CFD-315C-2ECB-2EE9-19E2023805AE}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -34801,6 +34801,55 @@ These features efficiently address the addition, removal, and verification of be
       </Properties>
     </DataType>
     <DataType>
+      <Name>ST_EPSLimits</Name>
+      <BitSize>1408</BitSize>
+      <SubItem>
+        <Name>fFwd_Limits</Name>
+        <Type>REAL</Type>
+        <Comment> Limit there MotionStage cannot move anymore forward</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>0</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: FwdLimit
+        io: i
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fBwd_Limits</Name>
+        <Type>REAL</Type>
+        <Comment> Limit there MotionStage cannot move anymore backward</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>32</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: BwdLimit
+        io: i
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stEPS</Name>
+        <Type Namespace="LCLS_General">DUT_EPS</Type>
+        <Comment> EPS_OK - TRUE, Use limits as 'plc limits'; EPS_OK - FALSE, DO not use limits</Comment>
+        <BitSize>1344</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: ST</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+    </DataType>
+    <DataType>
       <Name Namespace="PMPS">ST_DbStateParams</Name>
       <BitSize>2496</BitSize>
       <SubItem>
@@ -35270,55 +35319,6 @@ These features efficiently address the addition, removal, and verification of be
           <Value>FunctionBlock</Value>
         </Property>
       </Properties>
-    </DataType>
-    <DataType>
-      <Name>ST_EPSLimits</Name>
-      <BitSize>1408</BitSize>
-      <SubItem>
-        <Name>fFwd_Limits</Name>
-        <Type>REAL</Type>
-        <Comment> Limit there MotionStage cannot move anymore forward</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>0</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: FwdLimit
-        io: i
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fBwd_Limits</Name>
-        <Type>REAL</Type>
-        <Comment> Limit there MotionStage cannot move anymore backward</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>32</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: BwdLimit
-        io: i
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stEPS</Name>
-        <Type Namespace="LCLS_General">DUT_EPS</Type>
-        <Comment> EPS_OK - TRUE, Use limits as 'plc limits'; EPS_OK - FALSE, DO not use limits</Comment>
-        <BitSize>1344</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: ST</Value>
-          </Property>
-        </Properties>
-      </SubItem>
     </DataType>
     <DataType>
       <Name Namespace="lcls_twincat_motion">DUT_MotionStage</Name>
@@ -36698,7 +36698,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648670784</BitOffs>
+            <BitOffs>648715840</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -36710,7 +36710,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648969088</BitOffs>
+            <BitOffs>649014144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMZStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -36722,7 +36722,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649267392</BitOffs>
+            <BitOffs>649312448</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.Axis.NcToPlc</Name>
@@ -43278,7 +43278,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648655296</BitOffs>
+            <BitOffs>648700352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput1.iIlluminatorINT</Name>
@@ -43290,7 +43290,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648655312</BitOffs>
+            <BitOffs>648700368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput1.fbSetIllPercent.iRaw</Name>
@@ -43303,7 +43303,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648655808</BitOffs>
+            <BitOffs>648700864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput2.bLedPower</Name>
@@ -43323,7 +43323,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648656704</BitOffs>
+            <BitOffs>648701760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput2.iIlluminatorINT</Name>
@@ -43335,7 +43335,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648656720</BitOffs>
+            <BitOffs>648701776</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput2.fbSetIllPercent.iRaw</Name>
@@ -43348,7 +43348,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648657216</BitOffs>
+            <BitOffs>648702272</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMXStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -43360,7 +43360,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648669760</BitOffs>
+            <BitOffs>648714816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -43372,7 +43372,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648968064</BitOffs>
+            <BitOffs>649013120</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMZStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -43384,7 +43384,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>649266368</BitOffs>
+            <BitOffs>649311424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
@@ -51456,6 +51456,158 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <BitOffs>648605312</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>GVL_MotorEPS.aDPL_X_EPS</Name>
+            <BitSize>4224</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>3</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:DPL:MMS:X:EPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>648605376</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_MotorEPS.aDPL_Y_EPS</Name>
+            <BitSize>2816</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>2</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:DPL:MMS:Y:EPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>648609600</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_MotorEPS.aDPL_Z_EPS</Name>
+            <BitSize>5632</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>4</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:DPL:MMS:Z:EPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>648612416</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_MotorEPS.aRCC_Y_EPS</Name>
+            <BitSize>5632</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>4</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:RCC:MMS:Y:EPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>648618048</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_MotorEPS.aRCC_Z_EPS</Name>
+            <BitSize>4224</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>3</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:RCC:MMS:Z:EPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>648623680</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_MotorEPS.aSDS_RY_EPS</Name>
+            <BitSize>7040</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>5</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:SDS:MMS:RY:EPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>648627904</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_MotorEPS.aSDS_Y_EPS</Name>
+            <BitSize>7040</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>5</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:SDS:MMS:Y:EPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>648634944</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_MotorEPS.aSDS_Z_ENC_EPS</Name>
+            <BitSize>8448</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>6</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:SDS:MMS:ZENC:EPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>648641984</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPXPosPark</Name>
             <Comment> Define axis states for each axis. These are fed to a FB_PositionState manager for each axis
  X axis position states</Comment>
@@ -51504,7 +51656,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648605376</BitOffs>
+            <BitOffs>648650432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPXPosCenter</Name>
@@ -51553,7 +51705,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648609024</BitOffs>
+            <BitOffs>648654080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPXPosKnife</Name>
@@ -51602,7 +51754,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648612672</BitOffs>
+            <BitOffs>648657728</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosPark</Name>
@@ -51652,7 +51804,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648616320</BitOffs>
+            <BitOffs>648661376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosCenter</Name>
@@ -51701,7 +51853,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648619968</BitOffs>
+            <BitOffs>648665024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosDiode</Name>
@@ -51750,7 +51902,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648623616</BitOffs>
+            <BitOffs>648668672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosPinhole</Name>
@@ -51799,7 +51951,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648627264</BitOffs>
+            <BitOffs>648672320</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosYAG1</Name>
@@ -51848,7 +52000,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648630912</BitOffs>
+            <BitOffs>648675968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosYAG2</Name>
@@ -51897,7 +52049,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648634560</BitOffs>
+            <BitOffs>648679616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosYAG3</Name>
@@ -51946,7 +52098,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648638208</BitOffs>
+            <BitOffs>648683264</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosKnife</Name>
@@ -51995,7 +52147,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648641856</BitOffs>
+            <BitOffs>648686912</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPZPosPark</Name>
@@ -52045,7 +52197,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648645504</BitOffs>
+            <BitOffs>648690560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPZPosCenter</Name>
@@ -52094,7 +52246,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648649152</BitOffs>
+            <BitOffs>648694208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPPark</Name>
@@ -52119,7 +52271,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648652800</BitOffs>
+            <BitOffs>648697856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPUp</Name>
@@ -52144,7 +52296,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648652896</BitOffs>
+            <BitOffs>648697952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPCenter</Name>
@@ -52169,7 +52321,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648652992</BitOffs>
+            <BitOffs>648698048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPPinhole</Name>
@@ -52194,7 +52346,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648653088</BitOffs>
+            <BitOffs>648698144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPDiode</Name>
@@ -52219,7 +52371,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648653184</BitOffs>
+            <BitOffs>648698240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYag1</Name>
@@ -52244,7 +52396,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648653280</BitOffs>
+            <BitOffs>648698336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYag2</Name>
@@ -52269,7 +52421,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648653376</BitOffs>
+            <BitOffs>648698432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYag3</Name>
@@ -52294,7 +52446,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648653472</BitOffs>
+            <BitOffs>648698528</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPKnife</Name>
@@ -52319,7 +52471,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648653568</BitOffs>
+            <BitOffs>648698624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.arrDPStates</Name>
@@ -52444,7 +52596,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648653664</BitOffs>
+            <BitOffs>648698720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput1</Name>
@@ -52467,7 +52619,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648654528</BitOffs>
+            <BitOffs>648699584</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput2</Name>
@@ -52489,7 +52641,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648655936</BitOffs>
+            <BitOffs>648700992</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.stILMXPosPark</Name>
@@ -52540,7 +52692,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648657344</BitOffs>
+            <BitOffs>648702400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.stILMYPosPark</Name>
@@ -52590,7 +52742,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648660992</BitOffs>
+            <BitOffs>648706048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.stILMZPosPark</Name>
@@ -52640,7 +52792,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648664640</BitOffs>
+            <BitOffs>648709696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMXStage</Name>
@@ -52651,7 +52803,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648668288</BitOffs>
+            <BitOffs>648713344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMYStage</Name>
@@ -52662,7 +52814,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648966592</BitOffs>
+            <BitOffs>649011648</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMZStage</Name>
@@ -52673,159 +52825,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>649264896</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_MotorEPS.aDPL_X_EPS</Name>
-            <BitSize>4224</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>3</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:DPL:MMS:X:EPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>649563200</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_MotorEPS.aDPL_Y_EPS</Name>
-            <BitSize>2816</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>2</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:DPL:MMS:Y:EPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>649567424</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_MotorEPS.aDPL_Z_EPS</Name>
-            <BitSize>5632</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>4</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:DPL:MMS:Z:EPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>649570240</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_MotorEPS.aRCC_Y_EPS</Name>
-            <BitSize>5632</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>4</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:RCC:MMS:Y:EPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>649575872</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_MotorEPS.aRCC_Z_EPS</Name>
-            <BitSize>4224</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>3</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:RCC:MMS:Z:EPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>649581504</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_MotorEPS.aSDS_RY_EPS</Name>
-            <BitSize>7040</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>5</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:SDS:MMS:RY:EPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>649585728</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_MotorEPS.aSDS_Y_EPS</Name>
-            <BitSize>7040</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>5</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:SDS:MMS:Y:EPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>649592768</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_MotorEPS.aSDS_Z_ENC_EPS</Name>
-            <BitSize>8448</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>6</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:SDS:MMS:ZENC:EPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>649599808</BitOffs>
+            <BitOffs>649309952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_PMPS.g_FastFaultOutput1</Name>
@@ -55099,7 +55099,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2023-11-13T16:30:03</Value>
+          <Value>2023-11-14T08:40:44</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

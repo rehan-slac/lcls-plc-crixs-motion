@@ -76,7 +76,7 @@ fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(2, NOT bSDS_RY_FullRange); // NOT FULL RANGE COND.
 
 
-F_CheckEPSArray(stMotor:=M39, aEPSLimits:= aSDS_RY_EPS, nStart:=1, nEnd:=5);]]></ST>
+F_CheckEPSArray(stMotor:=M39, aEPSLimits:= aSDS_RY_EPS);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
