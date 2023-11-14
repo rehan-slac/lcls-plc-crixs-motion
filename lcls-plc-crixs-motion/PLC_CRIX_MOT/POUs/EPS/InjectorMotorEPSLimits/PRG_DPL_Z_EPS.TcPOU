@@ -62,7 +62,7 @@ fbEPS(eps:=aDPL_Z_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-F_CheckEPSArray(stMotor:=M3, aEPSLimits:= aDPL_Z_EPS);]]></ST>
+F_CheckEPSArray(stMotor:=M3, aEPSLimits:= aDPL_Z_EPS, nStart:=1, nEnd:=4);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
