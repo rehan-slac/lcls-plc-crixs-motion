@@ -14,11 +14,8 @@ VAR
     bSDS_vert_transport_state : BOOL;
     bFullRange	: BOOL;
 
-    fbEPS 		: FB_EPS;
-
-
-
-
+    fbEPS		: FB_EPS;
+    fbCheckEPS 	: FB_CheckEPS;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -87,7 +84,7 @@ fbEPS(eps:=aSDS_Z_ENC_EPS[1].stEPS);
 fbEPS.setDescription('FULL RANGE');
 fbEPS.setBit(0, bFullRange);
 
-F_CheckEPSArray(stMotor:=M18, aEPSLimits:=aSDS_Z_ENC_EPS);
+fbCheckEPS(stMotor:=M18, fPosition:=fSDS_Z_ENC, aEPSLimits:=aSDS_Z_ENC_EPS);
 
 
 

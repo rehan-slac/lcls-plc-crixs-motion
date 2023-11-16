@@ -5,12 +5,12 @@
 VAR
     bInit 		: BOOL := TRUE;
 
-    fbEPS		: FB_EPS;
     fDPL_Z      : LREAL;
     fRCC_Z      : LREAL;
     bFullRange	: BOOL;
 
-
+       fbEPS		: FB_EPS;
+    fbCheckEPS 	: FB_CheckEPS;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -39,7 +39,7 @@ fbEPS(eps:=aDPL_Y_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-F_CheckEPSArray(stMotor:= M2, aDPL_Y_EPS);
+fbCheckEPS(stMotor:=M2, fPosition:=M2.stAxisStatus.fActPosition, aEPSLimits:=aDPL_Y_EPS);
 ]]></ST>
     </Implementation>
   </POU>

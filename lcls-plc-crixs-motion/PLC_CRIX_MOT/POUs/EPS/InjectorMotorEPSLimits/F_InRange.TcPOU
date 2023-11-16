@@ -12,7 +12,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[F_InRange := (lower_limit <= value) AND (value <= upper_limit);]]></ST>
+      <ST><![CDATA[F_InRange := (lower_limit < value) AND (value < upper_limit);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

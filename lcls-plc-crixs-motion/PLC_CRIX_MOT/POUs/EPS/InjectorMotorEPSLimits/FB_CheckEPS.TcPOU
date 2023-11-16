@@ -1,15 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="F_CheckEPSArray" Id="{f3d4ff3a-d34c-48ee-a2cc-6fde4bafd853}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION F_CheckEPSArray : BOOL
-// Determins which 'plc limits' to use and stops motor from moving if motor is out of bounds.
+  <POU Name="FB_CheckEPS" Id="{34d78ab9-508b-476a-b7bf-433873b84d5d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_CheckEPS
 VAR_IN_OUT
     stMotor	: ST_MotionStage;
     aEPSLimits : ARRAY [*] OF ST_EPSLimits;
 END_VAR
 VAR_INPUT
+    // Encoder Position, Current position of motor. Needed for the case where the motor and encoders are seperate.
+    fPosition : LREAL;
+END_VAR
+VAR_OUTPUT
 END_VAR
 VAR
+    nPreviousState : DINT;
     nIndex: DINT;
     nEPSIndex: DINT;
     fbBwdEPS: FB_EPS;
@@ -20,12 +24,23 @@ END_VAR
       <ST><![CDATA[fbBwdEps(eps:=stMotor.stEPSBackwardEnable);
 fbFwdEPS(eps:=stMotor.stEPSForwardEnable);
 
+// Look through possible states to see witch state we are in
 FOR nIndex := LOWER_BOUND(aEPSLimits, 1) TO UPPER_BOUND(aEPSLimits, 1) BY 1 DO
     IF aEPSLimits[nIndex].stEPS.bEPS_OK THEN
         nEPSIndex := nIndex;
+        EXIT; // Stop Looking
     END_IF
 END_FOR
 
+IF (NOT (nPreviousState = nEPSIndex)) THEN
+    // Clear Previous State Errors
+    stMotor.stEPSBackwardEnable.nFlags := 16#FFFFFFFF;
+    stMotor.stEPSBackwardEnable.bEPS_OK := TRUE;
+    stMotor.stEPSForwardEnable.nFlags := 16#FFFFFFFF;
+    stMotor.stEPSForwardEnable.bEPS_OK := TRUE;
+END_IF
+
+// Check if position is in plc limit rage
 IF stMotor.stAxisStatus.fActPosition > aEPSLimits[nEPSIndex].fBwd_Limits THEN
     fbBwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), TRUE);
 ELSE
@@ -36,7 +51,9 @@ IF stMotor.stAxisStatus.fActPosition < aEPSLimits[nEPSIndex].fFwd_Limits THEN
     fbFwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), TRUE);
 ELSE
     fbFwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), FALSE);
-END_IF]]></ST>
+END_IF
+
+nPreviousState := nEPSIndex; // Update Previous State]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

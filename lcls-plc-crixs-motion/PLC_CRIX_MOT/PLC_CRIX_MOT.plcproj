@@ -158,10 +158,10 @@
     <Compile Include="POUs\EPS\FB_Queue.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\F_InRange.TcPOU">
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\FB_CheckEPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\F_CheckEPSArray.TcPOU">
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\F_InRange.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_DPL_X_EPS.TcPOU">

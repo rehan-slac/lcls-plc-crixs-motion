@@ -6,13 +6,13 @@ VAR
     bInit 		: BOOL := TRUE;
     bFullRange	: BOOL;
 
-    fbEPS		: FB_EPS;
-
     fRCC_Z      : LREAL;
     fRCC_Y      : LREAL;
     fDPL_Z      : LREAL;
     fDPL_Y      : LREAL;
 
+    fbEPS		: FB_EPS;
+    fbCheckEPS 	: FB_CheckEPS;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -52,7 +52,7 @@ fbEPS(eps:=aRCC_Z_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-F_CheckEPSArray(stMotor:= M39, aRCC_Z_EPS);]]></ST>
+fbCheckEPS(stMotor:= M39, fPosition:=fRCC_Z, aEPSLimits:=aRCC_Z_EPS);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

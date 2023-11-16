@@ -13,8 +13,8 @@ VAR
     fSDS_Y 		: LREAL;
     fRCC_Y 		: LREAL;
 
-    fbEPS		: FB_EPS;
-
+    fbEPS		: FB_EPS;;
+    fbCheckEPS 	: FB_CheckEPS;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -71,7 +71,7 @@ bFullRange := (NOT aSDS_Y_EPS[2].stEPS.bEPS_OK) AND (NOT aSDS_Y_EPS[3].stEPS.bEP
 fbEPS(eps:= aSDS_Y_EPS[1].stEPS);
 fbEPS.setBit(0, bFullRange); // FULL RANGE
 
-F_CheckEPSArray(stMotor:=M17, aEPSLimits:=aSDS_Y_EPS);]]></ST>
+fbCheckEPS(stMotor:=M17, fPosition:=fSDS_Y, aEPSLimits:=aSDS_Y_EPS);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
