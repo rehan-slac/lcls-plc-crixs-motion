@@ -33,14 +33,14 @@ FOR nIndex := LOWER_BOUND(aEPSLimits, 1) TO UPPER_BOUND(aEPSLimits, 1) BY 1 DO
 END_FOR
 
 IF (NOT (nPreviousState = nEPSIndex)) THEN
-    // Clear Previous State Errors
+    // Clear Motors EPS structures to allow motor to use limits from new state.
     stMotor.stEPSBackwardEnable.nFlags := 16#FFFFFFFF;
     stMotor.stEPSBackwardEnable.bEPS_OK := TRUE;
     stMotor.stEPSForwardEnable.nFlags := 16#FFFFFFFF;
     stMotor.stEPSForwardEnable.bEPS_OK := TRUE;
 END_IF
 
-// Check if position is in plc limit rage
+// Check if position is in plc limit rage, Stop motor if out of Upper/Lower bounds
 IF stMotor.stAxisStatus.fActPosition > aEPSLimits[nEPSIndex].fBwd_Limits THEN
     fbBwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), TRUE);
 ELSE
