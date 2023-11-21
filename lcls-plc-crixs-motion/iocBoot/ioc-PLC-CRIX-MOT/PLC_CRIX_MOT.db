@@ -238,6 +238,16 @@ record(ai, "CRIX:DPL:MMS:X:EPS:01:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:DPL:MMS:X:EPS:01:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_X_EPS[1].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_X_EPS[1].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:DPL:MMS:X:EPS:01:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aDPL_X_EPS[1].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -247,6 +257,16 @@ record(ai, "CRIX:DPL:MMS:X:EPS:01:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aDPL_X_EPS[1].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:DPL:MMS:X:EPS:01:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_X_EPS[1].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_X_EPS[1].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -316,6 +336,16 @@ record(ai, "CRIX:DPL:MMS:X:EPS:02:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:DPL:MMS:X:EPS:02:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_X_EPS[2].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_X_EPS[2].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:DPL:MMS:X:EPS:02:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aDPL_X_EPS[2].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -325,6 +355,16 @@ record(ai, "CRIX:DPL:MMS:X:EPS:02:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aDPL_X_EPS[2].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:DPL:MMS:X:EPS:02:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_X_EPS[2].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_X_EPS[2].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -394,6 +434,16 @@ record(ai, "CRIX:DPL:MMS:X:EPS:03:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:DPL:MMS:X:EPS:03:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_X_EPS[3].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_X_EPS[3].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:DPL:MMS:X:EPS:03:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aDPL_X_EPS[3].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -403,6 +453,16 @@ record(ai, "CRIX:DPL:MMS:X:EPS:03:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aDPL_X_EPS[3].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:DPL:MMS:X:EPS:03:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_X_EPS[3].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_X_EPS[3].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -472,6 +532,16 @@ record(ai, "CRIX:DPL:MMS:Y:EPS:01:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:DPL:MMS:Y:EPS:01:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Y_EPS[1].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Y_EPS[1].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:DPL:MMS:Y:EPS:01:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aDPL_Y_EPS[1].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -481,6 +551,16 @@ record(ai, "CRIX:DPL:MMS:Y:EPS:01:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aDPL_Y_EPS[1].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:DPL:MMS:Y:EPS:01:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Y_EPS[1].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Y_EPS[1].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -550,6 +630,16 @@ record(ai, "CRIX:DPL:MMS:Y:EPS:02:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:DPL:MMS:Y:EPS:02:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Y_EPS[2].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Y_EPS[2].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:DPL:MMS:Y:EPS:02:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aDPL_Y_EPS[2].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -559,6 +649,16 @@ record(ai, "CRIX:DPL:MMS:Y:EPS:02:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aDPL_Y_EPS[2].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:DPL:MMS:Y:EPS:02:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Y_EPS[2].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Y_EPS[2].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -628,6 +728,16 @@ record(ai, "CRIX:DPL:MMS:Z:EPS:01:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:DPL:MMS:Z:EPS:01:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[1].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Z_EPS[1].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:DPL:MMS:Z:EPS:01:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[1].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -637,6 +747,16 @@ record(ai, "CRIX:DPL:MMS:Z:EPS:01:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aDPL_Z_EPS[1].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:DPL:MMS:Z:EPS:01:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[1].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Z_EPS[1].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -706,6 +826,16 @@ record(ai, "CRIX:DPL:MMS:Z:EPS:02:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:DPL:MMS:Z:EPS:02:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[2].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Z_EPS[2].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:DPL:MMS:Z:EPS:02:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[2].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -715,6 +845,16 @@ record(ai, "CRIX:DPL:MMS:Z:EPS:02:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aDPL_Z_EPS[2].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:DPL:MMS:Z:EPS:02:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[2].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Z_EPS[2].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -784,6 +924,16 @@ record(ai, "CRIX:DPL:MMS:Z:EPS:03:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:DPL:MMS:Z:EPS:03:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[3].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Z_EPS[3].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:DPL:MMS:Z:EPS:03:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[3].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -793,6 +943,16 @@ record(ai, "CRIX:DPL:MMS:Z:EPS:03:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aDPL_Z_EPS[3].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:DPL:MMS:Z:EPS:03:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[3].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Z_EPS[3].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -862,6 +1022,16 @@ record(ai, "CRIX:DPL:MMS:Z:EPS:04:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:DPL:MMS:Z:EPS:04:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[4].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Z_EPS[4].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:DPL:MMS:Z:EPS:04:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[4].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -871,6 +1041,16 @@ record(ai, "CRIX:DPL:MMS:Z:EPS:04:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aDPL_Z_EPS[4].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:DPL:MMS:Z:EPS:04:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aDPL_Z_EPS[4].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aDPL_Z_EPS[4].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -940,6 +1120,16 @@ record(ai, "CRIX:RCC:MMS:Y:EPS:01:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:RCC:MMS:Y:EPS:01:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[1].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Y_EPS[1].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:RCC:MMS:Y:EPS:01:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[1].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -949,6 +1139,16 @@ record(ai, "CRIX:RCC:MMS:Y:EPS:01:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aRCC_Y_EPS[1].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:RCC:MMS:Y:EPS:01:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[1].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Y_EPS[1].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1018,6 +1218,16 @@ record(ai, "CRIX:RCC:MMS:Y:EPS:02:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:RCC:MMS:Y:EPS:02:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[2].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Y_EPS[2].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:RCC:MMS:Y:EPS:02:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[2].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1027,6 +1237,16 @@ record(ai, "CRIX:RCC:MMS:Y:EPS:02:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aRCC_Y_EPS[2].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:RCC:MMS:Y:EPS:02:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[2].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Y_EPS[2].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1096,6 +1316,16 @@ record(ai, "CRIX:RCC:MMS:Y:EPS:03:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:RCC:MMS:Y:EPS:03:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[3].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Y_EPS[3].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:RCC:MMS:Y:EPS:03:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[3].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1105,6 +1335,16 @@ record(ai, "CRIX:RCC:MMS:Y:EPS:03:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aRCC_Y_EPS[3].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:RCC:MMS:Y:EPS:03:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[3].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Y_EPS[3].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1174,6 +1414,16 @@ record(ai, "CRIX:RCC:MMS:Y:EPS:04:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:RCC:MMS:Y:EPS:04:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[4].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Y_EPS[4].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:RCC:MMS:Y:EPS:04:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[4].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1183,6 +1433,16 @@ record(ai, "CRIX:RCC:MMS:Y:EPS:04:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aRCC_Y_EPS[4].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:RCC:MMS:Y:EPS:04:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Y_EPS[4].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Y_EPS[4].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1252,6 +1512,16 @@ record(ai, "CRIX:RCC:MMS:Z:EPS:01:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:RCC:MMS:Z:EPS:01:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Z_EPS[1].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Z_EPS[1].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:RCC:MMS:Z:EPS:01:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aRCC_Z_EPS[1].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1261,6 +1531,16 @@ record(ai, "CRIX:RCC:MMS:Z:EPS:01:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aRCC_Z_EPS[1].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:RCC:MMS:Z:EPS:01:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Z_EPS[1].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Z_EPS[1].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1330,6 +1610,16 @@ record(ai, "CRIX:RCC:MMS:Z:EPS:02:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:RCC:MMS:Z:EPS:02:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Z_EPS[2].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Z_EPS[2].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:RCC:MMS:Z:EPS:02:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aRCC_Z_EPS[2].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1339,6 +1629,16 @@ record(ai, "CRIX:RCC:MMS:Z:EPS:02:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aRCC_Z_EPS[2].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:RCC:MMS:Z:EPS:02:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Z_EPS[2].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Z_EPS[2].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1408,6 +1708,16 @@ record(ai, "CRIX:RCC:MMS:Z:EPS:03:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:RCC:MMS:Z:EPS:03:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Z_EPS[3].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Z_EPS[3].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:RCC:MMS:Z:EPS:03:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aRCC_Z_EPS[3].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1417,6 +1727,16 @@ record(ai, "CRIX:RCC:MMS:Z:EPS:03:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aRCC_Z_EPS[3].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:RCC:MMS:Z:EPS:03:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aRCC_Z_EPS[3].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aRCC_Z_EPS[3].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1486,6 +1806,16 @@ record(ai, "CRIX:SDS:MMS:RY:EPS:01:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:RY:EPS:01:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[1].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_RY_EPS[1].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:RY:EPS:01:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[1].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1495,6 +1825,16 @@ record(ai, "CRIX:SDS:MMS:RY:EPS:01:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_RY_EPS[1].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:RY:EPS:01:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[1].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_RY_EPS[1].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1564,6 +1904,16 @@ record(ai, "CRIX:SDS:MMS:RY:EPS:02:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:RY:EPS:02:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[2].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_RY_EPS[2].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:RY:EPS:02:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[2].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1573,6 +1923,16 @@ record(ai, "CRIX:SDS:MMS:RY:EPS:02:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_RY_EPS[2].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:RY:EPS:02:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[2].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_RY_EPS[2].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1642,6 +2002,16 @@ record(ai, "CRIX:SDS:MMS:RY:EPS:03:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:RY:EPS:03:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[3].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_RY_EPS[3].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:RY:EPS:03:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[3].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1651,6 +2021,16 @@ record(ai, "CRIX:SDS:MMS:RY:EPS:03:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_RY_EPS[3].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:RY:EPS:03:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[3].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_RY_EPS[3].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1720,6 +2100,16 @@ record(ai, "CRIX:SDS:MMS:RY:EPS:04:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:RY:EPS:04:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[4].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_RY_EPS[4].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:RY:EPS:04:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[4].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1729,6 +2119,16 @@ record(ai, "CRIX:SDS:MMS:RY:EPS:04:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_RY_EPS[4].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:RY:EPS:04:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[4].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_RY_EPS[4].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1798,6 +2198,16 @@ record(ai, "CRIX:SDS:MMS:RY:EPS:05:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:RY:EPS:05:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[5].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_RY_EPS[5].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:RY:EPS:05:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[5].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1807,6 +2217,16 @@ record(ai, "CRIX:SDS:MMS:RY:EPS:05:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_RY_EPS[5].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:RY:EPS:05:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_RY_EPS[5].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_RY_EPS[5].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1876,6 +2296,16 @@ record(ai, "CRIX:SDS:MMS:Y:EPS:01:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:Y:EPS:01:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[1].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Y_EPS[1].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:Y:EPS:01:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[1].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1885,6 +2315,16 @@ record(ai, "CRIX:SDS:MMS:Y:EPS:01:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_Y_EPS[1].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:Y:EPS:01:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[1].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Y_EPS[1].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -1954,6 +2394,16 @@ record(ai, "CRIX:SDS:MMS:Y:EPS:02:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:Y:EPS:02:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[2].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Y_EPS[2].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:Y:EPS:02:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[2].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -1963,6 +2413,16 @@ record(ai, "CRIX:SDS:MMS:Y:EPS:02:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_Y_EPS[2].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:Y:EPS:02:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[2].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Y_EPS[2].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2032,6 +2492,16 @@ record(ai, "CRIX:SDS:MMS:Y:EPS:03:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:Y:EPS:03:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[3].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Y_EPS[3].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:Y:EPS:03:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[3].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -2041,6 +2511,16 @@ record(ai, "CRIX:SDS:MMS:Y:EPS:03:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_Y_EPS[3].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:Y:EPS:03:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[3].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Y_EPS[3].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2110,6 +2590,16 @@ record(ai, "CRIX:SDS:MMS:Y:EPS:04:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:Y:EPS:04:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[4].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Y_EPS[4].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:Y:EPS:04:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[4].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -2119,6 +2609,16 @@ record(ai, "CRIX:SDS:MMS:Y:EPS:04:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_Y_EPS[4].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:Y:EPS:04:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[4].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Y_EPS[4].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2188,6 +2688,16 @@ record(ai, "CRIX:SDS:MMS:Y:EPS:05:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:Y:EPS:05:BwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[5].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Y_EPS[5].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:Y:EPS:05:FwdLimit_RBV") {
   field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[5].fFwd_Limits")
   field(SCAN, "I/O Intr")
@@ -2197,6 +2707,16 @@ record(ai, "CRIX:SDS:MMS:Y:EPS:05:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_Y_EPS[5].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:Y:EPS:05:FwdLimit") {
+  field(DESC, "GVL_MotorEPS.aSDS_Y_EPS[5].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Y_EPS[5].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2267,6 +2787,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:01:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:01:BwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[1].fBwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[1].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[1].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:ZENC:EPS:01:FwdLimit_RBV") {
   # GVL_MotorEPS.aSDS_Z_ENC_EPS[1].fFwd_Limits
   field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[1].fFwd_Limits")
@@ -2277,6 +2808,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:01:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_Z_ENC_EPS[1].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:01:FwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[1].fFwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[1].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[1].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2347,6 +2889,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:02:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:02:BwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[2].fBwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[2].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[2].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:ZENC:EPS:02:FwdLimit_RBV") {
   # GVL_MotorEPS.aSDS_Z_ENC_EPS[2].fFwd_Limits
   field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[2].fFwd_Limits")
@@ -2357,6 +2910,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:02:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_Z_ENC_EPS[2].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:02:FwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[2].fFwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[2].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[2].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2427,6 +2991,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:03:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:03:BwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[3].fBwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[3].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[3].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:ZENC:EPS:03:FwdLimit_RBV") {
   # GVL_MotorEPS.aSDS_Z_ENC_EPS[3].fFwd_Limits
   field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[3].fFwd_Limits")
@@ -2437,6 +3012,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:03:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_Z_ENC_EPS[3].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:03:FwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[3].fFwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[3].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[3].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2507,6 +3093,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:04:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:04:BwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[4].fBwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[4].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[4].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:ZENC:EPS:04:FwdLimit_RBV") {
   # GVL_MotorEPS.aSDS_Z_ENC_EPS[4].fFwd_Limits
   field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[4].fFwd_Limits")
@@ -2517,6 +3114,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:04:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_Z_ENC_EPS[4].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:04:FwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[4].fFwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[4].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[4].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2587,6 +3195,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:05:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:05:BwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[5].fBwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[5].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[5].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:ZENC:EPS:05:FwdLimit_RBV") {
   # GVL_MotorEPS.aSDS_Z_ENC_EPS[5].fFwd_Limits
   field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[5].fFwd_Limits")
@@ -2597,6 +3216,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:05:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_Z_ENC_EPS[5].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:05:FwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[5].fFwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[5].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[5].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -2667,6 +3297,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:06:BwdLimit_RBV") {
   info(archive, "VAL")
 }
 
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:06:BwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[6].fBwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[6].fBwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[6].fBwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:ZENC:EPS:06:FwdLimit_RBV") {
   # GVL_MotorEPS.aSDS_Z_ENC_EPS[6].fFwd_Limits
   field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[6].fFwd_Limits")
@@ -2677,6 +3318,17 @@ record(ai, "CRIX:SDS:MMS:ZENC:EPS:06:FwdLimit_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.aSDS_Z_ENC_EPS[6].fFwd_Limits?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "CRIX:SDS:MMS:ZENC:EPS:06:FwdLimit") {
+  # GVL_MotorEPS.aSDS_Z_ENC_EPS[6].fFwd_Limits
+  field(DESC, "GVL_MotorEPS.aSDS_Z_...PS[6].fFwd_Limits")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.aSDS_Z_ENC_EPS[6].fFwd_Limits=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
