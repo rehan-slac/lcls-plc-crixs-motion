@@ -4,10 +4,6 @@
     <Declaration><![CDATA[PROGRAM PRG_DPL_X_EPS
 VAR
     bInit 		: BOOL := TRUE;
-
-    fDPL_X 		: LREAL;
-    fSDS_RY 	: LREAL;
-    fDPL_Z 		: LREAL;
     bFullRange 	: BOOL;
 
     fbEPS		: FB_EPS;
@@ -31,9 +27,6 @@ END_VAR
     bInit := FALSE;
 END_IF
 
-//fDPL_X  := M1.stAxisStatus.fActPosition;
-//fSDS_RY := M19.stAxisStatus.fActPosition;
-//fDPL_Z 	:= M3.stAxisStatus.fActPosition;
 
 fbEPS(eps:=aDPL_X_EPS[2].stEPS);
 fbEPS.setDescription('SDS_RY in [-100,-5]');
@@ -49,7 +42,7 @@ fbEPS(eps:=aDPL_X_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-fbCheckEPS(stMotor:= M1, fPosition:=fDPL_X, aEPSLimits:= aDPL_X_EPS);]]></ST>
+fbCheckEPS(stMotor:= M1, fPosition:=fDPL_X, aEPSLimits:= aDPL_X_EPS, refstForwardMotorEPS:=M1.stEPSForwardEnable, refstBackwardMotorEPS:= M1.stEPSBackwardEnable);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -9,10 +9,10 @@ VAR_IN_OUT
 END_VAR
 VAR_INPUT
     // Encoder Position, Current position of motor. Needed for the case where the motor and encoders are seperate. Default use stMotor Position
-    fPosition : LREAL := stMotor.stAxisStatus.fActPosition;
+    fPosition : LREAL;;
     // Allows for user to define what is 'forward' and what is 'backward'. In most cases, use the in_out stMotor as default.
-    refstForwardMotorEPS : REFERENCE TO DUT_EPS := stMotor.stEPSForwardEnable;
-    refstBackwardMotorEPS: REFERENCE TO DUT_EPS := stMotor.stEPSBackwardEnable;
+    refstForwardMotorEPS : REFERENCE TO DUT_EPS;
+    refstBackwardMotorEPS: REFERENCE TO DUT_EPS;
 END_VAR
 VAR_OUTPUT
 END_VAR
@@ -43,6 +43,9 @@ IF (NOT (nPreviousState = nEPSIndex)) THEN
 
     refstForwardMotorEPS.nFlags := 16#FFFFFFFF;
     refstForwardMotorEPS.bEPS_OK := TRUE;
+	
+	refstBackwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
+	refstForwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
 END_IF
 
 // Check if position is in plc limit rage, Stop motor if out of Upper/Lower bounds

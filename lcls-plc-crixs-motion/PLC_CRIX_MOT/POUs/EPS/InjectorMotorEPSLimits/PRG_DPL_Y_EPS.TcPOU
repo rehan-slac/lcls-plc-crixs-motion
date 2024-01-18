@@ -5,8 +5,6 @@
 VAR
     bInit 		: BOOL := TRUE;
 
-    fDPL_Z      : LREAL;
-    fRCC_Z      : LREAL;
     bFullRange	: BOOL;
 
        fbEPS		: FB_EPS;
@@ -25,9 +23,6 @@ END_VAR
     bInit := FALSE;
 END_IF
 
-//fDPL_Z := M3.stAxisStatus.fActPosition;
-//fRCC_Z := M39.stAxisStatus.fActPosition;
-
 fbEPS(eps:=aDPL_Y_EPS[2].stEPS);
 fbEPS.setDescription('DPL_Z in [-10,30];RCC in [-15,11]');
 fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
@@ -39,7 +34,7 @@ fbEPS(eps:=aDPL_Y_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-fbCheckEPS(stMotor:=M2, fPosition:=M2.stAxisStatus.fActPosition, aEPSLimits:=aDPL_Y_EPS);
+fbCheckEPS(stMotor:=M2, fPosition:=M2.stAxisStatus.fActPosition, aEPSLimits:=aDPL_Y_EPS, refstForwardMotorEPS:=M2.stEPSForwardEnable, refstBackwardMotorEPS:= M2.stEPSBackwardEnable);
 ]]></ST>
     </Implementation>
   </POU>

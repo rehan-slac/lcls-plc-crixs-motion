@@ -4,13 +4,7 @@
     <Declaration><![CDATA[PROGRAM PRG_SDS_RY_EPS
 VAR
     bInit 		: BOOL := TRUE;
-
-    fSDS_Z_ENC 	: LREAL;
-    fSDS_RY 	: LREAL;
-    fSDS_Y      : LREAL;
-    fRCC_Y 		: LREAL;
-    fDPL_X 		: LREAL;
-
+	
     bSDS_RY_FullRange : BOOL;
 
     fbEPS		: FB_EPS;
@@ -22,7 +16,7 @@ END_VAR
       <ST><![CDATA[IF bInit THEN
     // Set Inital Values
     aSDS_RY_EPS[1].fBwd_Limits := -100;
-    aSDS_RY_EPS[1].fFwd_Limits := -5;
+    aSDS_RY_EPS[1].fFwd_Limits := 5;
 
     aSDS_RY_EPS[2].fBwd_Limits := -5;
     aSDS_RY_EPS[2].fFwd_Limits := 5;
@@ -38,13 +32,6 @@ END_VAR
 
     bInit := FALSE;
 END_IF
-
-//fSDS_Z_ENC := M36.stAxisStatus.fActPosition;
-//fSDS_RY := M19.stAxisStatus.fActPosition + 10;
-//fSDS_Y  := M17.stAxisStatus.fActPosition;
-//fRCC_Y  := M38.stAxisStatus.fActPosition;
-//fDPL_X  := M1.stAxisStatus.fActPosition;
-
 
 // Set EPS conditions
 fbEPS(eps:=aSDS_RY_EPS[1].stEPS);
@@ -77,7 +64,7 @@ fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(2, NOT bSDS_RY_FullRange); // NOT FULL RANGE COND.
 
 
-fbCheckEPS(stMotor:=M19, fPosition:= fSDS_RY, aEPSLimits:= aSDS_RY_EPS);]]></ST>
+fbCheckEPS(stMotor:=M19, fPosition:= fSDS_RY, aEPSLimits:= aSDS_RY_EPS, refstForwardMotorEPS:=M19.stEPSForwardEnable, refstBackwardMotorEPS:= M19.stEPSBackwardEnable);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
