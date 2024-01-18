@@ -5,10 +5,14 @@
 VAR_IN_OUT
     stMotor	: ST_MotionStage;
     aEPSLimits : ARRAY [*] OF ST_EPSLimits;
+
 END_VAR
 VAR_INPUT
-    // Encoder Position, Current position of motor. Needed for the case where the motor and encoders are seperate.
-    fPosition : LREAL;
+    // Encoder Position, Current position of motor. Needed for the case where the motor and encoders are seperate. Default use stMotor Position
+    fPosition : LREAL := stMotor.stAxisStatus.fActPosition;
+    // Allows for user to define what is 'forward' and what is 'backward'. In most cases, use the in_out stMotor as default.
+    refstForwardMotorEPS : REFERENCE TO DUT_EPS := stMotor.stEPSForwardEnable;
+    refstBackwardMotorEPS: REFERENCE TO DUT_EPS := stMotor.stEPSBackwardEnable;
 END_VAR
 VAR_OUTPUT
 END_VAR
@@ -21,8 +25,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbBwdEps(eps:=stMotor.stEPSBackwardEnable);
-fbFwdEPS(eps:=stMotor.stEPSForwardEnable);
+      <ST><![CDATA[fbBwdEps(eps:=refstBackwardMotorEPS);
+fbFwdEPS(eps:=refstForwardMotorEPS);
 
 // Look through possible states to see witch state we are in
 FOR nIndex := LOWER_BOUND(aEPSLimits, 1) TO UPPER_BOUND(aEPSLimits, 1) BY 1 DO
@@ -34,11 +38,11 @@ END_FOR
 
 IF (NOT (nPreviousState = nEPSIndex)) THEN
     // Clear Motors EPS structures to allow motor to use limits from new state.
-    stMotor.stEPSBackwardEnable.nFlags := 16#FFFFFFFF;
-    stMotor.stEPSBackwardEnable.bEPS_OK := TRUE;
+    refstBackwardMotorEPS.nFlags := 16#FFFFFFFF;
+    refstBackwardMotorEPS.bEPS_OK := TRUE;
 
-    stMotor.stEPSForwardEnable.nFlags := 16#FFFFFFFF;
-    stMotor.stEPSForwardEnable.bEPS_OK := TRUE;
+    refstForwardMotorEPS.nFlags := 16#FFFFFFFF;
+    refstForwardMotorEPS.bEPS_OK := TRUE;
 END_IF
 
 // Check if position is in plc limit rage, Stop motor if out of Upper/Lower bounds

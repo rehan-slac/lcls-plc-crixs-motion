@@ -41,10 +41,10 @@ IF bInit THEN
 END_IF
 
 // Encoder / position values
-fSDS_Z_ENC :=  M36.stAxisStatus.fActPosition;
-fSDS_RY := M19.stAxisStatus.fActPosition;
-fSDS_Y  := M17.stAxisStatus.fActPosition;
-fRCC_Y  := M38.stAxisStatus.fActPosition;
+//fSDS_Z_ENC :=  M36.stAxisStatus.fActPosition;
+//fSDS_RY := M19.stAxisStatus.fActPosition;
+//fSDS_Y  := M17.stAxisStatus.fActPosition;
+//fRCC_Y  := M38.stAxisStatus.fActPosition;
 
 // Set EPS conditions
 fbEPS(eps:= aSDS_Y_EPS[2].stEPS);

@@ -41,11 +41,11 @@ END_VAR
     bInit := FALSE;
 END_IF
 
-fSDS_RY     := M19.stAxisStatus.fActPosition;
-fSDS_Y      := M17.stAxisStatus.fActPosition;
-fSDS_Z_ENC  := M36.stAxisStatus.fActPosition;
-fRCC_Y      := M38.stAxisStatus.fActPosition;
-fDPL_X      := M1.stAxisStatus.fActPosition;
+//fSDS_RY     := M19.stAxisStatus.fActPosition;
+//fSDS_Y      := M17.stAxisStatus.fActPosition;
+//fSDS_Z_ENC  := M36.stAxisStatus.fActPosition;
+//fRCC_Y      := M38.stAxisStatus.fActPosition;
+//fDPL_X      := M1.stAxisStatus.fActPosition;
 
 bSDS_vert_transport_state := F_InRange(fSDS_Y, 30, 35) AND F_InRange(fSDS_Z_ENC, 420, 495) AND F_InRange(fSDS_RY, -100, -80) AND (fDPL_X < 30) AND (fRCC_Y < -34);
 
@@ -84,7 +84,7 @@ fbEPS(eps:=aSDS_Z_ENC_EPS[1].stEPS);
 fbEPS.setDescription('FULL RANGE');
 fbEPS.setBit(0, bFullRange);
 
-fbCheckEPS(stMotor:=M18, fPosition:=fSDS_Z_ENC, aEPSLimits:=aSDS_Z_ENC_EPS);
+fbCheckEPS(stMotor:=M18, fPosition:=fSDS_Z_ENC, refstForwardMotorEPS:= M18.stEPSBackwardEnable, refstBackwardMotorEPS:=M18.stEPSForwardEnable, aEPSLimits:=aSDS_Z_ENC_EPS);
 
 
 

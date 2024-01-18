@@ -39,11 +39,11 @@ END_VAR
     bInit := FALSE;
 END_IF
 
-fSDS_Z_ENC := M36.stAxisStatus.fActPosition;
-fSDS_RY := M19.stAxisStatus.fActPosition;
-fSDS_Y  := M17.stAxisStatus.fActPosition;
-fRCC_Y  := M38.stAxisStatus.fActPosition;
-fDPL_X  := M1.stAxisStatus.fActPosition;
+//fSDS_Z_ENC := M36.stAxisStatus.fActPosition;
+//fSDS_RY := M19.stAxisStatus.fActPosition + 10;
+//fSDS_Y  := M17.stAxisStatus.fActPosition;
+//fRCC_Y  := M38.stAxisStatus.fActPosition;
+//fDPL_X  := M1.stAxisStatus.fActPosition;
 
 
 // Set EPS conditions
@@ -77,7 +77,7 @@ fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(2, NOT bSDS_RY_FullRange); // NOT FULL RANGE COND.
 
 
-fbCheckEPS(stMotor:=M19, fPosition:= M39.stAxisStatus.fActPosition, aEPSLimits:= aSDS_RY_EPS);]]></ST>
+fbCheckEPS(stMotor:=M19, fPosition:= fSDS_RY, aEPSLimits:= aSDS_RY_EPS);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

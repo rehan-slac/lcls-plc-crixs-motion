@@ -36,13 +36,13 @@ END_VAR
     bInit := FALSE;
 END_IF
 
-fRCC_Y      := M38.stAxisStatus.fActPosition;
-fRCC_Z      := M39.stAxisStatus.fActPosition;
-fSDS_RY     := M19.stAxisStatus.fActPosition;
-fSDS_Y      := M17.stAxisStatus.fActPosition;
-fSDS_Z_ENC  := M36.stAxisStatus.fActPosition;
-fDPL_Z      := M3.stAxisStatus.fActPosition;
-fDPL_Y      := M2.stAxisStatus.fActPosition;
+//fRCC_Y      := M38.stAxisStatus.fActPosition;
+//fRCC_Z      := M39.stAxisStatus.fActPosition;
+//fSDS_RY     := M19.stAxisStatus.fActPosition;
+//fSDS_Y      := M17.stAxisStatus.fActPosition;
+//fSDS_Z_ENC  := M36.stAxisStatus.fActPosition;
+//fDPL_Z      := M3.stAxisStatus.fActPosition;
+//fDPL_Y      := M2.stAxisStatus.fActPosition;
 
 
 fbEPS(eps:=aRCC_Y_EPS[2].stEPS);

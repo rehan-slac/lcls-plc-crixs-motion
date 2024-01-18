@@ -25,6 +25,17 @@
 
     {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:ZENC:EPS'}
     aSDS_Z_ENC_EPS	: ARRAY [1 .. 6] OF ST_EPSLimits;
+	
+	fDPL_X  	: LREAL;
+	fDPL_Z 		: LREAL;
+	fDPL_Y 		: LREAL;
+	
+	fSDS_RY 	: LREAL;
+	fSDS_Y 		: LREAL;
+	fSDS_Z_ENC 	: LREAL;
+
+	fRCC_Z 		: LREAL;
+	fRCC_Y 		: LREAL;
 
 END_VAR]]></Declaration>
   </GVL>

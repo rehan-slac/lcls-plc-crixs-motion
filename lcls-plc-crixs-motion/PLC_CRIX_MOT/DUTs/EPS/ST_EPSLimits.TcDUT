@@ -4,17 +4,11 @@
     <Declaration><![CDATA[TYPE ST_EPSLimits :
     // Defines the PLC limits and EPS structure of these limits to be valid
 STRUCT
-    {attribute 'pytmc' := '
-        pv: FwdLimit
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: FwdLimit'}
     // Limit there MotionStage cannot move anymore forward
 
     fFwd_Limits : REAL;
-    {attribute 'pytmc' := '
-        pv: BwdLimit
-        io: io
-    '}
+    {attribute 'pytmc' := 'pv: BwdLimit'}
     // Limit there MotionStage cannot move anymore backward
     fBwd_Limits	: REAL;
     {attribute 'pytmc' := 'pv: ST'}

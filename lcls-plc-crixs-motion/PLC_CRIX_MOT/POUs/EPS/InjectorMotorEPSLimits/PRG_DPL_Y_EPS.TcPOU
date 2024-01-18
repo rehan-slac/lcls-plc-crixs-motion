@@ -25,8 +25,8 @@ END_VAR
     bInit := FALSE;
 END_IF
 
-fDPL_Z := M3.stAxisStatus.fActPosition;
-fRCC_Z := M39.stAxisStatus.fActPosition;
+//fDPL_Z := M3.stAxisStatus.fActPosition;
+//fRCC_Z := M39.stAxisStatus.fActPosition;
 
 fbEPS(eps:=aDPL_Y_EPS[2].stEPS);
 fbEPS.setDescription('DPL_Z in [-10,30];RCC in [-15,11]');
