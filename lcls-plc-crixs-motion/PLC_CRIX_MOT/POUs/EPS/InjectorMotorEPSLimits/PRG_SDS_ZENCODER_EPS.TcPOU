@@ -7,6 +7,7 @@ VAR
 
     bSDS_vert_transport_state : BOOL;
     bFullRange	: BOOL;
+	bUnknownState	: BOOL;
 
     fbEPS		: FB_EPS;
     fbCheckEPS 	: FB_CheckEPS;
@@ -64,6 +65,17 @@ fbEPS.setDescription('SDS_RY in [-100,-80];SDS_Z_ENC in [495,510]; NOT SDS VERT.
 fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 480, 510));
 fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Transport Condition
+
+bUnknownState := (NOT aSDS_Z_ENC_EPS[1].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[2].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[3].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[4].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[5].stEPS.bEPS_OK);
+fbEPS(eps:=aSDS_Z_ENC_EPS[6].stEPS);
+fbEPS.setDescription('Un Sure State');
+fbEPS.setBit(0, bUnknownState);
+
+IF bUnknownState THEN
+	// Dont Allow Motor to Move
+	aSDS_Z_ENC_EPS[5].fBwd_Limits := fSDS_Z_ENC;
+    aSDS_Z_ENC_EPS[5].fFwd_Limits := fSDS_Z_ENC;
+END_IF
 
 
 fbCheckEPS(stMotor:=M18, fPosition:=fSDS_Z_ENC, refstForwardMotorEPS:= M18.stEPSBackwardEnable, refstBackwardMotorEPS:=M18.stEPSForwardEnable, aEPSLimits:=aSDS_Z_ENC_EPS);
