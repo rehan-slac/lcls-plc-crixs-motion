@@ -7,7 +7,7 @@ VAR
 
     bSDS_vert_transport_state : BOOL;
     bFullRange	: BOOL;
-	bUnknownState	: BOOL;
+    bUnknownState	: BOOL;
 
     fbEPS		: FB_EPS;
     fbCheckEPS 	: FB_CheckEPS;
@@ -15,7 +15,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF bInit THEN
-	
+
     aSDS_Z_ENC_EPS[1].fBwd_Limits := -100;
     aSDS_Z_ENC_EPS[1].fFwd_Limits := 420;
 
@@ -72,8 +72,8 @@ fbEPS.setDescription('Un Sure State');
 fbEPS.setBit(0, bUnknownState);
 
 IF bUnknownState THEN
-	// Dont Allow Motor to Move
-	aSDS_Z_ENC_EPS[5].fBwd_Limits := fSDS_Z_ENC;
+    // Dont Allow Motor to Move
+    aSDS_Z_ENC_EPS[5].fBwd_Limits := fSDS_Z_ENC;
     aSDS_Z_ENC_EPS[5].fFwd_Limits := fSDS_Z_ENC;
 END_IF
 

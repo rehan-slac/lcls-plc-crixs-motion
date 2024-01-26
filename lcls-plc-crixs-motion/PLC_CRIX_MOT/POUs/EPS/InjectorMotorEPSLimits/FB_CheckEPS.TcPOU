@@ -43,9 +43,9 @@ IF (NOT (nPreviousState = nEPSIndex)) THEN
 
     refstForwardMotorEPS.nFlags := 16#FFFFFFFF;
     refstForwardMotorEPS.bEPS_OK := TRUE;
-	
-	refstBackwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
-	refstForwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
+
+    refstBackwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
+    refstForwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
 END_IF
 
 // Check if position is in plc limit rage, Stop motor if out of Upper/Lower bounds

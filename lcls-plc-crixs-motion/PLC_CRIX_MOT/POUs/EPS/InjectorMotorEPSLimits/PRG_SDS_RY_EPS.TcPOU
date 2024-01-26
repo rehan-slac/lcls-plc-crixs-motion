@@ -4,7 +4,7 @@
     <Declaration><![CDATA[PROGRAM PRG_SDS_RY_EPS
 VAR
     bInit 		: BOOL := TRUE;
-	
+
     bSDS_RY_FullRange : BOOL;
 
     fbEPS		: FB_EPS;
