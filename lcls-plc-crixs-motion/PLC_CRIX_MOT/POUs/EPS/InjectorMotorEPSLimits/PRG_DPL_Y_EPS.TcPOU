@@ -3,6 +3,9 @@
   <POU Name="PRG_DPL_Y_EPS" Id="{f7a04ae9-83bd-4be2-b22f-d7b6b02b3657}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_DPL_Y_EPS
 VAR
+    {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Y:EPS'}
+    aDPL_Y_EPS		: ARRAY [1 .. 2] OF ST_EPSLimits;
+
     bInit 		: BOOL := TRUE;
 
     bFullRange	: BOOL;
@@ -34,7 +37,7 @@ fbEPS(eps:=aDPL_Y_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-fbCheckEPS(stMotor:=M2, fPosition:=M2.stAxisStatus.fActPosition, aEPSLimits:=aDPL_Y_EPS, refstForwardMotorEPS:=M2.stEPSForwardEnable, refstBackwardMotorEPS:= M2.stEPSBackwardEnable);
+fbCheckEPS(stMotor:=M2, fPosition:=M2.stAxisStatus.fActPosition, aEPSLimits:=aDPL_Y_EPS, stForwardMotorEPS:=M2.stEPSForwardEnable, stBackwardMotorEPS:= M2.stEPSBackwardEnable);
 ]]></ST>
     </Implementation>
   </POU>

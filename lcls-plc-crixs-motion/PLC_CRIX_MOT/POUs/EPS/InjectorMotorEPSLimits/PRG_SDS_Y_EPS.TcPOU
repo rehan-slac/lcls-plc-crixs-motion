@@ -3,6 +3,9 @@
   <POU Name="PRG_SDS_Y_EPS" Id="{1d694921-86bf-430a-8dcf-197fd1ce1485}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_SDS_Y_EPS
 VAR
+    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:Y:EPS'}
+    aSDS_Y_EPS 		: ARRAY [1 .. 5] OF ST_EPSLimits;
+
     bInit 		: BOOL := TRUE;
     bFullRange	: BOOL;
     nIndex 		: uint;
@@ -51,7 +54,7 @@ fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 495));
 fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -5));
 
 fbEPS(eps:= aSDS_Y_EPS[5].stEPS);
-fbEPS.setDescription('SDS_Z_ENC in [495,510];(SDS_Y - RCC >= 36');
+fbEPS.setDescription('SDS_Z_ENC in [495,510];(SDS_Y - RCC <= 36');
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 495, 510));
 fbEPS.setBit(1, (fSDS_Y - fRCC_Y) <= 36);
 
@@ -62,7 +65,7 @@ bFullRange := (NOT aSDS_Y_EPS[2].stEPS.bEPS_OK) AND (NOT aSDS_Y_EPS[3].stEPS.bEP
 fbEPS(eps:= aSDS_Y_EPS[1].stEPS);
 fbEPS.setBit(0, bFullRange); // FULL RANGE
 
-fbCheckEPS(stMotor:=M17, fPosition:=fSDS_Y, aEPSLimits:=aSDS_Y_EPS, refstForwardMotorEPS:=M17.stEPSForwardEnable, refstBackwardMotorEPS:= M17.stEPSBackwardEnable);]]></ST>
+fbCheckEPS(stMotor:=M17, fPosition:=fSDS_Y, aEPSLimits:=aSDS_Y_EPS, stForwardMotorEPS:=M17.stEPSForwardEnable, stBackwardMotorEPS:= M17.stEPSBackwardEnable);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

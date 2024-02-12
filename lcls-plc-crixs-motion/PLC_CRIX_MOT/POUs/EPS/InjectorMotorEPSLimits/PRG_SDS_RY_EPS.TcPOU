@@ -3,6 +3,9 @@
   <POU Name="PRG_SDS_RY_EPS" Id="{18466759-88d2-4c0f-bc51-f9ca798237c4}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_SDS_RY_EPS
 VAR
+    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:RY:EPS'}
+    aSDS_RY_EPS 	: ARRAY [1 .. 5] OF ST_EPSLimits;
+
     bInit 		: BOOL := TRUE;
 
     bSDS_RY_FullRange : BOOL;
@@ -64,7 +67,7 @@ fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -80));
 fbEPS.setBit(2, NOT bSDS_RY_FullRange); // NOT FULL RANGE COND.
 
 
-fbCheckEPS(stMotor:=M19, fPosition:= fSDS_RY, aEPSLimits:= aSDS_RY_EPS, refstForwardMotorEPS:=M19.stEPSForwardEnable, refstBackwardMotorEPS:= M19.stEPSBackwardEnable);]]></ST>
+fbCheckEPS(stMotor:=M19, fPosition:= fSDS_RY, aEPSLimits:= aSDS_RY_EPS, stForwardMotorEPS:=M19.stEPSForwardEnable, stBackwardMotorEPS:= M19.stEPSBackwardEnable);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

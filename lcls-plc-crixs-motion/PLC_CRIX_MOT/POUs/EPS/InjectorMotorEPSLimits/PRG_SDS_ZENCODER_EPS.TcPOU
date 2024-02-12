@@ -3,8 +3,10 @@
   <POU Name="PRG_SDS_ZENCODER_EPS" Id="{590b5600-f8af-4ace-bb67-7ba2f1f32fc7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_SDS_ZENCODER_EPS
 VAR
-    bInit       : BOOL := TRUE;
+    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:ZENC:EPS'}
+    aSDS_Z_ENC_EPS	: ARRAY [1 .. 6] OF ST_EPSLimits;
 
+    bInit       : BOOL := TRUE;
     bSDS_vert_transport_state : BOOL;
     bFullRange	: BOOL;
     bUnknownState	: BOOL;
@@ -78,7 +80,7 @@ IF bUnknownState THEN
 END_IF
 
 
-fbCheckEPS(stMotor:=M18, fPosition:=fSDS_Z_ENC, refstForwardMotorEPS:= M18.stEPSBackwardEnable, refstBackwardMotorEPS:=M18.stEPSForwardEnable, aEPSLimits:=aSDS_Z_ENC_EPS);
+fbCheckEPS(stMotor:=M18, fPosition:=fSDS_Z_ENC, stForwardMotorEPS:= M18.stEPSBackwardEnable, stBackwardMotorEPS:=M18.stEPSForwardEnable, aEPSLimits:=aSDS_Z_ENC_EPS);
 
 
 

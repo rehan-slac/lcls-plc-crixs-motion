@@ -5,14 +5,16 @@
 VAR_IN_OUT
     stMotor	: ST_MotionStage;
     aEPSLimits : ARRAY [*] OF ST_EPSLimits;
+    // Allows for user to define what is 'forward' and what is 'backward'. In most cases, use the in_out stMotor as default.
+    stForwardMotorEPS : DUT_EPS;
+    stBackwardMotorEPS: DUT_EPS;
 
 END_VAR
 VAR_INPUT
     // Encoder Position, Current position of motor. Needed for the case where the motor and encoders are seperate. Default use stMotor Position
     fPosition : LREAL;;
     // Allows for user to define what is 'forward' and what is 'backward'. In most cases, use the in_out stMotor as default.
-    refstForwardMotorEPS : REFERENCE TO DUT_EPS;
-    refstBackwardMotorEPS: REFERENCE TO DUT_EPS;
+
 END_VAR
 VAR_OUTPUT
 END_VAR
@@ -25,27 +27,24 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbBwdEps(eps:=refstBackwardMotorEPS);
-fbFwdEPS(eps:=refstForwardMotorEPS);
+      <ST><![CDATA[fbBwdEps(eps:=stBackwardMotorEPS);
+fbFwdEPS(eps:=stForwardMotorEPS);
 
-// Look through possible states to see witch state we are in
+// Look through possible states to see which state we are in
 FOR nIndex := LOWER_BOUND(aEPSLimits, 1) TO UPPER_BOUND(aEPSLimits, 1) BY 1 DO
     IF aEPSLimits[nIndex].stEPS.bEPS_OK THEN
         nEPSIndex := nIndex;
-        EXIT; // Stop Looking
     END_IF
 END_FOR
 
-IF (NOT (nPreviousState = nEPSIndex)) THEN
-    // Clear Motors EPS structures to allow motor to use limits from new state.
-    refstBackwardMotorEPS.nFlags := 16#FFFFFFFF;
-    refstBackwardMotorEPS.bEPS_OK := TRUE;
+IF (nPreviousState <> nEPSIndex) THEN
+    // only clear stMotor eps from previous state.
+    stBackwardMotorEPS.nFlags := (aEPSLimits[nPreviousState].stEPS.nFlags XOR ( NOT stBackwardMotorEPS.nFlags)) OR stBackwardMotorEPS.nFlags;
+    stForwardMotorEPS.nFlags := (aEPSLimits[nPreviousState].stEPS.nFlags XOR ( NOT stForwardMotorEPS.nFlags)) OR stForwardMotorEPS.nFlags;
 
-    refstForwardMotorEPS.nFlags := 16#FFFFFFFF;
-    refstForwardMotorEPS.bEPS_OK := TRUE;
-
-    refstBackwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
-    refstForwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
+    // Update Labels
+    stBackwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
+    stForwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
 END_IF
 
 // Check if position is in plc limit rage, Stop motor if out of Upper/Lower bounds
