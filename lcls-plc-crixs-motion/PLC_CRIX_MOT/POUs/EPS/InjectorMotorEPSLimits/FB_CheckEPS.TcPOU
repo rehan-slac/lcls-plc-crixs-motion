@@ -39,8 +39,8 @@ END_FOR
 
 IF (nPreviousState <> nEPSIndex) THEN
     // only clear stMotor eps from previous state.
-    stBackwardMotorEPS.nFlags := (aEPSLimits[nPreviousState].stEPS.nFlags XOR ( NOT stBackwardMotorEPS.nFlags)) OR stBackwardMotorEPS.nFlags;
-    stForwardMotorEPS.nFlags := (aEPSLimits[nPreviousState].stEPS.nFlags XOR ( NOT stForwardMotorEPS.nFlags)) OR stForwardMotorEPS.nFlags;
+    stBackwardMotorEPS.nFlags := stBackwardMotorEPS.nFlags OR (NOT aEPSLimits[nEPSIndex].stEPS.nFlags);
+    stForwardMotorEPS.nFlags :=  stForwardMotorEPS.nFlags OR (NOT aEPSLimits[nEPSIndex].stEPS.nFlags);
 
     // Update Labels
     stBackwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
