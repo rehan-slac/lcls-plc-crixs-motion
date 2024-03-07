@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_DPL_X_EPS" Id="{04026f9f-33ec-468b-8c87-d293a0ccda10}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_DPL_X_EPS
+VAR
+    {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:X:EPS'}
+    aDPL_X_EPS		: ARRAY [1 .. 3] OF ST_EPSLimits;
+
+    bInit 		: BOOL := TRUE;
+    bFullRange 	: BOOL;
+
+    fbEPS		: FB_EPS;
+    fbCheckEPS 	: FB_CheckEPS;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bInit THEN
+    // Set Inital Values
+    aDPL_X_EPS[1].fBwd_Limits := 10;
+    aDPL_X_EPS[1].fFwd_Limits := 80;
+
+    aDPL_X_EPS[2].fBwd_Limits := 10;
+    aDPL_X_EPS[2].fFwd_Limits := 30;
+
+    aDPL_X_EPS[3].fBwd_Limits := 30;
+    aDPL_X_EPS[3].fFwd_Limits := 80;
+
+
+    bInit := FALSE;
+END_IF
+
+
+fbEPS(eps:=aDPL_X_EPS[2].stEPS);
+fbEPS.setDescription('SDS_RY in [-100,-5]');
+fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -5));
+
+fbEPS(eps:=aDPL_X_EPS[3].stEPS);
+fbEPS.setDescription('DPL_Z in [-10,30]');
+fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
+
+bFullRange := (NOT aDPL_X_EPS[2].stEPS.bEPS_OK) AND (NOT aDPL_X_EPS[3].stEPS.bEPS_OK);
+
+fbEPS(eps:=aDPL_X_EPS[1].stEPS);
+fbEPS.setDescription('Full Range');
+fbEPS.setBit(0, bFullRange);
+
+fbCheckEPS(stMotor:= M1, fPosition:=fDPL_X, aEPSLimits:= aDPL_X_EPS, stForwardMotorEPS:=M1.stEPSForwardEnable, stBackwardMotorEPS:= M1.stEPSBackwardEnable);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

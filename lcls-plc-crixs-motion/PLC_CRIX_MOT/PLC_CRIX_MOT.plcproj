@@ -43,6 +43,9 @@
     <Compile Include="DUTs\EPS\ST_BFSAssemblyState.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\EPS\ST_EPSLimits.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\EPS\ST_Queue.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -59,6 +62,10 @@
       <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="GVLs\GVL_Illumination.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_MotorEPS.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
@@ -151,6 +158,36 @@
     <Compile Include="POUs\EPS\FB_Queue.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\FB_CheckEPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\F_InRange.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_DPL_X_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_DPL_Y_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_DPL_Z_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_RCC_Y_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_RCC_Z_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_SDS_RY_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_SDS_Y_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_SDS_ZENCODER_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\EPS\PRG_BFS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -189,6 +226,7 @@
     <Folder Include="GVLs" />
     <Folder Include="POUs\EPS" />
     <Folder Include="POUs\Assemblies" />
+    <Folder Include="POUs\EPS\InjectorMotorEPSLimits" />
     <Folder Include="POUs\temp" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />

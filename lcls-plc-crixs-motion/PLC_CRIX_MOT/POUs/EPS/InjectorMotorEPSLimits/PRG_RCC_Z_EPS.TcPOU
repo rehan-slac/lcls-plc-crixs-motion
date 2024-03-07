@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_RCC_Z_EPS" Id="{a0722060-c50e-4a96-ac46-0b4676b08166}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_RCC_Z_EPS
+VAR
+    {attribute 'pytmc' := 'pv: CRIX:RCC:MMS:Z:EPS'}
+    aRCC_Z_EPS	    : ARRAY [1 .. 3] OF ST_EPSLimits;
+
+    bInit 		: BOOL := TRUE;
+    bFullRange	: BOOL;
+
+    fbEPS		: FB_EPS;
+    fbCheckEPS 	: FB_CheckEPS;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bInit THEN
+    // Set Inital Values
+    aRCC_Z_EPS[1].fBwd_Limits := -18;
+    aRCC_Z_EPS[1].fFwd_Limits := 11;
+
+    aRCC_Z_EPS[2].fBwd_Limits := -18;
+    aRCC_Z_EPS[2].fFwd_Limits := -15;
+
+    aRCC_Z_EPS[3].fBwd_Limits := -18;
+    aRCC_Z_EPS[3].fFwd_Limits := -15;
+
+    bInit := FALSE;
+END_IF
+
+
+fbEPS(eps:=aRCC_Z_EPS[2].stEPS);
+fbEPS.setDescription('DPL_Z in [-10,30];DPL_Y in [-1,40]');
+fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
+fbEPS.setBit(1, F_InRange(fDPL_Y, -1, 40));
+
+fbEPS(eps:=aRCC_Z_EPS[3].stEPS);
+fbEPS.setDescription('DPL_Z in [-10, 30];RCC_Y in [-34,10]');
+fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
+fbEPS.setBit(1, F_InRange(fRCC_Y, -34, 10));
+
+bFullRange := (NOT aRCC_Z_EPS[2].stEPS.bEPS_OK) AND (NOT aRCC_Z_EPS[3].stEPS.bEPS_OK);
+
+fbEPS(eps:=aRCC_Z_EPS[1].stEPS);
+fbEPS.setDescription('Full Range');
+fbEPS.setBit(0, bFullRange);
+
+fbCheckEPS(stMotor:= M39, fPosition:=fRCC_Z, aEPSLimits:=aRCC_Z_EPS, stForwardMotorEPS:=M39.stEPSForwardEnable, stBackwardMotorEPS:= M39.stEPSBackwardEnable);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_SDS_Y_EPS" Id="{1d694921-86bf-430a-8dcf-197fd1ce1485}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_SDS_Y_EPS
+VAR
+    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:Y:EPS'}
+    aSDS_Y_EPS 		: ARRAY [1 .. 5] OF ST_EPSLimits;
+
+    bInit 		: BOOL := TRUE;
+    bFullRange	: BOOL;
+    nIndex 		: uint;
+    nEPSIndex 	: uint;
+
+    fbEPS		: FB_EPS;;
+    fbCheckEPS 	: FB_CheckEPS;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// SDS Y EPS
+IF bInit THEN
+    // Set Inital Values
+    aSDS_Y_EPS[1].fBwd_Limits := 20;
+    aSDS_Y_EPS[1].fFwd_Limits := 45;
+
+    aSDS_Y_EPS[2].fBwd_Limits := 37.5;
+    aSDS_Y_EPS[2].fFwd_Limits := 38.5;
+
+    aSDS_Y_EPS[3].fBwd_Limits := 30;
+    aSDS_Y_EPS[3].fFwd_Limits := 38.5;
+
+    aSDS_Y_EPS[4].fBwd_Limits := 30;
+    aSDS_Y_EPS[4].fFwd_Limits := 35;
+
+    aSDS_Y_EPS[5].fBwd_Limits := 30;
+    aSDS_Y_EPS[5].fFwd_Limits := 45;
+
+
+    bInit := FALSE;
+END_IF
+
+// Set EPS conditions
+fbEPS(eps:= aSDS_Y_EPS[2].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [0,400]');
+fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 0, 400));
+
+fbEPS(eps:= aSDS_Y_EPS[3].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [400,420];SDS_RY in [-5,5]');
+fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 420));
+fbEPS.setBit(1, F_InRange(fSDS_RY, -5, 5));
+
+fbEPS(eps:= aSDS_Y_EPS[4].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [400,495];SDS_RY in [-100,-5]');
+fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 495));
+fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -5));
+
+fbEPS(eps:= aSDS_Y_EPS[5].stEPS);
+fbEPS.setDescription('SDS_Z_ENC in [495,510];(SDS_Y - RCC <= 36');
+fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 495, 510));
+fbEPS.setBit(1, (fSDS_Y - fRCC_Y) <= 36);
+
+aSDS_Y_EPS[5].fBwd_Limits := 36 + fRCC_Y; // Magic 36?
+
+
+bFullRange := (NOT aSDS_Y_EPS[2].stEPS.bEPS_OK) AND (NOT aSDS_Y_EPS[3].stEPS.bEPS_OK) AND(NOT aSDS_Y_EPS[4].stEPS.bEPS_OK) AND (NOT aSDS_Y_EPS[5].stEPS.bEPS_OK);
+fbEPS(eps:= aSDS_Y_EPS[1].stEPS);
+fbEPS.setBit(0, bFullRange); // FULL RANGE
+
+fbCheckEPS(stMotor:=M17, fPosition:=fSDS_Y, aEPSLimits:=aSDS_Y_EPS, stForwardMotorEPS:=M17.stEPSForwardEnable, stBackwardMotorEPS:= M17.stEPSBackwardEnable);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

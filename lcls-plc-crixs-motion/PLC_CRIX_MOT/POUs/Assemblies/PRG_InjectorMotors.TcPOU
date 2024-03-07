@@ -89,7 +89,32 @@ ELSE
 END_IF
 
 Main.M16.bLimitForwardEnable := nHall_Forward_Cycles < nNumCyclesNeeded;
-Main.M16.bLimitBackwardEnable := nHall_Backward_Cycles < nNumCyclesNeeded;]]></ST>
+Main.M16.bLimitBackwardEnable := nHall_Backward_Cycles < nNumCyclesNeeded;
+
+
+// Update Motor Positions before Using them in EPS Checks
+fDPL_X  := M1.stAxisStatus.fActPosition;
+
+fSDS_RY 	:= M19.stAxisStatus.fActPosition + (-20); // Has offset?
+fSDS_Y      := M17.stAxisStatus.fActPosition;
+fSDS_Z_ENC  := M36.stAxisStatus.fActPosition;
+
+fDPL_Z 		:= M3.stAxisStatus.fActPosition;
+fDPL_Y 		:= M2.stAxisStatus.fActPosition;
+
+fRCC_Z 		:= M39.stAxisStatus.fActPosition;
+fRCC_Y 		:= M38.stAxisStatus.fActPosition;
+
+PRG_SDS_Y_EPS();
+PRG_SDS_ZENCODER_EPS();
+PRG_SDS_RY_EPS();
+
+PRG_DPL_X_EPS();
+PRG_DPL_Y_EPS();
+PRG_DPL_Z_EPS();
+
+PRG_RCC_Y_EPS();
+PRG_RCC_Z_EPS();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

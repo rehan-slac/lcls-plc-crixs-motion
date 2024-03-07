@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_SDS_ZENCODER_EPS" Id="{590b5600-f8af-4ace-bb67-7ba2f1f32fc7}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_SDS_ZENCODER_EPS
+VAR
+    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:ZENC:EPS'}
+    aSDS_Z_ENC_EPS	: ARRAY [1 .. 6] OF ST_EPSLimits;
+
+    bInit       : BOOL := TRUE;
+    bSDS_vert_transport_state : BOOL;
+    bFullRange	: BOOL;
+    bUnknownState	: BOOL;
+
+    fbEPS		: FB_EPS;
+    fbCheckEPS 	: FB_CheckEPS;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bInit THEN
+
+    aSDS_Z_ENC_EPS[1].fBwd_Limits := -100;
+    aSDS_Z_ENC_EPS[1].fFwd_Limits := 420;
+
+    aSDS_Z_ENC_EPS[2].fBwd_Limits := 400;
+    aSDS_Z_ENC_EPS[2].fFwd_Limits := 420;
+
+    aSDS_Z_ENC_EPS[3].fBwd_Limits := 400;
+    aSDS_Z_ENC_EPS[3].fFwd_Limits := 420;
+
+    aSDS_Z_ENC_EPS[4].fBwd_Limits := 400;
+    aSDS_Z_ENC_EPS[4].fFwd_Limits := 510;
+
+    aSDS_Z_ENC_EPS[5].fBwd_Limits := 495;
+    aSDS_Z_ENC_EPS[5].fFwd_Limits := 510;
+
+    bInit := FALSE;
+END_IF
+
+
+bSDS_vert_transport_state := F_InRange(fSDS_Y, 30, 35) AND F_InRange(fSDS_RY, -100, -80) AND (fDPL_X < 30) AND (fRCC_Y < -34);
+
+fbEPS(eps:=aSDS_Z_ENC_EPS[1].stEPS);
+fbEPS.setDescription('SDS_RY in [-5,5];SDS_Y in [37.5,58.5]');
+fbEPS.setBit(0, F_InRange(fSDS_RY, -5, 5));
+fbEPS.setBit(1, F_InRange(fSDS_Y, 37.5, 38.5));
+
+fbEPS(eps:=aSDS_Z_ENC_EPS[2].stEPS);
+fbEPS.setDescription('SDS_RY in [-80,5];SDS_Y in [30,37.5]');
+fbEPS.setBit(0, F_InRange(fSDS_RY, -80, 5));
+fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 37.5));
+
+fbEPS(eps:=aSDS_Z_ENC_EPS[3].stEPS);
+fbEPS.setDescription('SDS_RY in [-100,-80];SDS_Z_ENC in [400,420];Not SDS VERT. TRANS. State');
+fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
+fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 400, 430));
+fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Tansport Condition
+
+fbEPS(eps:=aSDS_Z_ENC_EPS[4].stEPS);
+fbEPS.setDescription('SDS_RY in [-100,-80];SDS_Y in [30,35];RCC_Y in [-38,-34];DPL_X in [10,30]');
+fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
+fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 35));
+fbEPS.setBit(2, F_InRange(fRCC_Y, -38, -34));
+fbEPS.setBit(3, F_InRange(fDPL_X, 10, 30));
+
+fbEPS(eps:=aSDS_Z_ENC_EPS[5].stEPS);
+fbEPS.setDescription('SDS_RY in [-100,-80];SDS_Z_ENC in [495,510]; NOT SDS VERT. TRANS. State');
+fbEPS.setBit(0, F_InRange(fSDS_RY, -100, -80));
+fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 480, 510));
+fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Transport Condition
+
+bUnknownState := (NOT aSDS_Z_ENC_EPS[1].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[2].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[3].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[4].stEPS.bEPS_OK) AND (NOT aSDS_Z_ENC_EPS[5].stEPS.bEPS_OK);
+fbEPS(eps:=aSDS_Z_ENC_EPS[6].stEPS);
+fbEPS.setDescription('Un Sure State');
+fbEPS.setBit(0, bUnknownState);
+
+IF bUnknownState THEN
+    // Dont Allow Motor to Move
+    aSDS_Z_ENC_EPS[5].fBwd_Limits := fSDS_Z_ENC;
+    aSDS_Z_ENC_EPS[5].fFwd_Limits := fSDS_Z_ENC;
+END_IF
+
+
+fbCheckEPS(stMotor:=M18, fPosition:=fSDS_Z_ENC, stForwardMotorEPS:= M18.stEPSBackwardEnable, stBackwardMotorEPS:=M18.stEPSForwardEnable, aEPSLimits:=aSDS_Z_ENC_EPS);
+
+
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
