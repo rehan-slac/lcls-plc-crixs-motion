@@ -6,7 +6,7 @@ VAR
     {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:ZENC:EPS'}
     aSDS_Z_ENC_EPS	: ARRAY [1 .. 6] OF ST_EPSLimits;
     {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:ZENC:EPS:OVRD_MODE'}
-	bEPS_Override : BOOL := FALSE;
+    bEPS_Override : BOOL := FALSE;
     bInit       : BOOL := TRUE;
     bSDS_vert_transport_state : BOOL;
     bFullRange	: BOOL;

@@ -13,7 +13,7 @@ END_VAR
 VAR_INPUT
     // Encoder Position, Current position of motor. Needed for the case where the motor and encoders are seperate. Default use stMotor Position
     fPosition : LREAL;
-	// Ignores EPS
+    // Ignores EPS
     bEPS_Override : BOOL;
 
 END_VAR
@@ -23,7 +23,7 @@ VAR
     nPreviousState : DINT;
     nIndex: DINT;
     nEPSIndex: DINT;
-	bUnknownState: BOOL;
+    bUnknownState: BOOL;
     fbBwdEPS: FB_EPS;
     fbFwdEPS: FB_EPS;
 END_VAR
@@ -37,7 +37,7 @@ bUnknownState := TRUE;
 FOR nIndex := LOWER_BOUND(aEPSLimits, 1) TO UPPER_BOUND(aEPSLimits, 1) BY 1 DO
     IF aEPSLimits[nIndex].stEPS.bEPS_OK THEN
         nEPSIndex := nIndex;
-		bUnknownState := FALSE; // Known State
+        bUnknownState := FALSE; // Known State
     END_IF
 END_FOR
 
@@ -45,10 +45,6 @@ IF (nPreviousState <> nEPSIndex) THEN
     // only clear stMotor eps from previous state.
     stBackwardMotorEPS.nFlags := stBackwardMotorEPS.nFlags OR (NOT aEPSLimits[nEPSIndex].stEPS.nFlags);
     stForwardMotorEPS.nFlags :=  stForwardMotorEPS.nFlags OR (NOT aEPSLimits[nEPSIndex].stEPS.nFlags);
-
-    // Update Labels
-    stBackwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
-    stForwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
 END_IF
 
 // Check if position is in plc limit rage, Stop motor if out of Upper/Lower bounds
@@ -65,16 +61,20 @@ ELSE
 END_IF
 
 IF bUnknownState THEN
-	stBackwardMotorEPS.bEPS_OK := FALSE;
-	stForwardMotorEPS.bEPS_OK := FALSE;
-	
-	stBackwardMotorEPS.sFlagDesc := 'UNKNOWN STATE';
+    stBackwardMotorEPS.bEPS_OK := FALSE;
+    stForwardMotorEPS.bEPS_OK := FALSE;
+
+    stBackwardMotorEPS.sFlagDesc := 'UNKNOWN STATE';
     stForwardMotorEPS.sFlagDesc := 'UNKNOWN STATE';
+    ELSE
+    // Update Labels
+    stBackwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
+    stForwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
 END_IF
 
 IF bEPS_Override THEN
-	stBackwardMotorEPS.bEPS_OK := TRUE;
-	stForwardMotorEPS.bEPS_OK := TRUE;
+    stBackwardMotorEPS.bEPS_OK := TRUE;
+    stForwardMotorEPS.bEPS_OK := TRUE;
 END_IF
 
 nPreviousState := nEPSIndex; // Update Previous State]]></ST>

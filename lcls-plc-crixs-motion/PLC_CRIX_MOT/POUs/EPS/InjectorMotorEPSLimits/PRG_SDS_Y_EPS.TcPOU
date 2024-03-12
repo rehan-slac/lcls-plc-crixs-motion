@@ -5,9 +5,9 @@
 VAR
     {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:Y:EPS'}
     aSDS_Y_EPS 		: ARRAY [1 .. 5] OF ST_EPSLimits;
-	
-	{attribute 'pytmc' := 'pv: CRIX:SDS:MMS:Y:EPS'}
-	bEPS_Override : BOOL := FALSE;
+
+    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:Y:EPS'}
+    bEPS_Override : BOOL := FALSE;
     bInit 		: BOOL := TRUE;
     bFullRange	: BOOL;
     nIndex 		: uint;
