@@ -5,6 +5,9 @@
 VAR
     {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Z:EPS'}
     aDPL_Z_EPS 	    : ARRAY [1 .. 4] OF ST_EPSLimits;
+	
+	{attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Z:EPS:OVRD_MODE'}
+	bEPS_Override: BOOL := FALSE;
 
     bInit 		: BOOL := TRUE;
     bFullRange 	: BOOL;
@@ -52,7 +55,7 @@ fbEPS(eps:=aDPL_Z_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-fbCheckEPS(stMotor:=M3, fPosition:=fDPL_Z, aEPSLimits:= aDPL_Z_EPS, stForwardMotorEPS:=M3.stEPSForwardEnable, stBackwardMotorEPS:= M3.stEPSBackwardEnable);]]></ST>
+fbCheckEPS(stMotor:=M3, fPosition:=fDPL_Z, aEPSLimits:= aDPL_Z_EPS, stForwardMotorEPS:=M3.stEPSForwardEnable, stBackwardMotorEPS:= M3.stEPSBackwardEnable, bEPS_Override:=bEPS_Override);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

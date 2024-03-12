@@ -5,7 +5,8 @@
 VAR
     {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:ZENC:EPS'}
     aSDS_Z_ENC_EPS	: ARRAY [1 .. 6] OF ST_EPSLimits;
-
+    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:ZENC:EPS:OVRD_MODE'}
+	bEPS_Override : BOOL := FALSE;
     bInit       : BOOL := TRUE;
     bSDS_vert_transport_state : BOOL;
     bFullRange	: BOOL;
@@ -80,7 +81,7 @@ IF bUnknownState THEN
 END_IF
 
 
-fbCheckEPS(stMotor:=M18, fPosition:=fSDS_Z_ENC, stForwardMotorEPS:= M18.stEPSBackwardEnable, stBackwardMotorEPS:=M18.stEPSForwardEnable, aEPSLimits:=aSDS_Z_ENC_EPS);
+fbCheckEPS(stMotor:=M18, fPosition:=fSDS_Z_ENC, stForwardMotorEPS:= M18.stEPSBackwardEnable, stBackwardMotorEPS:=M18.stEPSForwardEnable, aEPSLimits:=aSDS_Z_ENC_EPS, bEPS_Override:=bEPS_Override);
 
 
 

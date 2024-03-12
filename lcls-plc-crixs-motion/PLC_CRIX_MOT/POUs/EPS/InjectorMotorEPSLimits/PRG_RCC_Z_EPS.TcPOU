@@ -5,7 +5,8 @@
 VAR
     {attribute 'pytmc' := 'pv: CRIX:RCC:MMS:Z:EPS'}
     aRCC_Z_EPS	    : ARRAY [1 .. 3] OF ST_EPSLimits;
-
+    {attribute 'pytmc' := 'pv: CRIX:RCC:MMS:Z:EPS'}
+	bEPS_Override: BOOL := FALSE;
     bInit 		: BOOL := TRUE;
     bFullRange	: BOOL;
 
@@ -45,7 +46,7 @@ fbEPS(eps:=aRCC_Z_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-fbCheckEPS(stMotor:= M39, fPosition:=fRCC_Z, aEPSLimits:=aRCC_Z_EPS, stForwardMotorEPS:=M39.stEPSForwardEnable, stBackwardMotorEPS:= M39.stEPSBackwardEnable);]]></ST>
+fbCheckEPS(stMotor:= M39, fPosition:=fRCC_Z, aEPSLimits:=aRCC_Z_EPS, stForwardMotorEPS:=M39.stEPSForwardEnable, stBackwardMotorEPS:= M39.stEPSBackwardEnable, bEPS_Override:=bEPS_Override);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -12,8 +12,9 @@ VAR_IN_OUT
 END_VAR
 VAR_INPUT
     // Encoder Position, Current position of motor. Needed for the case where the motor and encoders are seperate. Default use stMotor Position
-    fPosition : LREAL;;
-    // Allows for user to define what is 'forward' and what is 'backward'. In most cases, use the in_out stMotor as default.
+    fPosition : LREAL;
+	// Ignores EPS
+    bEPS_Override : BOOL;
 
 END_VAR
 VAR_OUTPUT
@@ -22,6 +23,7 @@ VAR
     nPreviousState : DINT;
     nIndex: DINT;
     nEPSIndex: DINT;
+	bUnknownState: BOOL;
     fbBwdEPS: FB_EPS;
     fbFwdEPS: FB_EPS;
 END_VAR
@@ -31,9 +33,11 @@ END_VAR
 fbFwdEPS(eps:=stForwardMotorEPS);
 
 // Look through possible states to see which state we are in
+bUnknownState := TRUE;
 FOR nIndex := LOWER_BOUND(aEPSLimits, 1) TO UPPER_BOUND(aEPSLimits, 1) BY 1 DO
     IF aEPSLimits[nIndex].stEPS.bEPS_OK THEN
         nEPSIndex := nIndex;
+		bUnknownState := FALSE; // Known State
     END_IF
 END_FOR
 
@@ -58,6 +62,19 @@ IF fPosition < aEPSLimits[nEPSIndex].fFwd_Limits THEN
     fbFwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), TRUE);
 ELSE
     fbFwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), FALSE);
+END_IF
+
+IF bUnknownState THEN
+	stBackwardMotorEPS.bEPS_OK := FALSE;
+	stForwardMotorEPS.bEPS_OK := FALSE;
+	
+	stBackwardMotorEPS.sFlagDesc := 'UNKNOWN STATE';
+    stForwardMotorEPS.sFlagDesc := 'UNKNOWN STATE';
+END_IF
+
+IF bEPS_Override THEN
+	stBackwardMotorEPS.bEPS_OK := TRUE;
+	stForwardMotorEPS.bEPS_OK := TRUE;
 END_IF
 
 nPreviousState := nEPSIndex; // Update Previous State]]></ST>
