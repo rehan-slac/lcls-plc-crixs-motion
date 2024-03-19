@@ -5,20 +5,20 @@
 // Resets value of input after some elapsed time
 
 VAR_IN_OUT
-	bInput : BOOL;
+    bInput : BOOL;
 END_VAR
 VAR_INPUT
-	tElapsTime : TIME;
+    tElapsTime : TIME;
 END_VAR
 VAR
-	fbTimer : TON;
+    fbTimer : TON;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbTimer(IN := bInput, PT:= tElapsTime);
 
 IF fbTimer.Q THEN
-	bInput := FALSE;
+    bInput := FALSE;
 END_IF
 
 ]]></ST>
