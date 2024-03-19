@@ -13,6 +13,8 @@
 
     fRCC_Z 		: LREAL;
     fRCC_Y 		: LREAL;
+	
+	tEPS_OVRD_RESET_TIME : TIME := T#30s; // Resets overide after this amount of time.
 
 END_VAR]]></Declaration>
   </GVL>

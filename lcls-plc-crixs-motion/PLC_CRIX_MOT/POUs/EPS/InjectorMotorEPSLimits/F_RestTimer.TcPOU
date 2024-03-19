@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="F_RestTimer" Id="{1db109a2-39f6-4851-98e9-e4f5441e8a1b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM F_RestTimer
+// Resets value of input after some elapsed time
+
+VAR_IN_OUT
+	bInput : BOOL;
+END_VAR
+VAR_INPUT
+	tElapsTime : TIME;
+END_VAR
+VAR
+	fbTimer : TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbTimer(IN := bInput, PT:= tElapsTime);
+
+IF fbTimer.Q THEN
+	bInput := FALSE;
+END_IF
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

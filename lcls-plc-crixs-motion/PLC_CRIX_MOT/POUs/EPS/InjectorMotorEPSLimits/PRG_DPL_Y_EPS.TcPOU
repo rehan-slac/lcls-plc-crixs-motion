@@ -38,7 +38,7 @@ fbEPS(eps:=aDPL_Y_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-
+F_RestTimer(bInput:=bEPS_Override, tElapsTime:=tEPS_OVRD_RESET_TIME);
 fbCheckEPS(stMotor:=M2, fPosition:=M2.stAxisStatus.fActPosition, aEPSLimits:=aDPL_Y_EPS, stForwardMotorEPS:=M2.stEPSForwardEnable, stBackwardMotorEPS:= M2.stEPSBackwardEnable, bEPS_Override:= bEPS_Override);
 ]]></ST>
     </Implementation>

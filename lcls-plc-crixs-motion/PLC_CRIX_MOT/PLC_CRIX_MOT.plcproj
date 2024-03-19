@@ -164,6 +164,9 @@
     <Compile Include="POUs\EPS\InjectorMotorEPSLimits\F_InRange.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\F_RestTimer.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_DPL_X_EPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
