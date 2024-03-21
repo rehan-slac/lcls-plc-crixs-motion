@@ -9,7 +9,7 @@ VAR
     {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Y:EPS:OVRD_MODE'}
     bEPS_Override : BOOL := FALSE;
     {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Y:EPS:OVRD_COUNTDOWN'}
-    tEPS_TimerCountDown : TIME := T#0s;
+    tEPS_TimerCountDown : STRING := TIME_TO_STRING(T#0s);
 
     bInit 		: BOOL := TRUE;
     bFullRange	: BOOL;

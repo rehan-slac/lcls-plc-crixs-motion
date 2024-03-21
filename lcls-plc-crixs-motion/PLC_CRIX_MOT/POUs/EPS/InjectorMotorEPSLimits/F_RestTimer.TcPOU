@@ -9,7 +9,7 @@
 
 VAR_IN_OUT
     bInput : BOOL;
-    tCountDown : Time;
+    tCountDown : STRING;
 END_VAR
 VAR_INPUT
     tElapseTime : TIME;
@@ -22,12 +22,12 @@ END_VAR
       <ST><![CDATA[fbTimer(IN := bInput, PT:= tElapseTime);
 
 IF bInput THEN
-    tCountDown := tElapseTime - fbTimer.ET;
+    tCountDown := TIME_TO_STRING(tElapseTime - fbTimer.ET);
 END_IF
 
 IF fbTimer.Q THEN
     bInput := FALSE;
-    tCountDown := T#0s;
+    tCountDown := TIME_TO_STRING(T#0s);
 END_IF
 
 ]]></ST>
