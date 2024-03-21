@@ -55353,104 +55353,6 @@ record(waveform, "CRIX:DPL:MMS:X:EPS:03:ST:sMessage_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "CRIX:DPL:MMS:X:EPS:04:BwdLimit_RBV") {
-  field(DESC, "PRG_DPL_X_EPS.aDPL_X_EPS[4].fBwd_Limits")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_DPL_X_EPS.aDPL_X_EPS[4].fBwd_Limits?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
-  info(archive, "VAL")
-}
-
-record(ao, "CRIX:DPL:MMS:X:EPS:04:BwdLimit") {
-  field(DESC, "PRG_DPL_X_EPS.aDPL_X_EPS[4].fBwd_Limits")
-  field(DTYP, "asynFloat64")
-  field(UDFS, "0")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_DPL_X_EPS.aDPL_X_EPS[4].fBwd_Limits=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "CRIX:DPL:MMS:X:EPS:04:FwdLimit_RBV") {
-  field(DESC, "PRG_DPL_X_EPS.aDPL_X_EPS[4].fFwd_Limits")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_DPL_X_EPS.aDPL_X_EPS[4].fFwd_Limits?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
-  info(archive, "VAL")
-}
-
-record(ao, "CRIX:DPL:MMS:X:EPS:04:FwdLimit") {
-  field(DESC, "PRG_DPL_X_EPS.aDPL_X_EPS[4].fFwd_Limits")
-  field(DTYP, "asynFloat64")
-  field(UDFS, "0")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_DPL_X_EPS.aDPL_X_EPS[4].fFwd_Limits=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "CRIX:DPL:MMS:X:EPS:04:ST:bEPS_OK_RBV") {
-  field(DESC, "check if nFlags are all true")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_DPL_X_EPS.aDPL_X_EPS[4].stEPS.bEPS_OK?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
-  info(archive, "VAL")
-}
-
-record(longin, "CRIX:DPL:MMS:X:EPS:04:ST:nFlags_RBV") {
-  field(DESC, "Contains EPS flags")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_DPL_X_EPS.aDPL_X_EPS[4].stEPS.nFlags?")
-  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
-  info(archive, "VAL")
-}
-
-record(waveform, "CRIX:DPL:MMS:X:EPS:04:ST:sFlagDesc_RBV") {
-  field(DESC, "semicolon-delimited nFlag variable")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_DPL_X_EPS.aDPL_X_EPS[4].stEPS.sFlagDesc?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-  field(MPST, "On Change")
-  field(APST, "On Change")
-  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
-  info(archive, "VAL")
-}
-
-record(waveform, "CRIX:DPL:MMS:X:EPS:04:ST:sMessage_RBV") {
-  field(DESC, "Message from EPS to usr")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_DPL_X_EPS.aDPL_X_EPS[4].stEPS.sMessage?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-  field(MPST, "On Change")
-  field(APST, "On Change")
-  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
-  info(archive, "VAL")
-}
-
 record(bi, "CRIX:DPL:MMS:X:EPS:OVRD_MODE_RBV") {
   field(DESC, "PRG_DPL_X_EPS.bEPS_Override")
   field(SCAN, "I/O Intr")
@@ -55472,6 +55374,34 @@ record(bo, "CRIX:DPL:MMS:X:EPS:OVRD_MODE") {
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:DPL:MMS:X:EPS:OVRD_COUNTDOWN_RBV") {
+  field(DESC, "PRG_DPL_X_EPS.tEPS_TimerCountDown")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_DPL_X_EPS.tEPS_TimerCountDown?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:DPL:MMS:X:EPS:OVRD_COUNTDOWN") {
+  field(DESC, "PRG_DPL_X_EPS.tEPS_TimerCountDown")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/PRG_DPL_X_EPS.tEPS_TimerCountDown=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -55692,6 +55622,34 @@ record(bo, "CRIX:DPL:MMS:Y:EPS:OVRD_MODE") {
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:DPL:MMS:Y:EPS:OVRD_COUNTDOWN_RBV") {
+  field(DESC, "PRG_DPL_Y_EPS.tEPS_TimerCountDown")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_DPL_Y_EPS.tEPS_TimerCountDown?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:DPL:MMS:Y:EPS:OVRD_COUNTDOWN") {
+  field(DESC, "PRG_DPL_Y_EPS.tEPS_TimerCountDown")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/PRG_DPL_Y_EPS.tEPS_TimerCountDown=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -56111,6 +56069,34 @@ record(bo, "CRIX:DPL:MMS:Z:EPS:OVRD_MODE") {
   info(archive, "VAL")
 }
 
+record(waveform, "CRIX:DPL:MMS:Z:EPS:OVRD_COUNTDOWN_RBV") {
+  field(DESC, "PRG_DPL_Z_EPS.tEPS_TimerCountDown")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_DPL_Z_EPS.tEPS_TimerCountDown?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:DPL:MMS:Z:EPS:OVRD_COUNTDOWN") {
+  field(DESC, "PRG_DPL_Z_EPS.tEPS_TimerCountDown")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/PRG_DPL_Z_EPS.tEPS_TimerCountDown=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:RCC:MMS:Y:EPS:01:BwdLimit_RBV") {
   field(DESC, "PRG_RCC_Y_EPS.aRCC_Y_EPS[1].fBwd_Limits")
   field(SCAN, "I/O Intr")
@@ -56527,6 +56513,34 @@ record(bo, "CRIX:RCC:MMS:Y:EPS:OVRD_MODE") {
   info(archive, "VAL")
 }
 
+record(waveform, "CRIX:RCC:MMS:Y:EPS:OVRD_COUNTDOWN_RBV") {
+  field(DESC, "PRG_RCC_Y_EPS.tEPS_TimerCountDown")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_RCC_Y_EPS.tEPS_TimerCountDown?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:RCC:MMS:Y:EPS:OVRD_COUNTDOWN") {
+  field(DESC, "PRG_RCC_Y_EPS.tEPS_TimerCountDown")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/PRG_RCC_Y_EPS.tEPS_TimerCountDown=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:RCC:MMS:Z:EPS:01:BwdLimit_RBV") {
   field(DESC, "PRG_RCC_Z_EPS.aRCC_Z_EPS[1].fBwd_Limits")
   field(SCAN, "I/O Intr")
@@ -56821,7 +56835,7 @@ record(waveform, "CRIX:RCC:MMS:Z:EPS:03:ST:sMessage_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "CRIX:RCC:MMS:Z:EPS_RBV") {
+record(bi, "CRIX:RCC:MMS:Z:EPS:OVRD_MODE_RBV") {
   field(DESC, "PRG_RCC_Z_EPS.bEPS_Override")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -56834,7 +56848,7 @@ record(bi, "CRIX:RCC:MMS:Z:EPS_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "CRIX:RCC:MMS:Z:EPS") {
+record(bo, "CRIX:RCC:MMS:Z:EPS:OVRD_MODE") {
   field(DESC, "PRG_RCC_Z_EPS.bEPS_Override")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -56842,6 +56856,34 @@ record(bo, "CRIX:RCC:MMS:Z:EPS") {
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:RCC:MMS:Z:EPS:OVRD_COUNTDOWN_RBV") {
+  field(DESC, "PRG_RCC_Z_EPS.tEPS_TimerCountDown")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_RCC_Z_EPS.tEPS_TimerCountDown?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:RCC:MMS:Z:EPS:OVRD_COUNTDOWN") {
+  field(DESC, "PRG_RCC_Z_EPS.tEPS_TimerCountDown")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/PRG_RCC_Z_EPS.tEPS_TimerCountDown=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -57423,6 +57465,34 @@ record(bo, "CRIX:SDS:MMS:RY:EPS:OVRD_MODE") {
   info(archive, "VAL")
 }
 
+record(waveform, "CRIX:SDS:MMS:RY:EPS:OVRD_COUNTDOWN_RBV") {
+  field(DESC, "PRG_SDS_RY_EPS.tEPS_TimerCountDown")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SDS_RY_EPS.tEPS_TimerCountDown?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:SDS:MMS:RY:EPS:OVRD_COUNTDOWN") {
+  field(DESC, "PRG_SDS_RY_EPS.tEPS_TimerCountDown")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SDS_RY_EPS.tEPS_TimerCountDown=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(ai, "CRIX:SDS:MMS:Y:EPS:01:BwdLimit_RBV") {
   field(DESC, "PRG_SDS_Y_EPS.aSDS_Y_EPS[1].fBwd_Limits")
   field(SCAN, "I/O Intr")
@@ -57913,7 +57983,7 @@ record(waveform, "CRIX:SDS:MMS:Y:EPS:05:ST:sMessage_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "CRIX:SDS:MMS:Y:EPS_RBV") {
+record(bi, "CRIX:SDS:MMS:Y:EPS:OVRD_MODE_RBV") {
   field(DESC, "PRG_SDS_Y_EPS.bEPS_Override")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -57926,7 +57996,7 @@ record(bi, "CRIX:SDS:MMS:Y:EPS_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "CRIX:SDS:MMS:Y:EPS") {
+record(bo, "CRIX:SDS:MMS:Y:EPS:OVRD_MODE") {
   field(DESC, "PRG_SDS_Y_EPS.bEPS_Override")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -57934,6 +58004,34 @@ record(bo, "CRIX:SDS:MMS:Y:EPS") {
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:SDS:MMS:Y:EPS:OVRD_COUNTDOWN_RBV") {
+  field(DESC, "PRG_SDS_Y_EPS.tEPS_TimerCountDown")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SDS_Y_EPS.tEPS_TimerCountDown?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:SDS:MMS:Y:EPS:OVRD_COUNTDOWN") {
+  field(DESC, "PRG_SDS_Y_EPS.tEPS_TimerCountDown")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SDS_Y_EPS.tEPS_TimerCountDown=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
 
@@ -58447,108 +58545,6 @@ record(waveform, "CRIX:SDS:MMS:ZENC:EPS:05:ST:sMessage_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "CRIX:SDS:MMS:ZENC:EPS:06:BwdLimit_RBV") {
-  # PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].fBwd_Limits
-  field(DESC, "PRG_SDS_ZENCODER_EPS...PS[6].fBwd_Limits")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].fBwd_Limits?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
-  info(archive, "VAL")
-}
-
-record(ao, "CRIX:SDS:MMS:ZENC:EPS:06:BwdLimit") {
-  # PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].fBwd_Limits
-  field(DESC, "PRG_SDS_ZENCODER_EPS...PS[6].fBwd_Limits")
-  field(DTYP, "asynFloat64")
-  field(UDFS, "0")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].fBwd_Limits=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "CRIX:SDS:MMS:ZENC:EPS:06:FwdLimit_RBV") {
-  # PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].fFwd_Limits
-  field(DESC, "PRG_SDS_ZENCODER_EPS...PS[6].fFwd_Limits")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].fFwd_Limits?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
-  info(archive, "VAL")
-}
-
-record(ao, "CRIX:SDS:MMS:ZENC:EPS:06:FwdLimit") {
-  # PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].fFwd_Limits
-  field(DESC, "PRG_SDS_ZENCODER_EPS...PS[6].fFwd_Limits")
-  field(DTYP, "asynFloat64")
-  field(UDFS, "0")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].fFwd_Limits=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "CRIX:SDS:MMS:ZENC:EPS:06:ST:bEPS_OK_RBV") {
-  field(DESC, "check if nFlags are all true")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].stEPS.bEPS_OK?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
-  info(archive, "VAL")
-}
-
-record(longin, "CRIX:SDS:MMS:ZENC:EPS:06:ST:nFlags_RBV") {
-  field(DESC, "Contains EPS flags")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].stEPS.nFlags?")
-  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
-  info(archive, "VAL")
-}
-
-record(waveform, "CRIX:SDS:MMS:ZENC:EPS:06:ST:sFlagDesc_RBV") {
-  field(DESC, "semicolon-delimited nFlag variable")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].stEPS.sFlagDesc?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-  field(MPST, "On Change")
-  field(APST, "On Change")
-  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
-  info(archive, "VAL")
-}
-
-record(waveform, "CRIX:SDS:MMS:ZENC:EPS:06:ST:sMessage_RBV") {
-  field(DESC, "Message from EPS to usr")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS[6].stEPS.sMessage?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-  field(MPST, "On Change")
-  field(APST, "On Change")
-  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
-  info(archive, "VAL")
-}
-
 record(bi, "CRIX:SDS:MMS:ZENC:EPS:OVRD_MODE_RBV") {
   field(DESC, "PRG_SDS_ZENCODER_EPS.bEPS_Override")
   field(SCAN, "I/O Intr")
@@ -58570,5 +58566,33 @@ record(bo, "CRIX:SDS:MMS:ZENC:EPS:OVRD_MODE") {
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:SDS:MMS:ZENC:EPS:OVRD_COUNTDOWN_RBV") {
+  field(DESC, "PRG_SDS_ZENCODER_EPS.tEPS_TimerCountDown")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_SDS_ZENCODER_EPS.tEPS_TimerCountDown?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(waveform, "CRIX:SDS:MMS:ZENC:EPS:OVRD_COUNTDOWN") {
+  field(DESC, "PRG_SDS_ZENCODER_EPS.tEPS_TimerCountDown")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/PRG_SDS_ZENCODER_EPS.tEPS_TimerCountDown=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC DISS SIMS UDFS VAL")
   info(archive, "VAL")
 }
