@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{07E3BD6E-1FE0-F226-2C12-25252C4BCDA6}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{DA6B7AD4-B69E-ABF3-4794-38EB91505CBE}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -7564,6 +7564,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>FindTestSuiteInstancePath</Name>
@@ -7822,6 +7827,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_BYTE</Name>
@@ -7923,6 +7933,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8082,6 +8097,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_LTIME</Name>
@@ -8204,6 +8224,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8345,6 +8370,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9106,6 +9136,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>SetHasStartedRunning</Name>
@@ -9266,6 +9301,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>GetHasStartedRunning</Name>
@@ -9368,6 +9408,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9522,6 +9567,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_DINT</Name>
@@ -9644,6 +9694,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9819,6 +9874,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10101,6 +10161,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10897,6 +10962,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_UDINT</Name>
@@ -10988,6 +11058,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -34659,6 +34734,49 @@ These features efficiently address the addition, removal, and verification of be
       </Properties>
     </DataType>
     <DataType>
+      <Name>ST_EPSLimits</Name>
+      <BitSize>1472</BitSize>
+      <SubItem>
+        <Name>fFwd_Limits</Name>
+        <Type>LREAL</Type>
+        <Comment> Forward Limit</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>0</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: FwdLimit</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fBwd_Limits</Name>
+        <Type>LREAL</Type>
+        <Comment> Backward Limit</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: BwdLimit</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stEPS</Name>
+        <Type Namespace="LCLS_General">DUT_EPS</Type>
+        <Comment> EPS_OK - TRUE, Use limits as 'plc limits'; EPS_OK - FALSE, DO not use limits</Comment>
+        <BitSize>1344</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: ST</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+    </DataType>
+    <DataType>
       <Name Namespace="LCLS_General">FB_EPS</Name>
       <BitSize>64</BitSize>
       <SubItem>
@@ -34724,49 +34842,6 @@ These features efficiently address the addition, removal, and verification of be
           <Value>FunctionBlock</Value>
         </Property>
       </Properties>
-    </DataType>
-    <DataType>
-      <Name>ST_EPSLimits</Name>
-      <BitSize>1472</BitSize>
-      <SubItem>
-        <Name>fFwd_Limits</Name>
-        <Type>LREAL</Type>
-        <Comment> Forward Limit</Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>0</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: FwdLimit</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fBwd_Limits</Name>
-        <Type>LREAL</Type>
-        <Comment> Backward Limit</Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: BwdLimit</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stEPS</Name>
-        <Type Namespace="LCLS_General">DUT_EPS</Type>
-        <Comment> EPS_OK - TRUE, Use limits as 'plc limits'; EPS_OK - FALSE, DO not use limits</Comment>
-        <BitSize>1344</BitSize>
-        <BitOffs>128</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: ST</Value>
-          </Property>
-        </Properties>
-      </SubItem>
     </DataType>
     <DataType>
       <Name>FB_CheckEPS</Name>
@@ -35886,7 +35961,7 @@ These features efficiently address the addition, removal, and verification of be
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82313216</ByteSize>
+          <ByteSize>82247680</ByteSize>
           <Symbol>
             <Name>PRG_RCI.iMagnetInINT</Name>
             <BitSize>16</BitSize>
@@ -36726,7 +36801,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648673728</BitOffs>
+            <BitOffs>648720832</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -36738,7 +36813,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>648972032</BitOffs>
+            <BitOffs>649019136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMZStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -36750,7 +36825,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>649270336</BitOffs>
+            <BitOffs>649317440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Main.M1.Axis.NcToPlc</Name>
@@ -42633,7 +42708,7 @@ These features efficiently address the addition, removal, and verification of be
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82313216</ByteSize>
+          <ByteSize>82247680</ByteSize>
           <Symbol>
             <Name>PRG_RCI.iMagnetOutINT</Name>
             <BitSize>16</BitSize>
@@ -43306,7 +43381,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648658240</BitOffs>
+            <BitOffs>648705344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput1.iIlluminatorINT</Name>
@@ -43318,7 +43393,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648658256</BitOffs>
+            <BitOffs>648705360</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput1.fbSetIllPercent.iRaw</Name>
@@ -43331,7 +43406,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648658752</BitOffs>
+            <BitOffs>648705856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput2.bLedPower</Name>
@@ -43351,7 +43426,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648659648</BitOffs>
+            <BitOffs>648706752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput2.iIlluminatorINT</Name>
@@ -43363,7 +43438,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648659664</BitOffs>
+            <BitOffs>648706768</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput2.fbSetIllPercent.iRaw</Name>
@@ -43376,7 +43451,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648660160</BitOffs>
+            <BitOffs>648707264</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMXStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -43388,7 +43463,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648672704</BitOffs>
+            <BitOffs>648719808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -43400,7 +43475,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>648971008</BitOffs>
+            <BitOffs>649018112</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMZStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -43412,7 +43487,7 @@ These features efficiently address the addition, removal, and verification of be
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>649269312</BitOffs>
+            <BitOffs>649316416</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
@@ -44759,7 +44834,7 @@ These features efficiently address the addition, removal, and verification of be
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82313216</ByteSize>
+          <ByteSize>82247680</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -51109,34 +51184,50 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <BitOffs>648602992</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PRG_SDS_Y_EPS.aSDS_Y_EPS</Name>
+            <BitSize>7360</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>5</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:SDS:MMS:Y:EPS</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648603008</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>PRG_SDS_Y_EPS.nEPSIndex</Name>
             <BitSize>16</BitSize>
             <BaseType>UINT</BaseType>
-            <BitOffs>648603008</BitOffs>
+            <BitOffs>648610368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_SDS_ZENCODER_EPS.bSDS_vert_transport_state</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
-            <BitOffs>648603024</BitOffs>
+            <BitOffs>648610384</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_SDS_ZENCODER_EPS.bFullRange</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
-            <BitOffs>648603032</BitOffs>
+            <BitOffs>648610392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_SDS_Y_EPS.fbEPS</Name>
             <BitSize>64</BitSize>
             <BaseType Namespace="LCLS_General">FB_EPS</BaseType>
-            <BitOffs>648603040</BitOffs>
+            <BitOffs>648610400</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_SDS_ZENCODER_EPS.bUnknownState</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
-            <BitOffs>648603104</BitOffs>
+            <BitOffs>648610464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_SDS_RY_EPS.bInit</Name>
@@ -51145,13 +51236,13 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <Default>
               <Value>1</Value>
             </Default>
-            <BitOffs>648603112</BitOffs>
+            <BitOffs>648610472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_SDS_RY_EPS.bSDS_RY_FullRange</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
-            <BitOffs>648603120</BitOffs>
+            <BitOffs>648610480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_X_EPS.bInit</Name>
@@ -51160,43 +51251,91 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <Default>
               <Value>1</Value>
             </Default>
-            <BitOffs>648603128</BitOffs>
+            <BitOffs>648610488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_SDS_Y_EPS.fbCheckEPS</Name>
             <BitSize>576</BitSize>
             <BaseType>FB_CheckEPS</BaseType>
-            <BitOffs>648603136</BitOffs>
+            <BitOffs>648610496</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS</Name>
+            <BitSize>8832</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>6</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:SDS:MMS:ZENC:EPS</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648611072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_SDS_ZENCODER_EPS.fbEPS</Name>
             <BitSize>64</BitSize>
             <BaseType Namespace="LCLS_General">FB_EPS</BaseType>
-            <BitOffs>648603712</BitOffs>
+            <BitOffs>648619904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_SDS_ZENCODER_EPS.fbCheckEPS</Name>
             <BitSize>576</BitSize>
             <BaseType>FB_CheckEPS</BaseType>
-            <BitOffs>648603776</BitOffs>
+            <BitOffs>648619968</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_SDS_RY_EPS.aSDS_RY_EPS</Name>
+            <BitSize>7360</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>5</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:SDS:MMS:RY:EPS</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648620544</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_SDS_RY_EPS.fbEPS</Name>
             <BitSize>64</BitSize>
             <BaseType Namespace="LCLS_General">FB_EPS</BaseType>
-            <BitOffs>648604352</BitOffs>
+            <BitOffs>648627904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_SDS_RY_EPS.fbCheckEPS</Name>
             <BitSize>576</BitSize>
             <BaseType>FB_CheckEPS</BaseType>
-            <BitOffs>648604416</BitOffs>
+            <BitOffs>648627968</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_DPL_X_EPS.aDPL_X_EPS</Name>
+            <BitSize>4416</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>3</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:DPL:MMS:X:EPS</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648628544</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_X_EPS.bFullRange</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
-            <BitOffs>648604992</BitOffs>
+            <BitOffs>648632960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_Y_EPS.bInit</Name>
@@ -51205,13 +51344,13 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <Default>
               <Value>1</Value>
             </Default>
-            <BitOffs>648605000</BitOffs>
+            <BitOffs>648632968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_Y_EPS.bFullRange</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
-            <BitOffs>648605008</BitOffs>
+            <BitOffs>648632976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_Z_EPS.bInit</Name>
@@ -51220,19 +51359,19 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <Default>
               <Value>1</Value>
             </Default>
-            <BitOffs>648605016</BitOffs>
+            <BitOffs>648632984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_X_EPS.fbEPS</Name>
             <BitSize>64</BitSize>
             <BaseType Namespace="LCLS_General">FB_EPS</BaseType>
-            <BitOffs>648605024</BitOffs>
+            <BitOffs>648632992</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_Z_EPS.bFullRange</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
-            <BitOffs>648605088</BitOffs>
+            <BitOffs>648633056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_RCC_Y_EPS.bInit</Name>
@@ -51241,13 +51380,13 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <Default>
               <Value>1</Value>
             </Default>
-            <BitOffs>648605096</BitOffs>
+            <BitOffs>648633064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_RCC_Y_EPS.bFullRange</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
-            <BitOffs>648605104</BitOffs>
+            <BitOffs>648633072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_RCC_Z_EPS.bInit</Name>
@@ -51256,55 +51395,119 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <Default>
               <Value>1</Value>
             </Default>
-            <BitOffs>648605112</BitOffs>
+            <BitOffs>648633080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_X_EPS.fbCheckEPS</Name>
             <BitSize>576</BitSize>
             <BaseType>FB_CheckEPS</BaseType>
-            <BitOffs>648605120</BitOffs>
+            <BitOffs>648633088</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_DPL_Y_EPS.aDPL_Y_EPS</Name>
+            <BitSize>2944</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>2</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:DPL:MMS:Y:EPS</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648633664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_Y_EPS.fbEPS</Name>
             <BitSize>64</BitSize>
             <BaseType Namespace="LCLS_General">FB_EPS</BaseType>
-            <BitOffs>648605696</BitOffs>
+            <BitOffs>648636608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_Y_EPS.fbCheckEPS</Name>
             <BitSize>576</BitSize>
             <BaseType>FB_CheckEPS</BaseType>
-            <BitOffs>648605760</BitOffs>
+            <BitOffs>648636672</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_DPL_Z_EPS.aDPL_Z_EPS</Name>
+            <BitSize>5888</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>4</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:DPL:MMS:Z:EPS</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648637248</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_Z_EPS.fbEPS</Name>
             <BitSize>64</BitSize>
             <BaseType Namespace="LCLS_General">FB_EPS</BaseType>
-            <BitOffs>648606336</BitOffs>
+            <BitOffs>648643136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_DPL_Z_EPS.fbCheckEPS</Name>
             <BitSize>576</BitSize>
             <BaseType>FB_CheckEPS</BaseType>
-            <BitOffs>648606400</BitOffs>
+            <BitOffs>648643200</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_RCC_Y_EPS.aRCC_Y_EPS</Name>
+            <BitSize>5888</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>4</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:RCC:MMS:Y:EPS</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648643776</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_RCC_Y_EPS.fbEPS</Name>
             <BitSize>64</BitSize>
             <BaseType Namespace="LCLS_General">FB_EPS</BaseType>
-            <BitOffs>648606976</BitOffs>
+            <BitOffs>648649664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_RCC_Y_EPS.fbCheckEPS</Name>
             <BitSize>576</BitSize>
             <BaseType>FB_CheckEPS</BaseType>
-            <BitOffs>648607040</BitOffs>
+            <BitOffs>648649728</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_RCC_Z_EPS.aRCC_Z_EPS</Name>
+            <BitSize>4416</BitSize>
+            <BaseType>ST_EPSLimits</BaseType>
+            <ArrayInfo>
+              <LBound>1</LBound>
+              <Elements>3</Elements>
+            </ArrayInfo>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: CRIX:RCC:MMS:Z:EPS</Value>
+              </Property>
+            </Properties>
+            <BitOffs>648650304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_RCC_Z_EPS.bFullRange</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
-            <BitOffs>648607616</BitOffs>
+            <BitOffs>648654720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.xOverride</Name>
@@ -51319,7 +51522,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648607624</BitOffs>
+            <BitOffs>648654728</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bLittleEndian</Name>
@@ -51334,13 +51537,13 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648607640</BitOffs>
+            <BitOffs>648654744</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_RCC_Z_EPS.fbEPS</Name>
             <BitSize>64</BitSize>
             <BaseType Namespace="LCLS_General">FB_EPS</BaseType>
-            <BitOffs>648607648</BitOffs>
+            <BitOffs>648654752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bSimulationMode</Name>
@@ -51355,7 +51558,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648607712</BitOffs>
+            <BitOffs>648654816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bFPUSupport</Name>
@@ -51369,7 +51572,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648607720</BitOffs>
+            <BitOffs>648654824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.nRegisterSize</Name>
@@ -51384,13 +51587,13 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648607728</BitOffs>
+            <BitOffs>648654832</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_RCC_Z_EPS.fbCheckEPS</Name>
             <BitSize>576</BitSize>
             <BaseType>FB_CheckEPS</BaseType>
-            <BitOffs>648607744</BitOffs>
+            <BitOffs>648654848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPXPosPark</Name>
@@ -51441,7 +51644,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648608320</BitOffs>
+            <BitOffs>648655424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPXPosCenter</Name>
@@ -51490,7 +51693,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648611968</BitOffs>
+            <BitOffs>648659072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPXPosKnife</Name>
@@ -51539,7 +51742,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648615616</BitOffs>
+            <BitOffs>648662720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosPark</Name>
@@ -51589,7 +51792,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648619264</BitOffs>
+            <BitOffs>648666368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosCenter</Name>
@@ -51638,7 +51841,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648622912</BitOffs>
+            <BitOffs>648670016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosDiode</Name>
@@ -51687,7 +51890,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648626560</BitOffs>
+            <BitOffs>648673664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosPinhole</Name>
@@ -51736,7 +51939,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648630208</BitOffs>
+            <BitOffs>648677312</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosYAG1</Name>
@@ -51785,7 +51988,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648633856</BitOffs>
+            <BitOffs>648680960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosYAG2</Name>
@@ -51834,7 +52037,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648637504</BitOffs>
+            <BitOffs>648684608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosYAG3</Name>
@@ -51883,7 +52086,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648641152</BitOffs>
+            <BitOffs>648688256</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYPosKnife</Name>
@@ -51932,7 +52135,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648644800</BitOffs>
+            <BitOffs>648691904</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPZPosPark</Name>
@@ -51982,7 +52185,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648648448</BitOffs>
+            <BitOffs>648695552</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPZPosCenter</Name>
@@ -52031,7 +52234,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648652096</BitOffs>
+            <BitOffs>648699200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPPark</Name>
@@ -52056,7 +52259,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648655744</BitOffs>
+            <BitOffs>648702848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPUp</Name>
@@ -52081,7 +52284,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648655840</BitOffs>
+            <BitOffs>648702944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPCenter</Name>
@@ -52106,7 +52309,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648655936</BitOffs>
+            <BitOffs>648703040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPPinhole</Name>
@@ -52131,7 +52334,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648656032</BitOffs>
+            <BitOffs>648703136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPDiode</Name>
@@ -52156,7 +52359,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648656128</BitOffs>
+            <BitOffs>648703232</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYag1</Name>
@@ -52181,7 +52384,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648656224</BitOffs>
+            <BitOffs>648703328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYag2</Name>
@@ -52206,7 +52409,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648656320</BitOffs>
+            <BitOffs>648703424</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPYag3</Name>
@@ -52231,7 +52434,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648656416</BitOffs>
+            <BitOffs>648703520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.stDPKnife</Name>
@@ -52256,7 +52459,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648656512</BitOffs>
+            <BitOffs>648703616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_DiagnosticPaddle.arrDPStates</Name>
@@ -52381,7 +52584,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648656608</BitOffs>
+            <BitOffs>648703712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput1</Name>
@@ -52404,7 +52607,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648657472</BitOffs>
+            <BitOffs>648704576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_FiberLite.bLedOutput2</Name>
@@ -52426,7 +52629,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648658880</BitOffs>
+            <BitOffs>648705984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.stILMXPosPark</Name>
@@ -52477,7 +52680,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648660288</BitOffs>
+            <BitOffs>648707392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.stILMYPosPark</Name>
@@ -52527,7 +52730,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648663936</BitOffs>
+            <BitOffs>648711040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.stILMZPosPark</Name>
@@ -52577,7 +52780,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648667584</BitOffs>
+            <BitOffs>648714688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMXStage</Name>
@@ -52588,7 +52791,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648671232</BitOffs>
+            <BitOffs>648718336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMYStage</Name>
@@ -52599,7 +52802,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>648969536</BitOffs>
+            <BitOffs>649016640</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Illumination.fbILMZStage</Name>
@@ -52610,7 +52813,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>649267840</BitOffs>
+            <BitOffs>649314944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_MotorEPS.fDPL_X</Name>
@@ -54886,142 +55089,14 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>652458080</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_SDS_Y_EPS.aSDS_Y_EPS</Name>
-            <BitSize>7360</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>5</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:SDS:MMS:Y:EPS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>657226560</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_SDS_ZENCODER_EPS.aSDS_Z_ENC_EPS</Name>
-            <BitSize>8832</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>6</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:SDS:MMS:ZENC:EPS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>657233920</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_SDS_RY_EPS.aSDS_RY_EPS</Name>
-            <BitSize>7360</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>5</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:SDS:MMS:RY:EPS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>657242752</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_DPL_X_EPS.aDPL_X_EPS</Name>
-            <BitSize>4416</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>3</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:DPL:MMS:X:EPS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>657250112</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_DPL_Y_EPS.aDPL_Y_EPS</Name>
-            <BitSize>2944</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>2</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:DPL:MMS:Y:EPS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>657254528</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_DPL_Z_EPS.aDPL_Z_EPS</Name>
-            <BitSize>5888</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>4</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:DPL:MMS:Z:EPS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>657257472</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_RCC_Y_EPS.aRCC_Y_EPS</Name>
-            <BitSize>5888</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>4</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:RCC:MMS:Y:EPS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>657263360</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_RCC_Z_EPS.aRCC_Z_EPS</Name>
-            <BitSize>4416</BitSize>
-            <BaseType>ST_EPSLimits</BaseType>
-            <ArrayInfo>
-              <LBound>1</LBound>
-              <Elements>3</Elements>
-            </ArrayInfo>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: CRIX:RCC:MMS:Z:EPS</Value>
-              </Property>
-            </Properties>
-            <BitOffs>657269248</BitOffs>
+            <BitOffs>652473696</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82313216</ByteSize>
+          <ByteSize>82247680</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -55086,7 +55161,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-02-12T15:21:07</Value>
+          <Value>2024-03-26T11:03:38</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
