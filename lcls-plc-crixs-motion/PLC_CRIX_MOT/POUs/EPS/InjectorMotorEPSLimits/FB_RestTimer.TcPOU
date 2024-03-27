@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="F_RestTimer" Id="{1db109a2-39f6-4851-98e9-e4f5441e8a1b}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM F_RestTimer
+  <POU Name="FB_RestTimer" Id="{1db109a2-39f6-4851-98e9-e4f5441e8a1b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_RestTimer
 // Resets value of input after some time
 // bInput 	: Value that will reset when set to true after some time passes
 // tCountdown : count down when input will be rest

@@ -11,6 +11,7 @@ VAR
 
     {attribute 'pytmc' := 'pv: CRIX:RCC:MMS:Y:EPS:OVRD_COUNTDOWN'}
     tEPS_TimerCountDown : STRING := TIME_TO_STRING(T#0s);
+    fbResetTimer : FB_RestTimer;
 
     bInit 		: BOOL := TRUE;
     bFullRange	: BOOL;
@@ -61,7 +62,7 @@ fbEPS(eps:=aRCC_Y_EPS[1].stEPS);
 fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-F_RestTimer(bInput:=bEPS_Override, tElapseTime:=tEPS_OVRD_RESET_TIME, tCountDown:=tEPS_TimerCountDown);
+fbResetTimer(bInput:=bEPS_Override, tElapseTime:=tEPS_OVRD_RESET_TIME, tCountDown:=tEPS_TimerCountDown);
 fbCheckEPS(stMotor:=M38, fPosition:=fRCC_Y, aEPSLimits:=aRCC_Y_EPS, stForwardMotorEPS:=M38.stEPSForwardEnable, stBackwardMotorEPS:= M38.stEPSBackwardEnable, bEPS_Override:=bEPS_Override);]]></ST>
     </Implementation>
   </POU>
