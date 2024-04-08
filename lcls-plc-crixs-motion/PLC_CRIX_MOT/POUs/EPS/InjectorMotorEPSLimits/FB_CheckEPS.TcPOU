@@ -43,33 +43,33 @@ END_FOR
 
 IF (nPreviousState <> nEPSIndex) THEN
     // only clear stMotor eps from previous state.
-    stBackwardMotorEPS.nFlags := stBackwardMotorEPS.nFlags OR (NOT aEPSLimits[nEPSIndex].stEPS.nFlags);
-    stForwardMotorEPS.nFlags :=  stForwardMotorEPS.nFlags OR (NOT aEPSLimits[nEPSIndex].stEPS.nFlags);
+    fbBwdEPS.setBit(DINT_TO_BYTE(0), TRUE);
+    fbBwdEPS.setBit(DINT_TO_BYTE(0), TRUE);
 END_IF
 
 // Check if position is in plc limit rage, Stop motor if out of Upper/Lower bounds
 IF fPosition > aEPSLimits[nEPSIndex].fBwd_Limits THEN
-    fbBwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), TRUE);
+    fbBwdEPS.setBit(DINT_TO_BYTE(0), TRUE);
 ELSE
-    fbBwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), FALSE);
+    fbBwdEPS.setBit(DINT_TO_BYTE(0), FALSE);
 END_IF
 
 IF fPosition < aEPSLimits[nEPSIndex].fFwd_Limits THEN
-    fbFwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), TRUE);
+    fbFwdEPS.setBit(DINT_TO_BYTE(0), TRUE);
 ELSE
-    fbFwdEPS.setBit(DINT_TO_BYTE(nEPSIndex), FALSE);
+    fbFwdEPS.setBit(DINT_TO_BYTE(0), FALSE);
 END_IF
 
 IF bUnknownState THEN
     stBackwardMotorEPS.bEPS_OK := FALSE;
     stForwardMotorEPS.bEPS_OK := FALSE;
 
-    stBackwardMotorEPS.sFlagDesc := 'UNKNOWN STATE';
-    stForwardMotorEPS.sFlagDesc := 'UNKNOWN STATE';
+    stBackwardMotorEPS.sMessage := 'UNKNOWN STATE';
+    stForwardMotorEPS.sMessage := 'UNKNOWN STATE';
     ELSE
     // Update Labels
-    stBackwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
-    stForwardMotorEPS.sFlagDesc := aEPSLimits[nEPSIndex].stEPS.sFlagDesc;
+    stBackwardMotorEPS.sMessage := aEPSLimits[nEPSIndex].stEPS.sMessage;
+    stForwardMotorEPS.sMessage := aEPSLimits[nEPSIndex].stEPS.sMessage;
 END_IF
 
 IF bEPS_Override THEN
