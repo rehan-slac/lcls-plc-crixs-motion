@@ -6,6 +6,12 @@ VAR
     {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Z:EPS'}
     aDPL_Z_EPS 	    : ARRAY [1 .. 4] OF ST_EPSLimits;
 
+    {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Z:EPS:OVRD_MODE'}
+    bEPS_Override: BOOL := FALSE;
+    {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Z:EPS:OVRD_COUNTDOWN'}
+    tEPS_TimerCountDown : STRING := TIME_TO_STRING(T#0s);
+    fbResetTimer : FB_RestTimer;
+
     bInit 		: BOOL := TRUE;
     bFullRange 	: BOOL;
 
@@ -32,16 +38,16 @@ END_VAR
 END_IF
 
 fbEPS(eps:=aDPL_Z_EPS[2].stEPS);
-fbEPS.setDescription('DPL X in [10,30]');
-fbEPS.setBit(0, F_InRange(fDPL_X, 10, 30));
+fbEPS.setMessage('DPL X in [10,30]');
+fbEPS.setBit(0, F_InRange(fDPL_X, 10, 60));
 
 fbEPS(eps:=aDPL_Z_EPS[3].stEPS);
-fbEPS.setDescription('RCC Y in [-34,10];RCC_Z in [-15,11]');
+fbEPS.setMessage('RCC Y in [-34,10];RCC_Z in [-15,11]');
 fbEPS.setBit(0, F_InRange(fRCC_Y, -34, 10));
 fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
 
 fbEPS(eps:=aDPL_Z_EPS[4].stEPS);
-fbEPS.setDescription('RCC_Y in [-38,-34];RCC_Z in [-15,11];DPL_Y in [-1,40]');
+fbEPS.setMessage('RCC_Y in [-38,-34];RCC_Z in [-15,11];DPL_Y in [-1,40]');
 fbEPS.setBit(0, F_InRange(fRCC_Y, -38, -34));
 fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
 fbEPS.setBit(2, F_InRange(fDPL_Y, -1, 40));
@@ -49,10 +55,11 @@ fbEPS.setBit(2, F_InRange(fDPL_Y, -1, 40));
 bFullRange := (NOT aDPL_Z_EPS[2].stEPS.bEPS_OK) AND (NOT aDPL_Z_EPS[3].stEPS.bEPS_OK) AND (NOT aDPL_Z_EPS[4].stEPS.bEPS_OK);
 
 fbEPS(eps:=aDPL_Z_EPS[1].stEPS);
-fbEPS.setDescription('Full Range');
+fbEPS.setMessage('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-fbCheckEPS(stMotor:=M3, fPosition:=fDPL_Z, aEPSLimits:= aDPL_Z_EPS, stForwardMotorEPS:=M3.stEPSForwardEnable, stBackwardMotorEPS:= M3.stEPSBackwardEnable);]]></ST>
+fbResetTimer(bInput:=bEPS_Override, tElapseTime:=tEPS_OVRD_RESET_TIME, tCountDown:=tEPS_TimerCountDown);
+fbCheckEPS(stMotor:=M3, fPosition:=fDPL_Z, aEPSLimits:= aDPL_Z_EPS, stForwardMotorEPS:=M3.stEPSForwardEnable, stBackwardMotorEPS:= M3.stEPSBackwardEnable, bEPS_Override:=bEPS_Override);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

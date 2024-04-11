@@ -6,8 +6,13 @@ VAR
     {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Y:EPS'}
     aDPL_Y_EPS		: ARRAY [1 .. 2] OF ST_EPSLimits;
 
-    bInit 		: BOOL := TRUE;
+    {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Y:EPS:OVRD_MODE'}
+    bEPS_Override : BOOL := FALSE;
+    {attribute 'pytmc' := 'pv: CRIX:DPL:MMS:Y:EPS:OVRD_COUNTDOWN'}
+    tEPS_TimerCountDown : STRING := TIME_TO_STRING(T#0s);
+    fbResetTimer : FB_RestTimer;
 
+    bInit 		: BOOL := TRUE;
     bFullRange	: BOOL;
 
        fbEPS		: FB_EPS;
@@ -27,17 +32,18 @@ END_VAR
 END_IF
 
 fbEPS(eps:=aDPL_Y_EPS[2].stEPS);
-fbEPS.setDescription('DPL_Z in [-10,30];RCC in [-15,11]');
+fbEPS.setMessage('DPL_Z in [-10,30];RCC in [-15,11]');
 fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
 fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
 
 bFullRange := NOT aDPL_Y_EPS[2].stEPS.bEPS_OK;
 
 fbEPS(eps:=aDPL_Y_EPS[1].stEPS);
-fbEPS.setDescription('Full Range');
+fbEPS.setMessage('Full Range');
 fbEPS.setBit(0, bFullRange);
 
-fbCheckEPS(stMotor:=M2, fPosition:=M2.stAxisStatus.fActPosition, aEPSLimits:=aDPL_Y_EPS, stForwardMotorEPS:=M2.stEPSForwardEnable, stBackwardMotorEPS:= M2.stEPSBackwardEnable);
+fbResetTimer(bInput:=bEPS_Override, tElapseTime:=tEPS_OVRD_RESET_TIME, tCountDown:=tEPS_TimerCountDown);
+fbCheckEPS(stMotor:=M2, fPosition:=M2.stAxisStatus.fActPosition, aEPSLimits:=aDPL_Y_EPS, stForwardMotorEPS:=M2.stEPSForwardEnable, stBackwardMotorEPS:= M2.stEPSBackwardEnable, bEPS_Override:= bEPS_Override);
 ]]></ST>
     </Implementation>
   </POU>

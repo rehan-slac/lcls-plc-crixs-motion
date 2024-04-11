@@ -6,6 +6,13 @@ VAR
     {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:Y:EPS'}
     aSDS_Y_EPS 		: ARRAY [1 .. 5] OF ST_EPSLimits;
 
+    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:Y:EPS:OVRD_MODE'}
+    bEPS_Override : BOOL := FALSE;
+
+    {attribute 'pytmc' := 'pv: CRIX:SDS:MMS:Y:EPS:OVRD_COUNTDOWN'}
+    tEPS_TimerCountDown : STRING := TIME_TO_STRING(T#0s);
+    fbResetTimer : FB_RestTimer;
+
     bInit 		: BOOL := TRUE;
     bFullRange	: BOOL;
     nIndex 		: uint;
@@ -29,7 +36,7 @@ IF bInit THEN
     aSDS_Y_EPS[3].fFwd_Limits := 38.5;
 
     aSDS_Y_EPS[4].fBwd_Limits := 30;
-    aSDS_Y_EPS[4].fFwd_Limits := 35;
+    aSDS_Y_EPS[4].fFwd_Limits := 38.5;
 
     aSDS_Y_EPS[5].fBwd_Limits := 30;
     aSDS_Y_EPS[5].fFwd_Limits := 45;
@@ -40,22 +47,22 @@ END_IF
 
 // Set EPS conditions
 fbEPS(eps:= aSDS_Y_EPS[2].stEPS);
-fbEPS.setDescription('SDS_Z_ENC in [0,400]');
-fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 0, 400));
+fbEPS.setMessage('SDS_Z_ENC in [-1,3.05]');
+fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, -1, 3.05));
 
 fbEPS(eps:= aSDS_Y_EPS[3].stEPS);
-fbEPS.setDescription('SDS_Z_ENC in [400,420];SDS_RY in [-5,5]');
-fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 420));
-fbEPS.setBit(1, F_InRange(fSDS_RY, -5, 5));
+fbEPS.setMessage('SDS_Z_ENC in [3.05, 3.4];SDS_RY in [215, 220]');
+fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 3.05, 3.4));
+fbEPS.setBit(1, F_InRange(fSDS_RY, 215, 220));
 
 fbEPS(eps:= aSDS_Y_EPS[4].stEPS);
-fbEPS.setDescription('SDS_Z_ENC in [400,495];SDS_RY in [-100,-5]');
-fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 400, 495));
-fbEPS.setBit(1, F_InRange(fSDS_RY, -100, -5));
+fbEPS.setMessage('SDS_Z_ENC in [3.05, 3.8];SDS_RY in [124, 215]');
+fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 3.05, 3.8));
+fbEPS.setBit(1, F_InRange(fSDS_RY, 124, 215));
 
 fbEPS(eps:= aSDS_Y_EPS[5].stEPS);
-fbEPS.setDescription('SDS_Z_ENC in [495,510];(SDS_Y - RCC <= 36');
-fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 495, 510));
+fbEPS.setDescription('SDS_Z_ENC in [3.8, 4];(SDS_Y - RCC <= 36');
+fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 3.8, 4));
 fbEPS.setBit(1, (fSDS_Y - fRCC_Y) <= 36);
 
 aSDS_Y_EPS[5].fBwd_Limits := 36 + fRCC_Y; // Magic 36?
@@ -63,9 +70,12 @@ aSDS_Y_EPS[5].fBwd_Limits := 36 + fRCC_Y; // Magic 36?
 
 bFullRange := (NOT aSDS_Y_EPS[2].stEPS.bEPS_OK) AND (NOT aSDS_Y_EPS[3].stEPS.bEPS_OK) AND(NOT aSDS_Y_EPS[4].stEPS.bEPS_OK) AND (NOT aSDS_Y_EPS[5].stEPS.bEPS_OK);
 fbEPS(eps:= aSDS_Y_EPS[1].stEPS);
+fbEPS.setDescription('Full Range');
 fbEPS.setBit(0, bFullRange); // FULL RANGE
 
-fbCheckEPS(stMotor:=M17, fPosition:=fSDS_Y, aEPSLimits:=aSDS_Y_EPS, stForwardMotorEPS:=M17.stEPSForwardEnable, stBackwardMotorEPS:= M17.stEPSBackwardEnable);]]></ST>
+
+fbResetTimer(bInput:=bEPS_Override, tElapseTime:=tEPS_OVRD_RESET_TIME, tCountDown:=tEPS_TimerCountDown);
+fbCheckEPS(stMotor:=M17, fPosition:=fSDS_Y, aEPSLimits:=aSDS_Y_EPS, stForwardMotorEPS:=M17.stEPSForwardEnable, stBackwardMotorEPS:= M17.stEPSBackwardEnable, bEPS_Override:=bEPS_Override);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

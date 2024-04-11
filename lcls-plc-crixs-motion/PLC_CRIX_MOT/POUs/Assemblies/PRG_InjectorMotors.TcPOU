@@ -95,7 +95,7 @@ Main.M16.bLimitBackwardEnable := nHall_Backward_Cycles < nNumCyclesNeeded;
 // Update Motor Positions before Using them in EPS Checks
 fDPL_X  := M1.stAxisStatus.fActPosition;
 
-fSDS_RY 	:= M19.stAxisStatus.fActPosition + (-20); // Has offset?
+fSDS_RY 	:= M19.stAxisStatus.fActPosition;
 fSDS_Y      := M17.stAxisStatus.fActPosition;
 fSDS_Z_ENC  := M36.stAxisStatus.fActPosition;
 
