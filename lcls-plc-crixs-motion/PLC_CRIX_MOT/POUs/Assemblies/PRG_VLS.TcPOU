@@ -57,7 +57,7 @@ END_VAR
     Main.M44.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
     Main.M44.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
     //Homing routine parameters
-    Main.M44.fHomePosition:= -3.473;
+    Main.M44.fHomePosition:= -0.2288; // old homing position: -3.473;
     Main.M44.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
 
     //Grating Pitch
