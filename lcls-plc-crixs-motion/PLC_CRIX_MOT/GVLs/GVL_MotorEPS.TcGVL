@@ -15,6 +15,9 @@
     fRCC_Y 		: LREAL;
 
     tEPS_OVRD_RESET_TIME : TIME := T#5m; // Resets overide after this amount of time.
+	
+	{attribute 'pytmc' := 'pv: CRIX:EPS:INJ:Pos'}
+	fInjPos		: LREAL;
 
 END_VAR]]></Declaration>
   </GVL>
