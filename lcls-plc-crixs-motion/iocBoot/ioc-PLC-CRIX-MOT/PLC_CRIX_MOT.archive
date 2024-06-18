@@ -16,6 +16,8 @@ $(PREFIX)LCLSGeneral:LogHost.VAL	1	scan
 $(PREFIX)LCLSGeneral:LogPort_RBV.VAL	1	scan
 $(PREFIX)LCLSGeneral:LogPort.VAL	1	scan
 $(PREFIX)LCLSGeneral:LogMessageCount_RBV.VAL	1	scan
+RIX:CRIX:EPS:fNozzleCatcherOffset_RBV.VAL	1	scan
+RIX:CRIX:EPS:fNozzleCatcherOffset.VAL	1	scan
 PLC:CRIX:MOT:ARB:01:AP:Entry:010:Live_RBV.VAL	1	scan
 PLC:CRIX:MOT:ARB:01:AP:Entry:010:Veto_RBV.VAL	1	scan
 PLC:CRIX:MOT:ARB:01:AP:Entry:010:Apt:01:Height_RBV.VAL	1	scan

@@ -226,6 +226,28 @@ record(longin, "$(PREFIX)LCLSGeneral:LogMessageCount_RBV") {
   info(archive, "VAL")
 }
 
+record(ai, "RIX:CRIX:EPS:fNozzleCatcherOffset_RBV") {
+  field(DESC, "GVL_MotorEPS.fNozzleCatcherOffset")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_MotorEPS.fNozzleCatcherOffset?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+}
+
+record(ao, "RIX:CRIX:EPS:fNozzleCatcherOffset") {
+  field(DESC, "GVL_MotorEPS.fNozzleCatcherOffset")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_MotorEPS.fNozzleCatcherOffset=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "PLC:CRIX:MOT:ARB:01:AP:Entry:010:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
