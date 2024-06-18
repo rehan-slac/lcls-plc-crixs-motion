@@ -16,7 +16,11 @@
 
     tEPS_OVRD_RESET_TIME : TIME := T#5m; // Resets overide after this amount of time.
 	
-	{attribute 'pytmc' := 'pv: CRIX:EPS:fNozzleCatcherOffset'}
+	
+	 {attribute 'pytmc' := '
+        pv: RIX:CRIX:EPS:fNozzleCatcherOffset
+        io: io
+    '}
 	fNozzleCatcherOffset	: LREAL := 20;
 
 END_VAR]]></Declaration>
