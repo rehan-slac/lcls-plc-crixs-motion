@@ -38,13 +38,14 @@ FOR nIndex := LOWER_BOUND(aEPSLimits, 1) TO UPPER_BOUND(aEPSLimits, 1) BY 1 DO
     IF aEPSLimits[nIndex].stEPS.bEPS_OK THEN
         nEPSIndex := nIndex;
         bUnknownState := FALSE; // Known State
+		exit; // stop when found state
     END_IF
 END_FOR
 
 IF (nPreviousState <> nEPSIndex) THEN
     // only clear stMotor eps from previous state.
     fbBwdEPS.setBit(DINT_TO_BYTE(0), TRUE);
-    fbBwdEPS.setBit(DINT_TO_BYTE(0), TRUE);
+    fbFwdEPS.setBit(DINT_TO_BYTE(0), TRUE);
 END_IF
 
 // Check if position is in plc limit rage, Stop motor if out of Upper/Lower bounds

@@ -176,6 +176,9 @@
     <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_DPL_Z_EPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_EPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\EPS\InjectorMotorEPSLimits\PRG_RCC_Y_EPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
