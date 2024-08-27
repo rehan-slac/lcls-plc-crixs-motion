@@ -38,7 +38,7 @@ FOR nIndex := LOWER_BOUND(aEPSLimits, 1) TO UPPER_BOUND(aEPSLimits, 1) BY 1 DO
     IF aEPSLimits[nIndex].stEPS.bEPS_OK THEN
         nEPSIndex := nIndex;
         bUnknownState := FALSE; // Known State
-		exit; // stop when found state
+        exit; // stop when found state
     END_IF
 END_FOR
 

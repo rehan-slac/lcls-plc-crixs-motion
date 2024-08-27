@@ -9,7 +9,7 @@ END_VAR
       <ST><![CDATA[// Update Motor Positions before Using them in EPS Checks
 fDPL_X  := M1.stAxisStatus.fActPosition;
 
-fSDS_RY 	:= M19.stAxisStatus.fActPosition;
+fSDS_RX 	:= M19.stAxisStatus.fActPosition;
 fSDS_Y      := M17.stAxisStatus.fActPosition;
 fSDS_Z_ENC  := M36.stAxisStatus.fActPosition;
 
@@ -20,7 +20,7 @@ fRCC_Z 		:= M39.stAxisStatus.fActPosition;
 fRCC_Y 		:= M38.stAxisStatus.fActPosition;
 
 PRG_SDS_Y_EPS();
-PRG_SDS_RY_EPS();
+PRG_SDS_RX_EPS();
 PRG_SDS_ZENCODER_EPS();
 
 PRG_DPL_X_EPS();
