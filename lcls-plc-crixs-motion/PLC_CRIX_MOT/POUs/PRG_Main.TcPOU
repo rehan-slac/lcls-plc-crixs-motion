@@ -27,6 +27,7 @@ bDPaddleOK := TRUE;
 
 //PRG_BFS();
 
+PRG_EPS();
 PRG_DiagnosticPaddleMotors();
 
 PRG_QuestarMotors();

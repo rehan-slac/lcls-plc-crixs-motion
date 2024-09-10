@@ -36,8 +36,8 @@ END_VAR
 END_IF
 
 fbEPS(eps:=aDPL_X_EPS[2].stEPS);
-fbEPS.setMessage('SDS_RY in [124, 215');
-fbEPS.setBit(0, F_InRange(fSDS_RY, 124, 215));
+fbEPS.setMessage('SDS_RX in [124, 215');
+fbEPS.setBit(0, F_InRange(fSDS_RX, 124, 215));
 
 fbEPS(eps:=aDPL_X_EPS[3].stEPS);
 fbEPS.setMessage('DPL_Z in [-10, 30]');
