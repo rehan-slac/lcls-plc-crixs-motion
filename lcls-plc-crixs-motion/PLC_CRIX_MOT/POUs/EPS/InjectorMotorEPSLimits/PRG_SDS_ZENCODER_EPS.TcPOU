@@ -44,34 +44,34 @@ END_VAR
 END_IF
 
 
-bSDS_vert_transport_state := F_InRange(fSDS_Y, 30, 38.5) AND F_InRange(fSDS_RY, 124, 134) AND (fDPL_X < 30) AND (fRCC_Y < -34);
+bSDS_vert_transport_state := F_InRange(fSDS_Y, 30, 38.5) AND F_InRange(fSDS_RX, 124, 134) AND (fDPL_X < 30) AND (fRCC_Y < -34);
 
 fbEPS(eps:=aSDS_Z_ENC_EPS[1].stEPS);
-fbEPS.setMessage('SDS_RY in [215, 220];SDS_Y in [37.5, 38.5]');
-fbEPS.setBit(0, F_InRange(fSDS_RY, 215, 220));
+fbEPS.setMessage('SDS_RX in [215, 220];SDS_Y in [37.5, 38.5]');
+fbEPS.setBit(0, F_InRange(fSDS_RX, 215, 220));
 fbEPS.setBit(1, F_InRange(fSDS_Y, 37.5, 38.5));
 
 fbEPS(eps:=aSDS_Z_ENC_EPS[2].stEPS);
-fbEPS.setMessage('SDS_RY in [134, 220];SDS_Y in [30, 38.5]');
-fbEPS.setBit(0, F_InRange(fSDS_RY, 134, 220));
+fbEPS.setMessage('SDS_RX in [134, 220];SDS_Y in [30, 38.5]');
+fbEPS.setBit(0, F_InRange(fSDS_RX, 134, 220));
 fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 37.5));
 
 fbEPS(eps:=aSDS_Z_ENC_EPS[3].stEPS);
-fbEPS.setMessage('SDS_RY in [124, 134];SDS_Z_ENC in [3.05, 3.45];Not SDS VERT. TRANS. State');
-fbEPS.setBit(0, F_InRange(fSDS_RY, 124, 134));
+fbEPS.setMessage('SDS_RX in [124, 134];SDS_Z_ENC in [3.05, 3.45];NOT SDS VERT. TRANSPORT STATE');
+fbEPS.setBit(0, F_InRange(fSDS_RX, 124, 134));
 fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 3.05, 3.45));
 fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Tansport Condition
 
 fbEPS(eps:=aSDS_Z_ENC_EPS[4].stEPS);
-fbEPS.setMessage('SDS_RY in [124, 134];SDS_Y in [30, 38.5];RCC_Y in [-38,-34];DPL_X in [10,30]');
-fbEPS.setBit(0, F_InRange(fSDS_RY, 124, 134));
+fbEPS.setMessage('SDS_RX in [124, 134];SDS_Y in [30, 38.5];RCC_Y in [-38,-34];DPL_X in [10,30]');
+fbEPS.setBit(0, F_InRange(fSDS_RX, 124, 134));
 fbEPS.setBit(1, F_InRange(fSDS_Y, 30, 38.5));
 fbEPS.setBit(2, F_InRange(fRCC_Y, -38, -34));
 fbEPS.setBit(3, F_InRange(fDPL_X, 10, 30));
 
 fbEPS(eps:=aSDS_Z_ENC_EPS[5].stEPS);
-fbEPS.setMessage('SDS_RY in [124, 134];SDS_Z_ENC in [3.75, 4]; NOT SDS VERT. TRANS. State');
-fbEPS.setBit(0, F_InRange(fSDS_RY, 124, 134));
+fbEPS.setMessage('SDS_RX in [124, 134];SDS_Z_ENC in [3.75, 4]; NOT SDS VERT. TRANSPORT State');
+fbEPS.setBit(0, F_InRange(fSDS_RX, 124, 134));
 fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 3.75, 4));
 fbEPS.setBit(2, NOT bSDS_vert_transport_state); // NOT INJECTOR Vertical Transport Condition
 

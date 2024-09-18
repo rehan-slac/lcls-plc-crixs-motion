@@ -7,7 +7,7 @@
     fDPL_Z 		: LREAL;
     fDPL_Y 		: LREAL;
 
-    fSDS_RY 	: LREAL;
+    fSDS_RX 	: LREAL;
     fSDS_Y 		: LREAL;
     fSDS_Z_ENC 	: LREAL;
 
@@ -15,6 +15,13 @@
     fRCC_Y 		: LREAL;
 
     tEPS_OVRD_RESET_TIME : TIME := T#5m; // Resets overide after this amount of time.
+
+
+     {attribute 'pytmc' := '
+        pv: RIX:CRIX:EPS:fNozzleCatcherOffset
+        io: io
+    '}
+    fNozzleCatcherOffset	: LREAL := 20;
 
 END_VAR]]></Declaration>
   </GVL>

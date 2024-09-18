@@ -39,8 +39,8 @@ END_VAR
 END_IF
 
 fbEPS(eps:=aRCC_Y_EPS[2].stEPS);
-fbEPS.setMessage('SDS_RY in [124, 215];SDS_Z_ENC in [3.05, 3.8]');
-fbEPS.setBit(0, F_InRange(fSDS_RY, 124, 215));
+fbEPS.setMessage('SDS_RX in [124, 215];SDS_Z_ENC in [3.05, 3.8]');
+fbEPS.setBit(0, F_InRange(fSDS_RX, 124, 215));
 fbEPS.setBit(1, F_InRange(fSDS_Z_ENC, 3.05, 3.8));
 
 fbEPS(eps:=aRCC_Y_EPS[3].stEPS);
@@ -49,11 +49,11 @@ fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
 fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
 
 fbEPS(eps:=aRCC_Y_EPS[4].stEPS);
-fbEPS.setMessage('SDS_Z_ENC in [3.8, 4];SDS_Y - RCC_Y <= 36');
+fbEPS.setMessage('SDS_Z_ENC in [3.8, 4];SDS_Y - RCC_Y <= nozzle_catcher_offset');
 fbEPS.setBit(0, F_InRange(fSDS_Z_ENC, 3.8, 4));
-fbEPS.setBit(1, (fSDS_Y - fRCC_Y) <= 36);
+fbEPS.setBit(1, (fSDS_Y - fRCC_Y) <= fNozzleCatcherOffset);
 
-aRCC_Y_EPS[4].fFwd_Limits := fSDS_Y - 36; // Variable Limits
+aRCC_Y_EPS[4].fFwd_Limits := fSDS_Y - fNozzleCatcherOffset; // Variable Limits
 
 
 bFullRange := (NOT aRCC_Y_EPS[2].stEPS.bEPS_OK) AND (NOT aRCC_Y_EPS[3].stEPS.bEPS_OK) AND (NOT aRCC_Y_EPS[4].stEPS.bEPS_OK);

@@ -72,8 +72,8 @@
 		<Axis File="Axis 16 - SDS Injector X.xti" Id="16"/>
 		<Axis File="Axis 17 - SDS Injectory Y.xti" Id="17"/>
 		<Axis File="Axis 18 - SDS Injector Z.xti" Id="18"/>
-		<Axis File="Axis 19 - SDS Rotation Y.xti" Id="19"/>
-		<Axis File="Axis 20 - SDS Shroud Rotation.xti" Id="20"/>
+		<Axis File="Axis 19 - SDS Rotation X.xti" Id="19"/>
+		<Axis File="Axis 20 - SDS Jet Rotation.xti" Id="20"/>
 		<Axis File="Axis 21 - Questar Focus.xti" Id="21"/>
 		<Axis File="Axis 35 - Outcoupling Lens Y.xti" Id="35"/>
 		<Axis File="Axis 36 - SDS Z Encoder.xti" Id="36"/>

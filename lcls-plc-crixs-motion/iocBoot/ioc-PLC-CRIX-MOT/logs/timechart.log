@@ -1,0 +1,4 @@
+[2024-08-27 11:25:39,011] [WARNING ] - Unable to import QtWebEngineWidgets must be imported before a QCoreApplication instance is created; typhos web views disabled.
+[2024-08-27 11:31:28,480] [WARNING ] - Unable to import QtWebEngineWidgets must be imported before a QCoreApplication instance is created; typhos web views disabled.
+[2024-08-27 11:36:41,096] [WARNING ] - Unable to import QtWebEngineWidgets must be imported before a QCoreApplication instance is created; typhos web views disabled.
+[2024-08-27 11:42:46,863] [WARNING ] - Unable to import QtWebEngineWidgets must be imported before a QCoreApplication instance is created; typhos web views disabled.

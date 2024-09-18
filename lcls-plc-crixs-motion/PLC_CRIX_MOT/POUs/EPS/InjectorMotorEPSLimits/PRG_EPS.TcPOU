@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_EPS" Id="{1606d6f3-aaea-4db7-b8cc-22061f30dece}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_EPS
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Update Motor Positions before Using them in EPS Checks
+fDPL_X  := M1.stAxisStatus.fActPosition;
+
+fSDS_RX 	:= M19.stAxisStatus.fActPosition;
+fSDS_Y      := M17.stAxisStatus.fActPosition;
+fSDS_Z_ENC  := M36.stAxisStatus.fActPosition;
+
+fDPL_Z 		:= M3.stAxisStatus.fActPosition;
+fDPL_Y 		:= M2.stAxisStatus.fActPosition;
+
+fRCC_Z 		:= M39.stAxisStatus.fActPosition;
+fRCC_Y 		:= M38.stAxisStatus.fActPosition;
+
+PRG_SDS_Y_EPS();
+PRG_SDS_RX_EPS();
+PRG_SDS_ZENCODER_EPS();
+
+PRG_DPL_X_EPS();
+PRG_DPL_Y_EPS();
+PRG_DPL_Z_EPS();
+
+PRG_RCC_Y_EPS();
+PRG_RCC_Z_EPS();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
