@@ -19,27 +19,29 @@ VAR
 
     (*ETHERCAT BRRIDGE COM STATUS*)
     //0: Other side is in OP state, >0: Error
-    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^TxPDO state
-    '}
+    {attribute 'pytmc' := 'pv:  CRIX:MOT:ECATBRG:TxPDO_state'}
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^TxPDO state'}
     xEcatBridge_TxPDO_state AT %I* :BOOL;
 
     //0: External device connectd, 1: External device not connected
-    {attribute := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^External device not connected
-    '}
+    {attribute 'pytmc' := 'pv:  CRIX:MOT:ECATBRG:External_device_not_connected'}
+    {attribute := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^External device not connected'}
     xEcatBridge_External_device_not_connected AT %I* : BOOL;
 
     //0 = Data valid, 1 = Data invalid
-    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^WcState^WcState
-    '}
+    {attribute 'pytmc' := 'pv:  CRIX:MOT:ECATBRG:WcState'}
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^WcState^WcState'}
     xEcatBridge_WcState AT %I* : BOOL;
 
     //Inputs
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_01_CLS'}
     bCRYO_VGC_01_CLS AT %I* : BOOL;
+    {attribute 'pytmc' := 'pv:  CRIX:MOT:ECATBRG:CRYO_VGC_01_OPN'}
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_01_OPN'}
     bCRYO_VGC_01_OPN AT %I* : BOOL;
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_02_CLS'}
     bCRYO_VGC_02_CLS AT %I* : BOOL;
+    {attribute 'pytmc' := 'pv:  CRIX:MOT:ECATBRG:CRYO_VGC_02_OPN'}
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_02_OPN'}
     bCRYO_VGC_02_OPN AT %I* : BOOL;
 
@@ -52,10 +54,6 @@ VAR
     bMOTY11_IN AT %Q* : BOOL;
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTY11_OUT'}
     bMOTY11_OUT AT %Q* : BOOL;
-
-    {attribute 'pytmc' := 'pv:  CRIX:ECAT:BRIDGE:COMMS'}
-    fbMOTY_COMMS_EPS : DUT_EPS;
-    fbEPSHandler : FB_EPS;
 
 END_VAR
 ]]></Declaration>
@@ -89,12 +87,6 @@ bMOTY11_OUT := NOT Main.M49.bLimitForwardEnable;
 bEPS_OK_Y_10 := (NOT bCRYO_VGC_01_CLS) AND bCRYO_VGC_01_OPN AND NOT (xEcatBridge_External_device_not_connected) AND NOT (xEcatBridge_WcState) AND NOT (xEcatBridge_TxPDO_state);
 bEPS_OK_Y_11 := (NOT bCRYO_VGC_02_CLS) AND bCRYO_VGC_02_OPN AND NOT (xEcatBridge_External_device_not_connected) AND NOT (xEcatBridge_WcState) AND NOT (xEcatBridge_TxPDO_state);
 
-// Capture MOTY 11 and 10 comms.
-fbEPSHandler(eps := fbMOTY_COMMS_EPS);
-fbEPSHandler.setDescription('xEcatBridge_External_connected;xEcatBridge_WcState;(xEcatBridge_TxPDO_state');
-fbEPSHandler.setBit(0, NOT (xEcatBridge_External_device_not_connected));
-fbEPSHandler.setBit(1, NOT (xEcatBridge_WcState));
-fbEPSHandler.setBit(2, NOT (xEcatBridge_TxPDO_state));
 
 
 //Handle EPS
