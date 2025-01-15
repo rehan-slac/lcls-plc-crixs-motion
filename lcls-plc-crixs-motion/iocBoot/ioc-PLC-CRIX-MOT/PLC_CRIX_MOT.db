@@ -58522,13 +58522,13 @@ record(bi, "$(PREFIX)RequestedBP:Valid_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "CRIX:ECAT:BRIDGE:COMMS:bEPS_OK_RBV") {
-  field(DESC, "check if nFlags are all true")
+record(bi, "CRIX:MOT:ECATBRG:CRYO_VGC_01_OPN_RBV") {
+  field(DESC, "PRG_CryoPump.bCRYO_VGC_01_OPN")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_CryoPump.fbMOTY_COMMS_EPS.bEPS_OK?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_CryoPump.bCRYO_VGC_01_OPN?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -58536,48 +58536,117 @@ record(bi, "CRIX:ECAT:BRIDGE:COMMS:bEPS_OK_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "CRIX:ECAT:BRIDGE:COMMS:nFlags_RBV") {
-  field(DESC, "Contains EPS flags")
+record(bo, "CRIX:MOT:ECATBRG:CRYO_VGC_01_OPN") {
+  field(DESC, "PRG_CryoPump.bCRYO_VGC_01_OPN")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_CryoPump.bCRYO_VGC_01_OPN=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "CRIX:MOT:ECATBRG:CRYO_VGC_02_OPN_RBV") {
+  field(DESC, "PRG_CryoPump.bCRYO_VGC_02_OPN")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_CryoPump.fbMOTY_COMMS_EPS.nFlags?")
-  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_CryoPump.bCRYO_VGC_02_OPN?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "CRIX:ECAT:BRIDGE:COMMS:sFlagDesc_RBV") {
-  field(DESC, "semicolon-delimited nFlag variable")
+record(bo, "CRIX:MOT:ECATBRG:CRYO_VGC_02_OPN") {
+  field(DESC, "PRG_CryoPump.bCRYO_VGC_02_OPN")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_CryoPump.bCRYO_VGC_02_OPN=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "CRIX:MOT:ECATBRG:External_device_not_connected_RBV") {
+  # PRG_CryoPump.xEcatBridge_External_device_not_connected
+  field(DESC, "PRG_CryoPump.xEcatBr...ice_not_connected")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_CryoPump.fbMOTY_COMMS_EPS.sFlagDesc?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-  field(MPST, "On Change")
-  field(APST, "On Change")
-  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_CryoPump.xEcatBridge_External_device_not_connected?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "CRIX:ECAT:BRIDGE:COMMS:sMessage_RBV") {
-  field(DESC, "Message from EPS to usr")
+record(bo, "CRIX:MOT:ECATBRG:External_device_not_connected") {
+  # PRG_CryoPump.xEcatBridge_External_device_not_connected
+  field(DESC, "PRG_CryoPump.xEcatBr...ice_not_connected")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_CryoPump.xEcatBridge_External_device_not_connected=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "CRIX:MOT:ECATBRG:TxPDO_state_RBV") {
+  field(DESC, "PRG_CryoPump.xEcatBridge_TxPDO_state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_CryoPump.fbMOTY_COMMS_EPS.sMessage?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-  field(MPST, "On Change")
-  field(APST, "On Change")
-  info(autosaveFields_pass0, "DESC DISS SIMS UDFS")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_CryoPump.xEcatBridge_TxPDO_state?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
+}
+
+record(bo, "CRIX:MOT:ECATBRG:TxPDO_state") {
+  field(DESC, "PRG_CryoPump.xEcatBridge_TxPDO_state")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_CryoPump.xEcatBridge_TxPDO_state=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(bi, "CRIX:MOT:ECATBRG:WcState_RBV") {
+  field(DESC, "PRG_CryoPump.xEcatBridge_WcState")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_CryoPump.xEcatBridge_WcState?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+  field(ASG, "NO_WRITE")
+}
+
+record(bo, "CRIX:MOT:ECATBRG:WcState") {
+  field(DESC, "PRG_CryoPump.xEcatBridge_WcState")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_CryoPump.xEcatBridge_WcState=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
 }
 
 record(ai, "CRIX:DPL:MMS:X:EPS:01:BwdLimit_RBV") {
