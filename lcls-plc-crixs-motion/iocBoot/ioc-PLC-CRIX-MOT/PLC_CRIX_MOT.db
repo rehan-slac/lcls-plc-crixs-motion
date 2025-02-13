@@ -58522,57 +58522,7 @@ record(bi, "$(PREFIX)RequestedBP:Valid_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "CRIX:MOT:ECATBRG:CRYO_VGC_01_OPN_RBV") {
-  field(DESC, "PRG_CryoPump.bCRYO_VGC_01_OPN")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_CryoPump.bCRYO_VGC_01_OPN?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
-  info(archive, "VAL")
-  field(ASG, "NO_WRITE")
-}
-
-record(bo, "CRIX:MOT:ECATBRG:CRYO_VGC_01_OPN") {
-  field(DESC, "PRG_CryoPump.bCRYO_VGC_01_OPN")
-  field(DTYP, "asynInt32")
-  field(UDFS, "0")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_CryoPump.bCRYO_VGC_01_OPN=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
-  info(archive, "VAL")
-}
-
-record(bi, "CRIX:MOT:ECATBRG:CRYO_VGC_02_OPN_RBV") {
-  field(DESC, "PRG_CryoPump.bCRYO_VGC_02_OPN")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PRG_CryoPump.bCRYO_VGC_02_OPN?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
-  info(archive, "VAL")
-  field(ASG, "NO_WRITE")
-}
-
-record(bo, "CRIX:MOT:ECATBRG:CRYO_VGC_02_OPN") {
-  field(DESC, "PRG_CryoPump.bCRYO_VGC_02_OPN")
-  field(DTYP, "asynInt32")
-  field(UDFS, "0")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PRG_CryoPump.bCRYO_VGC_02_OPN=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
-  info(archive, "VAL")
-}
-
-record(bi, "CRIX:MOT:ECATBRG:External_device_not_connected_RBV") {
+record(bi, "CRIX:MOT2VAC:ECATBRG:External_device_not_connected_RBV") {
   # PRG_CryoPump.xEcatBridge_External_device_not_connected
   field(DESC, "PRG_CryoPump.xEcatBr...ice_not_connected")
   field(SCAN, "I/O Intr")
@@ -58587,7 +58537,7 @@ record(bi, "CRIX:MOT:ECATBRG:External_device_not_connected_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bo, "CRIX:MOT:ECATBRG:External_device_not_connected") {
+record(bo, "CRIX:MOT2VAC:ECATBRG:External_device_not_connected") {
   # PRG_CryoPump.xEcatBridge_External_device_not_connected
   field(DESC, "PRG_CryoPump.xEcatBr...ice_not_connected")
   field(DTYP, "asynInt32")
@@ -58599,7 +58549,7 @@ record(bo, "CRIX:MOT:ECATBRG:External_device_not_connected") {
   info(archive, "VAL")
 }
 
-record(bi, "CRIX:MOT:ECATBRG:TxPDO_state_RBV") {
+record(bi, "CRIX:MOT2VAC:ECATBRG:TxPDO_state_RBV") {
   field(DESC, "PRG_CryoPump.xEcatBridge_TxPDO_state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -58613,7 +58563,7 @@ record(bi, "CRIX:MOT:ECATBRG:TxPDO_state_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bo, "CRIX:MOT:ECATBRG:TxPDO_state") {
+record(bo, "CRIX:MOT2VAC:ECATBRG:TxPDO_state") {
   field(DESC, "PRG_CryoPump.xEcatBridge_TxPDO_state")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
@@ -58624,7 +58574,7 @@ record(bo, "CRIX:MOT:ECATBRG:TxPDO_state") {
   info(archive, "VAL")
 }
 
-record(bi, "CRIX:MOT:ECATBRG:WcState_RBV") {
+record(bi, "CRIX:MOT2VAC:ECATBRG:WcState_RBV") {
   field(DESC, "PRG_CryoPump.xEcatBridge_WcState")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -58638,7 +58588,7 @@ record(bi, "CRIX:MOT:ECATBRG:WcState_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bo, "CRIX:MOT:ECATBRG:WcState") {
+record(bo, "CRIX:MOT2VAC:ECATBRG:WcState") {
   field(DESC, "PRG_CryoPump.xEcatBridge_WcState")
   field(DTYP, "asynInt32")
   field(UDFS, "0")
