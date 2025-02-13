@@ -19,29 +19,27 @@ VAR
 
     (*ETHERCAT BRRIDGE COM STATUS*)
     //0: Other side is in OP state, >0: Error
-    {attribute 'pytmc' := 'pv:  CRIX:MOT:ECATBRG:TxPDO_state'}
+    {attribute 'pytmc' := 'pv:  CRIX:MOT2VAC:ECATBRG:TxPDO_state'}
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^TxPDO state'}
     xEcatBridge_TxPDO_state AT %I* :BOOL;
 
     //0: External device connectd, 1: External device not connected
-    {attribute 'pytmc' := 'pv:  CRIX:MOT:ECATBRG:External_device_not_connected'}
-    {attribute := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^External device not connected'}
+    {attribute 'pytmc' := 'pv:  CRIX:MOT2VAC:ECATBRG:External_device_not_connected'}
+    {attribute 'TcLinkTo':= 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^External device not connected'}
     xEcatBridge_External_device_not_connected AT %I* : BOOL;
 
     //0 = Data valid, 1 = Data invalid
-    {attribute 'pytmc' := 'pv:  CRIX:MOT:ECATBRG:WcState'}
+    {attribute 'pytmc' := 'pv:  CRIX:MOT2VAC:ECATBRG:WcState'}
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^WcState^WcState'}
     xEcatBridge_WcState AT %I* : BOOL;
 
     //Inputs
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_01_CLS'}
     bCRYO_VGC_01_CLS AT %I* : BOOL;
-    {attribute 'pytmc' := 'pv:  CRIX:MOT:ECATBRG:CRYO_VGC_01_OPN'}
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_01_OPN'}
     bCRYO_VGC_01_OPN AT %I* : BOOL;
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_02_CLS'}
     bCRYO_VGC_02_CLS AT %I* : BOOL;
-    {attribute 'pytmc' := 'pv:  CRIX:MOT:ECATBRG:CRYO_VGC_02_OPN'}
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Inputs^bCRYO_VGC_02_OPN'}
     bCRYO_VGC_02_OPN AT %I* : BOOL;
 
