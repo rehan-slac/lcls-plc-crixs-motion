@@ -10153,6 +10153,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^PRG_CryoPump.bCRYO_VGC_01_OPN" VarB="IO Inputs^bCRYO_VGC_01_OPN" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_CryoPump.bCRYO_VGC_02_CLS" VarB="IO Inputs^bCRYO_VGC_02_CLS" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_CryoPump.bCRYO_VGC_02_OPN" VarB="IO Inputs^bCRYO_VGC_02_OPN" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_CryoPump.xEcatBridge_External_device_not_connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_CryoPump.xEcatBridge_TxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_CryoPump.xEcatBridge_WcState" VarB="WcState^WcState" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PRG_InjectorMotors.bSDS_VGC_01_CLS" VarB="IO Inputs^bSDS_VGC_01_CLS" AutoLink="true"/>

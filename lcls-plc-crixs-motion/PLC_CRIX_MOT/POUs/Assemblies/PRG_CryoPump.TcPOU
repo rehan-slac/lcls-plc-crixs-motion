@@ -19,18 +19,18 @@ VAR
 
     (*ETHERCAT BRRIDGE COM STATUS*)
     //0: Other side is in OP state, >0: Error
-    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^TxPDO state
-    '}
+    {attribute 'pytmc' := 'pv:  CRIX:MOT2VAC:ECATBRG:TxPDO_state'}
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^TxPDO state'}
     xEcatBridge_TxPDO_state AT %I* :BOOL;
 
     //0: External device connectd, 1: External device not connected
-    {attribute := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^External device not connected
-    '}
+    {attribute 'pytmc' := 'pv:  CRIX:MOT2VAC:ECATBRG:External_device_not_connected'}
+    {attribute 'TcLinkTo':= 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^SYNC Inputs^External device not connected'}
     xEcatBridge_External_device_not_connected AT %I* : BOOL;
 
     //0 = Data valid, 1 = Data invalid
-    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^WcState^WcState
-    '}
+    {attribute 'pytmc' := 'pv:  CRIX:MOT2VAC:ECATBRG:WcState'}
+    {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^WcState^WcState'}
     xEcatBridge_WcState AT %I* : BOOL;
 
     //Inputs
@@ -52,6 +52,7 @@ VAR
     bMOTY11_IN AT %Q* : BOOL;
     {attribute 'TcLinkTo' := 'TIIB[CRIX_VAC_INTF (EL6695-0002)]^IO Outputs^bMOTY11_OUT'}
     bMOTY11_OUT AT %Q* : BOOL;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -83,6 +84,7 @@ bMOTY11_IN := NOT bLimitBackwardEnable_Y_11;
 bMOTY11_OUT := NOT Main.M49.bLimitForwardEnable;
 bEPS_OK_Y_10 := (NOT bCRYO_VGC_01_CLS) AND bCRYO_VGC_01_OPN AND NOT (xEcatBridge_External_device_not_connected) AND NOT (xEcatBridge_WcState) AND NOT (xEcatBridge_TxPDO_state);
 bEPS_OK_Y_11 := (NOT bCRYO_VGC_02_CLS) AND bCRYO_VGC_02_OPN AND NOT (xEcatBridge_External_device_not_connected) AND NOT (xEcatBridge_WcState) AND NOT (xEcatBridge_TxPDO_state);
+
 
 
 //Handle EPS
