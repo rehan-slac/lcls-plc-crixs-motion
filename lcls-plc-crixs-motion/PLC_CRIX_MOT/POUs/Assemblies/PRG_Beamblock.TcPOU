@@ -25,9 +25,5 @@ fbOUTCOUP_Motor_Y(stMotionStage:=Main.M35);
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_Beamblock">
-      <LineId Id="3" Count="12" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
