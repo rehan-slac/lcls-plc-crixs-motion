@@ -10234,12 +10234,12 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M34.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock X (EL7041)">
-				<Link VarA="PlcTask Inputs^Main.M30.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^Main.M30.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock Y (EL7041)">
 				<Link VarA="PlcTask Inputs^Main.M31.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M31.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock Y (EL7041)">
+				<Link VarA="PlcTask Inputs^Main.M30.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M30.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock Z (EL7041)">
 				<Link VarA="PlcTask Inputs^Main.M32.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
@@ -10423,12 +10423,12 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^Main.M9.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Beam X">
-				<Link VarA="PlcTask Inputs^Main.M30.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^Main.M30.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Beam Y">
 				<Link VarA="PlcTask Inputs^Main.M31.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^Main.M31.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Beam Y">
+				<Link VarA="PlcTask Inputs^Main.M30.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M30.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Beam Z">
 				<Link VarA="PlcTask Inputs^Main.M32.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
