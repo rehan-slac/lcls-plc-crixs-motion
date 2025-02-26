@@ -11,10 +11,10 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[Main.M30.bHardwareEnable := TRUE;
-fbBEAM_Motor_X(stMotionStage:=Main.M30);
+fbBEAM_Motor_Y(stMotionStage:=Main.M30);
 
 Main.M31.bHardwareEnable := TRUE;
-fbBEAM_Motor_Y(stMotionStage:=Main.M31);
+fbBEAM_Motor_X(stMotionStage:=Main.M31);
 
 Main.M32.bHardwareEnable := TRUE;
 fbBEAM_Motor_Z(stMotionStage:=Main.M32);
