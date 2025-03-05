@@ -16,13 +16,13 @@
 				</Entry>
 			</Pdo>
 		</EtherCAT>
-		<Box File="Beamblock X (EL7041).xti" Id="114">
+		<Box File="Beamblock Y (EL7041).xti" Id="114">
 			<EtherCAT PortABoxInfo="#x01000071"/>
 		</Box>
 		<Box File="Beam X%_2FBeam Y Enc (EL5042).xti" Id="115">
 			<EtherCAT PortABoxInfo="#x01000072"/>
 		</Box>
-		<Box File="Beamblock Y (EL7041).xti" Id="116">
+		<Box File="Beamblock X (EL7041).xti" Id="116">
 			<EtherCAT PortABoxInfo="#x01000073"/>
 		</Box>
 		<Box File="Beamblock Z (EL7041).xti" Id="117">
