@@ -160,6 +160,168 @@ record(waveform, "RIX:CRIX:LED:02:NAME") {
   info(archive, "VAL")
 }
 
+record(bi, "RIX:CRIX:LED:03:PWR_RBV") {
+  field(DESC, "GVL_FiberLite.bLedOutput3.bLedPower")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_FiberLite.bLedOutput3.bLedPower?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+  field(ASG, "NO_WRITE")
+}
+
+record(bo, "RIX:CRIX:LED:03:PWR") {
+  field(DESC, "GVL_FiberLite.bLedOutput3.bLedPower")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_FiberLite.bLedOutput3.bLedPower=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(ai, "RIX:CRIX:LED:03:ILL:PCT_RBV") {
+  # GVL_FiberLite.bLedOutput3.fIlluminatorPercent
+  field(DESC, "GVL_FiberLite.bLedOu...lluminatorPercent")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_FiberLite.bLedOutput3.fIlluminatorPercent?")
+  field(PREC, "3")
+  field(EGU, "%")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+  field(ASG, "NO_WRITE")
+}
+
+record(ao, "RIX:CRIX:LED:03:ILL:PCT") {
+  # GVL_FiberLite.bLedOutput3.fIlluminatorPercent
+  field(DESC, "GVL_FiberLite.bLedOu...lluminatorPercent")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_FiberLite.bLedOutput3.fIlluminatorPercent=")
+  field(PREC, "3")
+  field(EGU, "%")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(waveform, "RIX:CRIX:LED:03:NAME_RBV") {
+  field(DESC, "Descriptive name for the LED")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_FiberLite.bLedOutput3.ledName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC VAL")
+  info(archive, "VAL")
+  field(ASG, "NO_WRITE")
+}
+
+record(waveform, "RIX:CRIX:LED:03:NAME") {
+  field(DESC, "Descriptive name for the LED")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_FiberLite.bLedOutput3.ledName=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "RIX:CRIX:LED:04:PWR_RBV") {
+  field(DESC, "GVL_FiberLite.bLedOutput4.bLedPower")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_FiberLite.bLedOutput4.bLedPower?")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
+  info(archive, "VAL")
+  field(ASG, "NO_WRITE")
+}
+
+record(bo, "RIX:CRIX:LED:04:PWR") {
+  field(DESC, "GVL_FiberLite.bLedOutput4.bLedPower")
+  field(DTYP, "asynInt32")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_FiberLite.bLedOutput4.bLedPower=")
+  field(ZNAM, "OFF")
+  field(ONAM, "ON")
+  info(autosaveFields_pass0, "COSV DESC DISS OSV SIMS UDFS VAL ZSV")
+  info(archive, "VAL")
+}
+
+record(ai, "RIX:CRIX:LED:04:ILL:PCT_RBV") {
+  # GVL_FiberLite.bLedOutput4.fIlluminatorPercent
+  field(DESC, "GVL_FiberLite.bLedOu...lluminatorPercent")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_FiberLite.bLedOutput4.fIlluminatorPercent?")
+  field(PREC, "3")
+  field(EGU, "%")
+  info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
+  info(archive, "VAL")
+  field(ASG, "NO_WRITE")
+}
+
+record(ao, "RIX:CRIX:LED:04:ILL:PCT") {
+  # GVL_FiberLite.bLedOutput4.fIlluminatorPercent
+  field(DESC, "GVL_FiberLite.bLedOu...lluminatorPercent")
+  field(DTYP, "asynFloat64")
+  field(UDFS, "0")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_FiberLite.bLedOutput4.fIlluminatorPercent=")
+  field(PREC, "3")
+  field(EGU, "%")
+  info(autosaveFields_pass0, "DESC DISS DRVH DRVL HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS VAL")
+  info(archive, "VAL")
+}
+
+record(waveform, "RIX:CRIX:LED:04:NAME_RBV") {
+  field(DESC, "Descriptive name for the LED")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_FiberLite.bLedOutput4.ledName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC VAL")
+  info(archive, "VAL")
+  field(ASG, "NO_WRITE")
+}
+
+record(waveform, "RIX:CRIX:LED:04:NAME") {
+  field(DESC, "Descriptive name for the LED")
+  field(DTYP, "asynInt8ArrayOut")
+  field(UDFS, "0")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_FiberLite.bLedOutput4.ledName=")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(autosaveFields_pass0, "DESC VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "$(PREFIX)LCLSGeneral:GlobalLogTrickleTrip_RBV") {
   field(DESC, "Tripped by overall log count")
   field(SCAN, "I/O Intr")
