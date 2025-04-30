@@ -4,6 +4,7 @@
     <Declaration><![CDATA[PROGRAM PRG_FiberLite
 VAR
 
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -12,7 +13,13 @@ bLedOutput1.iTermBits := 14;
 bLedOutput1(fbSetIllPercent=>);
 
 bLedOutput2.iTermBits := 14;
-bLedOutput2();]]></ST>
+bLedOutput2();
+
+bLedOutput3.iTermBits := 14;
+bLedOutput3();
+
+bLedOutput4.iTermBits := 14;
+bLedOutput4();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

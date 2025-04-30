@@ -9728,6 +9728,36 @@ External Setpoint Generation:
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>GVL_FiberLite.bLedOutput3.bLedPower</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FiberLite.bLedOutput3.iIlluminatorINT</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FiberLite.bLedOutput3.fbSetIllPercent.iRaw</Name>
+					<Comment>
+						<![CDATA[ Connect this output to the terminal]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FiberLite.bLedOutput4.bLedPower</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FiberLite.bLedOutput4.iIlluminatorINT</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_FiberLite.bLedOutput4.fbSetIllPercent.iRaw</Name>
+					<Comment>
+						<![CDATA[ Connect this output to the terminal]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>PlcTask Retains</Name>
@@ -10259,6 +10289,8 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^CryoStat (EK1101)^FiberLite (EL4004)">
 				<Link VarA="PlcTask Outputs^GVL_FiberLite.bLedOutput2.iIlluminatorINT" VarB="AO Outputs Channel 2^Analog output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_FiberLite.bLedOutput3.iIlluminatorINT" VarB="AO Outputs Channel 3^Analog output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_FiberLite.bLedOutput4.iIlluminatorINT" VarB="AO Outputs Channel 4^Analog output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ1 (EK1122)^VLS_EP10_EP7041-3102">
 				<Link VarA="PlcTask Inputs^Main.M44.bHome" VarB="ENC Status compact^Status^Status of input C" AutoLink="true"/>
