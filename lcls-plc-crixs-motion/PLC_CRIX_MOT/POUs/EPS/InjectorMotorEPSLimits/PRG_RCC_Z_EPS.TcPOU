@@ -26,10 +26,10 @@ END_VAR
     aRCC_Z_EPS[1].fFwd_Limits := 11;
 
     aRCC_Z_EPS[2].fBwd_Limits := -18;
-    aRCC_Z_EPS[2].fFwd_Limits := -15;
+    aRCC_Z_EPS[2].fFwd_Limits := -11;
 
     aRCC_Z_EPS[3].fBwd_Limits := -18;
-    aRCC_Z_EPS[3].fFwd_Limits := -15;
+    aRCC_Z_EPS[3].fFwd_Limits := -11;
 
     bInit := FALSE;
 END_IF

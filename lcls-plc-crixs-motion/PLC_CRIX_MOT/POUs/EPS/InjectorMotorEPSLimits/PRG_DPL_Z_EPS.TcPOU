@@ -38,18 +38,18 @@ END_VAR
 END_IF
 
 fbEPS(eps:=aDPL_Z_EPS[2].stEPS);
-fbEPS.setMessage('DPL X in [10,30]');
-fbEPS.setBit(0, F_InRange(fDPL_X, 10, 60));
+fbEPS.setMessage('DPL X in [10, OBJ_X + 30]');
+fbEPS.setBit(0, F_InRange(fDPL_X, 10, fOBJ_X + 30));
 
 fbEPS(eps:=aDPL_Z_EPS[3].stEPS);
-fbEPS.setMessage('RCC Y in [-34,10];RCC_Z in [-15,11]');
+fbEPS.setMessage('RCC Y in [-34,10];RCC_Z in [-11,11]');
 fbEPS.setBit(0, F_InRange(fRCC_Y, -34, 10));
-fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
+fbEPS.setBit(1, F_InRange(fRCC_Z, -11, 11));
 
 fbEPS(eps:=aDPL_Z_EPS[4].stEPS);
-fbEPS.setMessage('RCC_Y in [-38,-34];RCC_Z in [-15,11];DPL_Y in [-1,40]');
+fbEPS.setMessage('RCC_Y in [-38,-34];RCC_Z in [-11,11];DPL_Y in [-1,40]');
 fbEPS.setBit(0, F_InRange(fRCC_Y, -38, -34));
-fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
+fbEPS.setBit(1, F_InRange(fRCC_Z, -11, 11));
 fbEPS.setBit(2, F_InRange(fDPL_Y, -1, 40));
 
 bFullRange := (NOT aDPL_Z_EPS[2].stEPS.bEPS_OK) AND (NOT aDPL_Z_EPS[3].stEPS.bEPS_OK) AND (NOT aDPL_Z_EPS[4].stEPS.bEPS_OK);

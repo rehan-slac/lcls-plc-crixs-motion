@@ -32,9 +32,9 @@ END_VAR
 END_IF
 
 fbEPS(eps:=aDPL_Y_EPS[2].stEPS);
-fbEPS.setMessage('DPL_Z in [-10,30];RCC in [-15,11]');
+fbEPS.setMessage('DPL_Z in [-10,30];RCC in [-11,11]');
 fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
-fbEPS.setBit(1, F_InRange(fRCC_Z, -15, 11));
+fbEPS.setBit(1, F_InRange(fRCC_Z, -11, 11));
 
 bFullRange := NOT aDPL_Y_EPS[2].stEPS.bEPS_OK;
 

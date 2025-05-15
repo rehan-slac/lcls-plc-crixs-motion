@@ -13,6 +13,8 @@
 
     fRCC_Z 		: LREAL;
     fRCC_Y 		: LREAL;
+	
+	fOBJ_X		: LREAL;
 
     tEPS_OVRD_RESET_TIME : TIME := T#5m; // Resets overide after this amount of time.
 
