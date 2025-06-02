@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_OBJ_X_EPS" Id="{7e5bf471-b7cc-4a3e-a348-e16f8985ae7f}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_OBJ_X_EPS
+VAR
+    {attribute 'pytmc' := 'pv: CRIX:OBJ:MMS:X:EPS'}
+    aOBJ_X_EPS 	    : ARRAY [1 .. 2] OF ST_EPSLimits;
+
+    {attribute 'pytmc' := 'pv: CRIX:OBJ:MMS:X:EPS:OVRD_MODE'}
+    bEPS_Override: BOOL := FALSE;
+    {attribute 'pytmc' := 'pv: CRIX:OBJ:MMS:X:EPS:OVRD_COUNTDOWN'}
+    tEPS_TimerCountDown : STRING := TIME_TO_STRING(T#0s);
+    fbResetTimer : FB_RestTimer;
+
+    bInit 		: BOOL := TRUE;
+    bFullRange 	: BOOL;
+
+    fbEPS		: FB_EPS;
+    fbCheckEPS 	: FB_CheckEPS;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bInit THEN
+    // Set Inital Values
+    aOBJ_X_EPS[1].fBwd_Limits := -2;
+    aOBJ_X_EPS[1].fFwd_Limits := 32;
+
+    aOBJ_X_EPS[2].fBwd_Limits := -2;
+
+    bInit := FALSE;
+END_IF
+
+aOBJ_X_EPS[2].fFwd_Limits := MIN(fDPL_X - 30, 32);
+
+fbEPS(eps:=aOBJ_X_EPS[2].stEPS);
+fbEPS.setMessage('DPL Z in [10, 30]');
+fbEPS.setBit(0, F_InRange(fDPL_Z, -10, 30));
+
+bFullRange := (NOT aOBJ_X_EPS[2].stEPS.bEPS_OK);
+
+fbEPS(eps:=aOBJ_X_EPS[1].stEPS);
+fbEPS.setMessage('Full Range');
+fbEPS.setBit(0, bFullRange);
+
+
+fbResetTimer(bInput:=bEPS_Override, tElapseTime:=tEPS_OVRD_RESET_TIME, tCountDown:=tEPS_TimerCountDown);
+fbCheckEPS(stMotor:=M4, fPosition:=fOBJ_X, aEPSLimits:= aOBJ_X_EPS, stForwardMotorEPS:=M4.stEPSForwardEnable, stBackwardMotorEPS:= M4.stEPSBackwardEnable, bEPS_Override:=bEPS_Override);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

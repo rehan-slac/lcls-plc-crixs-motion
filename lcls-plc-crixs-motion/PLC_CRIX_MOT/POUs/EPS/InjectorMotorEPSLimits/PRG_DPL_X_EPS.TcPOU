@@ -29,11 +29,13 @@ END_VAR
     aDPL_X_EPS[2].fBwd_Limits := 10;
     aDPL_X_EPS[2].fFwd_Limits := 30;
 
-    aDPL_X_EPS[3].fBwd_Limits := 60;
+    //aDPL_X_EPS[3].fBwd_Limits := 60;
     aDPL_X_EPS[3].fFwd_Limits := 80;
 
     bInit := FALSE;
 END_IF
+
+aDPL_X_EPS[3].fBwd_Limits := fOBJ_X + 30;
 
 fbEPS(eps:=aDPL_X_EPS[2].stEPS);
 fbEPS.setMessage('SDS_RX in [124, 215');
