@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_FZP" Id="{cad6a7fa-2f2f-4059-8ecf-4abf4749b17e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_FZP
+VAR
+    fbFZP_Motor_X : FB_MotionStage;
+    fbFZP_Motor_Y : FB_MotionStage;
+    fbFZP_Motor_Z : FB_MotionStage;
+    fbOUTCOUP_Motor_Y : FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Main.M30.bHardwareEnable := TRUE;
+fbFZP_Motor_Y(stMotionStage:=Main.M30);
+
+Main.M31.bHardwareEnable := TRUE;
+fbFZP_Motor_X(stMotionStage:=Main.M31);
+
+Main.M32.bHardwareEnable := TRUE;
+fbFZP_Motor_Z(stMotionStage:=Main.M32);
+
+Main.M35.bHardwareEnable := TRUE;
+fbOUTCOUP_Motor_Y(stMotionStage:=Main.M35);
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_FZP">
+      <LineId Id="3" Count="12" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

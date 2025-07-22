@@ -37,7 +37,7 @@ PRG_PointDetectorMotors();
 PRG_CryoStat();
 PRG_RCI();
 PRG_Camera();
-PRG_Beamblock();
+PRG_FZP();
 PRG_ObjectivesMotors();
 PRG_RCC();
 PRG_VLS();
@@ -49,5 +49,9 @@ PRG_FiberLite();
 PRG_PMPS();
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_Main">
+      <LineId Id="3" Count="33" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
