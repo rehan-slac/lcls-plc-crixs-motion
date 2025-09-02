@@ -32,9 +32,9 @@
 		<Axis File="RCI Y.xti" Id="27"/>
 		<Axis File="RCI Z.xti" Id="28"/>
 		<Axis File="RCI RX.xti" Id="29"/>
-		<Axis File="Beam Y.xti" Id="30"/>
-		<Axis File="Beam X.xti" Id="31"/>
-		<Axis File="Beam Z.xti" Id="32"/>
+		<Axis File="FZP Y.xti" Id="30"/>
+		<Axis File="FZP X.xti" Id="31"/>
+		<Axis File="FZP Z.xti" Id="32"/>
 		<Axis File="Camera X.xti" Id="33"/>
 		<Axis File="Camera Y.xti" Id="34"/>
 		<Axis File="M37-X.xti" Id="37"/>
