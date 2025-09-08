@@ -18,7 +18,7 @@
 		</SvbTask>
 		<AxisFolder Name="CryoStat"/>
 		<AxisFolder Name="RCI"/>
-		<AxisFolder Name="Beamblock"/>
+		<AxisFolder Name="FZP"/>
 		<AxisFolder Name="Camera"/>
 		<AxisFolder Name="Catcher"/>
 		<AxisFolder Name="VLS"/>
