@@ -16,19 +16,19 @@
 				</Entry>
 			</Pdo>
 		</EtherCAT>
-		<Box File="Beamblock Y (EL7041).xti" Id="114">
+		<Box File="FZP Y (EL7041).xti" Id="114">
 			<EtherCAT PortABoxInfo="#x01000071"/>
 		</Box>
-		<Box File="Beam X%_2FBeam Y Enc (EL5042).xti" Id="115">
+		<Box File="FZP XY Enc (EL5042).xti" Id="115">
 			<EtherCAT PortABoxInfo="#x01000072"/>
 		</Box>
-		<Box File="Beamblock X (EL7041).xti" Id="116">
+		<Box File="FZP X (EL7041).xti" Id="116">
 			<EtherCAT PortABoxInfo="#x01000073"/>
 		</Box>
-		<Box File="Beamblock Z (EL7041).xti" Id="117">
+		<Box File="FZP Z (EL7041).xti" Id="117">
 			<EtherCAT PortABoxInfo="#x01000074"/>
 		</Box>
-		<Box File="Beam Z Enc (EL5042).xti" Id="118">
+		<Box File="FZP Z Enc (EL5042).xti" Id="118">
 			<EtherCAT PortABoxInfo="#x01000075"/>
 		</Box>
 		<Box File="Term 130 (EL9011).xti" Id="131">

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{FBCC5C5F-7253-24AD-11DF-571D3BE75A0C}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{C26B74F8-9AFA-05AB-30D6-D1495615A74E}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -7564,11 +7564,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>FindTestSuiteInstancePath</Name>
@@ -7827,11 +7822,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_BYTE</Name>
@@ -7933,11 +7923,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8097,11 +8082,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_LTIME</Name>
@@ -8224,11 +8204,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8370,11 +8345,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9136,11 +9106,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>SetHasStartedRunning</Name>
@@ -9301,11 +9266,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>GetHasStartedRunning</Name>
@@ -9408,11 +9368,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9567,11 +9522,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_DINT</Name>
@@ -9694,11 +9644,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9874,11 +9819,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10161,11 +10101,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10962,11 +10897,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_UDINT</Name>
@@ -11058,11 +10988,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -36008,7 +35933,7 @@ These features efficiently address the addition, removal, and verification of be
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82247680</ByteSize>
+          <ByteSize>82444288</ByteSize>
           <Symbol>
             <Name>PRG_RCI.iMagnetInINT</Name>
             <BitSize>16</BitSize>
@@ -36237,54 +36162,6 @@ These features efficiently address the addition, removal, and verification of be
               </Property>
             </Properties>
             <BitOffs>640385984</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_Beamblock.fbBEAM_Motor_X.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-            <BitSize>2048</BitSize>
-            <BaseType GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}">NCTOPLC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>640684288</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_Beamblock.fbBEAM_Motor_Y.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-            <BitSize>2048</BitSize>
-            <BaseType GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}">NCTOPLC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>640982592</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_Beamblock.fbBEAM_Motor_Z.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-            <BitSize>2048</BitSize>
-            <BaseType GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}">NCTOPLC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641280896</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_Beamblock.fbOUTCOUP_Motor_Y.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-            <BitSize>2048</BitSize>
-            <BaseType GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}">NCTOPLC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641579200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_ObjectivesMotors.fbOBJX_Motor.fbDriveVirtual.MasterAxis.NcToPlc</Name>
@@ -42764,12 +42641,60 @@ These features efficiently address the addition, removal, and verification of be
             </Properties>
             <BitOffs>652421904</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbFZP_Motor_X.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+            <BitSize>2048</BitSize>
+            <BaseType GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}">NCTOPLC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>657281024</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbFZP_Motor_Y.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+            <BitSize>2048</BitSize>
+            <BaseType GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}">NCTOPLC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>657579328</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbFZP_Motor_Z.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+            <BitSize>2048</BitSize>
+            <BaseType GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}">NCTOPLC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>657877632</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbOUTCOUP_Motor_Y.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+            <BitSize>2048</BitSize>
+            <BaseType GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}">NCTOPLC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>658175936</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82247680</ByteSize>
+          <ByteSize>82444288</ByteSize>
           <Symbol>
             <Name>PRG_RCI.iMagnetOutINT</Name>
             <BitSize>16</BitSize>
@@ -42998,54 +42923,6 @@ These features efficiently address the addition, removal, and verification of be
               </Property>
             </Properties>
             <BitOffs>640384960</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_Beamblock.fbBEAM_Motor_X.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-            <BitSize>1024</BitSize>
-            <BaseType GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}">PLCTONC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>640683264</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_Beamblock.fbBEAM_Motor_Y.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-            <BitSize>1024</BitSize>
-            <BaseType GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}">PLCTONC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>640981568</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_Beamblock.fbBEAM_Motor_Z.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-            <BitSize>1024</BitSize>
-            <BaseType GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}">PLCTONC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641279872</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_Beamblock.fbOUTCOUP_Motor_Y.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-            <BitSize>1024</BitSize>
-            <BaseType GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}">PLCTONC_AXIS_REF</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Output</Value>
-              </Property>
-            </Properties>
-            <BitOffs>641578176</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PRG_ObjectivesMotors.fbOBJX_Motor.fbDriveVirtual.MasterAxis.PlcToNc</Name>
@@ -44980,12 +44857,60 @@ These features efficiently address the addition, removal, and verification of be
             </Properties>
             <BitOffs>652421784</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbFZP_Motor_X.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+            <BitSize>1024</BitSize>
+            <BaseType GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}">PLCTONC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>657280000</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbFZP_Motor_Y.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+            <BitSize>1024</BitSize>
+            <BaseType GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}">PLCTONC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>657578304</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbFZP_Motor_Z.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+            <BitSize>1024</BitSize>
+            <BaseType GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}">PLCTONC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>657876608</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbOUTCOUP_Motor_Y.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+            <BitSize>1024</BitSize>
+            <BaseType GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}">PLCTONC_AXIS_REF</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Output</Value>
+              </Property>
+            </Properties>
+            <BitOffs>658174912</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82247680</ByteSize>
+          <ByteSize>82444288</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -51009,30 +50934,6 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <BitOffs>640383488</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>PRG_Beamblock.fbBEAM_Motor_X</Name>
-            <BitSize>298304</BitSize>
-            <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>640681792</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_Beamblock.fbBEAM_Motor_Y</Name>
-            <BitSize>298304</BitSize>
-            <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>640980096</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_Beamblock.fbBEAM_Motor_Z</Name>
-            <BitSize>298304</BitSize>
-            <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>641278400</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_Beamblock.fbOUTCOUP_Motor_Y</Name>
-            <BitSize>298304</BitSize>
-            <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
-            <BitOffs>641576704</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>PRG_ObjectivesMotors.fbOBJX_Motor</Name>
             <BitSize>298304</BitSize>
             <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
@@ -54864,7 +54765,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
           </Symbol>
           <Symbol>
             <Name>Main.M30</Name>
-            <Comment>BEAM Y</Comment>
+            <Comment>FZP Y</Comment>
             <BitSize>25216</BitSize>
             <BaseType Namespace="lcls_twincat_motion">DUT_MotionStage</BaseType>
             <Default>
@@ -54880,12 +54781,12 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: CRIX:BEAM:MMS:Y</Value>
+                <Value>pv: CRIX:FZP:MMS:Y</Value>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
-                <Value>.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock Y (EL7041)^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock Y (EL7041)^STM Status^Status^Digital input 2</Value>
+                <Value>.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^FZP Y (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^FZP Y (EL7041)^STM Status^Status^Digital input 2</Value>
               </Property>
               <Property>
                 <Name>TcVarGlobal</Name>
@@ -54895,7 +54796,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
           </Symbol>
           <Symbol>
             <Name>Main.M31</Name>
-            <Comment>BEAM X</Comment>
+            <Comment>FZP X</Comment>
             <BitSize>25216</BitSize>
             <BaseType Namespace="lcls_twincat_motion">DUT_MotionStage</BaseType>
             <Default>
@@ -54911,12 +54812,12 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: CRIX:BEAM:MMS:X</Value>
+                <Value>pv: CRIX:FZP:MMS:X</Value>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
-                <Value>.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock X (EL7041)^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock X (EL7041)^STM Status^Status^Digital input 2</Value>
+                <Value>.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^FZP X (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^FZP X (EL7041)^STM Status^Status^Digital input 2</Value>
               </Property>
               <Property>
                 <Name>TcVarGlobal</Name>
@@ -54926,7 +54827,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
           </Symbol>
           <Symbol>
             <Name>Main.M32</Name>
-            <Comment>BEAM Z</Comment>
+            <Comment>FZP Z</Comment>
             <BitSize>25216</BitSize>
             <BaseType Namespace="lcls_twincat_motion">DUT_MotionStage</BaseType>
             <Default>
@@ -54942,12 +54843,12 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: CRIX:BEAM:MMS:Z</Value>
+                <Value>pv: CRIX:FZP:MMS:Z</Value>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
-                <Value>.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock Z (EL7041)^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^Beamblock Z (EL7041)^STM Status^Status^Digital input 2</Value>
+                <Value>.bLimitForwardEnable  := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^FZP Z (EL7041)^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 6 (EK1122-0080)^DRL02-EK0 (EK1101-0080)^DRL02-ECJ0 (EK1122-0080)^Term 113 (EK1101-0080)^FZP Z (EL7041)^STM Status^Status^Digital input 2</Value>
               </Property>
               <Property>
                 <Name>TcVarGlobal</Name>
@@ -55700,12 +55601,36 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
             </Properties>
             <BitOffs>652472992</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbFZP_Motor_X</Name>
+            <BitSize>298304</BitSize>
+            <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
+            <BitOffs>657278528</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbFZP_Motor_Y</Name>
+            <BitSize>298304</BitSize>
+            <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
+            <BitOffs>657576832</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbFZP_Motor_Z</Name>
+            <BitSize>298304</BitSize>
+            <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
+            <BitOffs>657875136</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PRG_FZP.fbOUTCOUP_Motor_Y</Name>
+            <BitSize>298304</BitSize>
+            <BaseType Namespace="lcls_twincat_motion">FB_MotionStage</BaseType>
+            <BitOffs>658173440</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">4</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82247680</ByteSize>
+          <ByteSize>82444288</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -55770,7 +55695,7 @@ fbTestMotor		:	FB_SIM_MOTOR;</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2025-05-27T09:23:52</Value>
+          <Value>2025-09-11T13:27:24</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
